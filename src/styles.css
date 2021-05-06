@@ -1,6 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* CONFIGURACOES GLOBAIS */
 
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*
+font-family: 'Vollkorn', serif;
+font-family: 'Montserrat', sans-serif;
+*/
 
 * {
   padding: 0;
@@ -9,8 +15,101 @@
 }
 
 html, body {
-  height: 100vh;
+  height: 100%;
 
-  font-family: 'Vollkorn', serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+
+  background-color: var(--background-global) !important;
+
+  color: var(--text-black);
+
+}
+
+:root {
+  --background-global: #f9f9f9;
+  --background-header: #f1f1f1;
+  --background-footer: #222222;
+  --background-copyright: #191919;
+  --background-menu-hover: #262626;
+
+  --text-black: #262626;
+  --text-white: #f1f1f1;
+  --text-menu-hover: #f1f1f1;
+  --text-gray: #a6a8af;
+
+  --color-hr: #c9cacc;
+
+  --overlay: #282c4ea0;
+
+  --button: #032a63;
+
+  /*--warning: #cc3300;
+  --ok: #339900;*/
+
+  --textarea: #767676;
+
+  /* LOGIN / CADASTRO*/
+  --background-card: #f9f9f9;
+
+  --shadow: #262626;
+
+  --text-h1: #032a63;
+
+  --focus-input: #091c3a;
+
+  --warning-border:#cc3300;
+  --sucess-border:#339900;
+  --warning: 	#cc330080;
+  --sucess: #33990080;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+
+}
+
+h1 {
+  font-family: 'Vollkorn', serif !important;
+  font-size: 4rem !important;
+
+}
+
+h2 {
+  font-family: 'Vollkorn', serif !important;
+  font-size: 3rem !important;
+
+}
+
+h3 {
+  font-family: 'Vollkorn', serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+
+  color: var(--text-white) !important;
+
+}
+
+hr {
+  width: 66% !important;
+  height: auto;
+
+  border-top: 1.7px solid var(--color-hr) !important;
+  border-right: 0px solid var(--color-hr);
+  border-bottom: 0px solid var(--color-hr);
+  border-left: 0px solid var(--color-hr);
+
+}
+
+p {
+  margin: 0 !important;
+
+}
+
+
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
 
 }

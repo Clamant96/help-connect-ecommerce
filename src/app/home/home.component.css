@@ -1,0 +1,931 @@
+/* SECTION - APRESENTACAO */
+section {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+section .sectionApresentacao {
+    background-image: url(../../assets/img/planejamento.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+section .sectionApresentacao .overlay {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--overlay);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+section .sectionApresentacao .overlay .apresentacao {
+    padding-top: 15%;
+    padding-bottom: 15%;
+
+    width: 80%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+}
+
+section .sectionApresentacao .overlay .apresentacao h1 {
+    color: var(--text-white);
+
+    font-weight: 700;
+
+}
+
+section .sectionApresentacao .overlay .apresentacao p {
+    margin: 2% 0% !important;
+
+    width: 70%;
+    height: auto;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    color: var(--text-white);
+
+    text-align: justify;
+
+}
+
+section .sectionApresentacao .overlay .apresentacao a {
+    text-decoration: none;
+
+    color: var(--text-black);
+
+    background-color: var(--button);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1% !important;
+
+    width: 11%;
+    height: auto;
+
+    border-radius: 5px;
+
+    transition: width, .3s ease-in-out;
+
+}
+
+section .sectionApresentacao .overlay .apresentacao a:hover {
+    width: 13%;
+    height: auto;
+
+}
+
+section .sectionApresentacao .overlay .apresentacao a button {
+    border: none;
+
+    width: 100%;
+    height: auto;
+
+    background-color: transparent;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: var(--text-white);
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/* SECTION - FERRAMENTAS E ESTRATEGIAS */
+section .sectionFerramentas {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 5%;
+    padding: 2%;
+
+    width: 66%;
+    height: auto;
+
+}
+
+section .sectionFerramentas h2 {
+    padding: 1%;
+
+    width: 98%;
+    height: auto;
+
+    text-align: center;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+}
+
+section .sectionFerramentas p {
+    padding: 1%;
+
+    width: 88%;
+    height: auto;
+
+    text-align: center;
+
+    color: var(--text-gray);
+
+    font-weight: 400;
+
+}
+
+section .sectionFerramentas .ferramentas {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+section .sectionFerramentas .ferramentas .bloco {
+    margin-top: 4%;
+    padding: 2%;
+
+    width: 437px;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+
+}
+
+section .sectionFerramentas .ferramentas .bloco svg {
+    margin-top: 1%;
+    padding: 2%;
+
+    width: 16%;
+    height: auto;
+
+}
+
+section .sectionFerramentas .ferramentas .bloco .texto {
+    width: 76%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+section .sectionFerramentas .ferramentas .bloco .texto .titulo {
+    font-family: 'Vollkorn', serif;
+    font-size: 26px;
+    font-weight: 700 !important;
+
+    color: var(--text-black);
+
+    text-align: left;
+
+}
+
+section .sectionFerramentas .ferramentas .bloco .texto p {
+    font-size: 15px;
+    font-weight: 400;
+
+    color: var(--text-gray);
+
+    text-align: left;
+
+}
+
+/* SECTION - LOYOUTS E INDEXACAO */
+section .sectionLayout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 2%;
+
+    width: 76%;
+    height: auto;
+
+}
+
+section .sectionLayout .layouts {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+
+}
+
+section .sectionLayout .layouts .img {
+    padding: 2%;
+
+    width: 40%;
+    height: auto;
+
+}
+
+section .sectionLayout .layouts .img img {
+    width: 100%;
+    height: auto;
+
+}
+
+section .sectionLayout .layouts .coteudo {
+    width: 56%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+section .sectionLayout .layouts .coteudo h2 {
+    line-height: 1;
+
+    font-weight: 600 !important;
+
+}
+
+section .sectionLayout .layouts .coteudo p {
+    margin-top: 2% !important;
+    margin-bottom: 2% !important;
+
+    color: var(--text-gray);
+
+    font-weight: 400;
+
+}
+
+section .sectionLayout .layouts .coteudo a {
+    text-decoration: none;
+
+    color: var(--text-black);
+
+    background-color: var(--button);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1% 1.5% !important;
+
+    width: 22%;
+    height: auto;
+
+    border-radius: 5px;
+
+    transition: width, .3s ease-in-out;
+
+}
+
+section .sectionLayout .layouts .coteudo a:hover {
+    width: 24%;
+    height: auto;
+
+}
+
+section .sectionLayout .layouts .coteudo a button {
+    border: none;
+
+    width: 100%;
+    height: auto;
+
+    background-color: transparent;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: var(--text-white);
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/* ......................... PAGINA SOBRE MIM ................................. */
+/* PAGE SOBRE */
+section .sobreMim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2%;
+
+    width: 76%;
+    height: auto;
+
+}
+
+section .sobreMim .texto{
+    padding: 2%;
+
+    width: 66%;
+    height: auto;
+
+}
+
+section .sobreMim .texto p {
+    font-size: 14px;
+
+    color: var(--text-black);
+
+    text-align: justify;
+
+}
+
+section .sobreMim .perfil {
+    width: 30%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+section .sobreMim .perfil .img {
+    width: 100%;
+    height: auto;
+
+}
+
+section .sobreMim .perfil .img img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 50%;
+
+}
+
+section .sobreMim .perfil .redesSociais {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+section .sobreMim .perfil .redesSociais h2 {
+    text-align: center;
+
+    width: 100%;
+    height: auto;
+
+}
+
+section .sobreMim .perfil .redesSociais .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+
+}
+
+section .sobreMim .perfil .redesSociais .icon a {
+    text-decoration: none;
+
+    color: var(--text-black);
+
+    width: 15%;
+    height: auto;
+
+    cursor: default;
+
+}
+
+section .sobreMim .perfil .redesSociais .icon a svg {
+    padding: 2%;
+
+    width: 86%;
+    height: auto;
+
+    transition: color, .5s;
+
+    cursor: pointer;
+
+}
+
+section .sobreMim .perfil .redesSociais .icon a svg:hover {
+   color: var(--text-gray);
+
+}
+
+/* PAGE CONTATO */
+section .contato {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 2%;
+
+    width: 76%;
+    height: auto;
+
+}
+
+section .contato > p {
+    text-align: justify;
+
+}
+
+section .apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2%;
+
+    width: 76%;
+    height: auto;
+
+}
+
+section .apresentacao .formulario {
+    padding: 2%;
+
+    width: 46%;
+    height: auto;
+
+}
+
+section .apresentacao .formulario h1 {
+   font-size: 2.5rem;
+
+}
+
+section .apresentacao .formulario forms {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+section .apresentacao .formulario forms label {
+    margin: 1%;
+
+    width: 48%;
+    height: auto;
+
+}
+
+section .apresentacao .formulario forms textarea {
+    margin: 1%;
+    padding: 1%;
+
+    width: 98%;
+    height: auto;
+
+
+}
+
+section .apresentacao .formulario forms a {
+    text-decoration: none;
+
+    color: var(--text-black);
+
+    background-color: var(--button);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 1%;
+    padding: 1%;
+
+    width: 10%;
+    height: auto;
+
+    border-radius: 5px;
+
+}
+
+section .apresentacao .formulario forms a button {
+    border: none;
+
+    width: 100%;
+    height: auto;
+
+    background-color: transparent;
+
+    font-size: 16px;
+
+    color: var(--text-white);
+
+    cursor: pointer;
+
+}
+
+section .apresentacao .localizacao {
+    width: 50%;
+    height: auto;
+
+}
+
+section .apresentacao .localizacao .endereco {
+    margin-bottom: 3%;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+section .apresentacao .localizacao .endereco h2 {
+    font-size: 2.5rem;
+
+}
+
+section .apresentacao .localizacao .mapa {
+    width: 100%;
+    height: auto;
+
+}
+
+section .apresentacao .localizacao .mapa iframe {
+    width: 100%;
+    height: 40vh;
+
+}
+
+@media(max-width: 600px){
+  section .sectionApresentacao {
+      background-image: url(../../assets/img/planejamento.jpg);
+      background-position: center left;
+      background-repeat: no-repeat;
+      background-size: 180%;
+
+  }
+
+  section .sectionApresentacao .overlay .apresentacao {
+      padding-top: 15%;
+      padding-bottom: 15%;
+
+      width: 90%;
+      height: auto;
+
+      align-items: center;
+
+  }
+
+  section .sectionApresentacao .overlay .apresentacao h1 {
+      color: var(--text-white);
+
+      font-weight: 700;
+      font-size: 3rem !important;
+
+      text-align: center;
+
+  }
+
+  section .sectionApresentacao .overlay .apresentacao p {
+      margin: 2% 0% !important;
+
+      width: 100%;
+      height: auto;
+
+      font-size: 16px;
+      font-weight: 400;
+
+      color: var(--text-white);
+
+      text-align: center;
+
+  }
+
+  section .sectionApresentacao .overlay .apresentacao a {
+      text-decoration: none;
+
+      color: var(--text-black);
+
+      background-color: var(--button);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 1.5% !important;
+
+      width: 27%;
+      height: auto;
+
+      border-radius: 5px;
+
+      transition: width, .3s ease-in-out;
+
+  }
+
+  section .sectionApresentacao .overlay .apresentacao a:hover {
+      width: 30%;
+      height: auto;
+
+  }
+
+  section .sectionApresentacao .overlay .apresentacao a button {
+      border: none;
+
+      width: 100%;
+      height: auto;
+
+      background-color: transparent;
+
+      font-size: 16px;
+      font-weight: 500;
+
+      color: var(--text-white);
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+  }
+
+  /* SECTION - FERRAMENTAS E ESTRATEGIAS */
+  section .sectionFerramentas {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 5%;
+    padding: 2%;
+
+    width: 90%;
+    height: auto;
+
+  }
+
+  section .sectionFerramentas h2 {
+    padding: 1%;
+
+    width: 98%;
+    height: auto;
+
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 1.8rem !important;
+
+    line-height: 1;
+
+  }
+
+  section .sectionFerramentas p {
+    padding: 1%;
+
+    width: 88%;
+    height: auto;
+
+    text-align: center;
+
+    color: var(--text-gray);
+
+    font-weight: 400;
+    font-size: 0.92rem;
+
+  }
+
+  section .sectionFerramentas .ferramentas {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+  }
+
+  section .sectionFerramentas .ferramentas .bloco {
+    margin-top: 4%;
+    padding: 2%;
+
+    width: 437px;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+
+  }
+
+  section .sectionFerramentas .ferramentas .bloco svg {
+    margin-top: 1%;
+    padding: 2%;
+
+    width: 16%;
+    height: auto;
+
+  }
+
+  section .sectionFerramentas .ferramentas .bloco .texto {
+    width: 76%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+
+  section .sectionFerramentas .ferramentas .bloco .texto .titulo {
+    font-family: 'Vollkorn', serif;
+    font-size: 26px;
+    font-weight: 700 !important;
+
+    color: var(--text-black);
+
+    text-align: left;
+
+  }
+
+  section .sectionFerramentas .ferramentas .bloco .texto p {
+    font-size: 15px;
+    font-weight: 400;
+
+    color: var(--text-gray);
+
+    text-align: left;
+
+  }
+
+  /* SECTION - LOYOUTS E INDEXACAO */
+  section .sectionLayout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 2%;
+
+    width: 90%;
+    height: auto;
+
+  }
+
+  section .sectionLayout .layouts {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+
+  }
+
+  section .sectionLayout .layouts .img {
+    padding: 2%;
+
+    width: 342px;
+    height: auto;
+
+  }
+
+  section .sectionLayout .layouts .img img {
+    width: 100%;
+    height: auto;
+
+  }
+
+  section .sectionLayout .layouts .coteudo {
+    width: 570px;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  section .sectionLayout .layouts .coteudo h2 {
+    line-height: 1;
+
+    font-weight: 600 !important;
+    font-size: 2rem !important;
+
+    text-align: center;
+
+  }
+
+  section .sectionLayout .layouts .coteudo p {
+    margin-top: 2% !important;
+    margin-bottom: 2% !important;
+
+    color: var(--text-gray);
+
+    font-weight: 400;
+    font-size: 0.9rem !important;
+
+    text-align: center;
+
+  }
+
+  section .sectionLayout .layouts .coteudo a {
+    text-decoration: none;
+
+    color: var(--text-black);
+
+    background-color: var(--button);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1% 1.5% !important;
+
+    width: 31%;
+    height: auto;
+
+    border-radius: 5px;
+
+    transition: width, .3s ease-in-out;
+
+  }
+
+  section .sectionLayout .layouts .coteudo a:hover {
+    width: 34%;
+    height: auto;
+
+  }
+
+  section .sectionLayout .layouts .coteudo a button {
+    border: none;
+
+    width: 100%;
+    height: auto;
+
+    background-color: transparent;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: var(--text-white);
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+}

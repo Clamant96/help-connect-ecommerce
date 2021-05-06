@@ -1,0 +1,235 @@
+.container-fluid{
+  height: 100vh;
+
+  font-family: 'Vollkorn', serif !important;
+
+  background-color: var(--background-header);
+
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+}
+
+.card {
+  background-color: var(--background-card);
+
+  padding: 30px;
+
+  border-radius: 4%;
+
+  box-shadow: 0px 3px 5px -5px var(--shadow);
+
+  background-image: url(../../assets/img/background-tecnologia.jpg);
+  background-position: center;
+  background-size: 300%;
+  background-repeat: no-repeat;
+
+}
+
+.cadastro {
+  width: 400px;
+
+}
+
+h1 {
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  color: var(--text-h1);
+
+  font-weight: 600 !important;
+
+}
+
+.label-float input {
+  padding: 2%;
+
+  width: 96%;
+  height: auto;
+
+  display: inline-block;
+
+  border: 0;
+  border-bottom: 2px solid var(--text-h1);
+
+  background-color: transparent;
+
+  outline: none;
+
+  min-width: 180px;
+
+  font-size: 16px;
+
+  transition: all .3s ease-out;
+
+  border-radius: 0;
+
+}
+
+.label-float {
+  position: relative;
+
+  padding-top: 13px;
+  margin-top: 5%;
+
+  margin-bottom: 5%;
+
+}
+
+.label-float input:focus {
+  border-bottom: 2px solid var(--focus-input);
+
+}
+
+.label-float label {
+  color: var(--text-h1);
+
+  pointer-events: none;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  margin-top: 13px;
+
+  transition: all .3s ease-out;
+
+}
+
+.label-float input:focus + label, .label-float input:valid + label {
+  font-size: 13px;
+  margin-top: 0;
+
+  color: var(--focus-input);
+
+}
+
+button {
+  background-color: transparent;
+
+  padding: 7px;
+  margin-top: 20px;
+
+  width: 50%;
+
+  color: var(--text-h1);
+
+  font-weight: 700;
+  font-size: 14pt;
+
+  border-radius: 4px;
+  border-color: var(--text-h1);
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition: background-color, color, .3s ease-out;
+
+}
+
+button:hover {
+  background-color: var(--text-h1);
+
+  color: var(--text-white);
+
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+
+}
+
+hr {
+  margin-top: 10% !important;
+  margin-bottom: 10% !important;
+
+  width: 60% !important;
+
+  background-color: var(--focus-input) !important;
+
+  border-top: 1px solid var(--focus-input) !important;
+  border-bottom: 0px solid var(--shadow) !important;
+  border-right: 0px solid var(--shadow) !important;
+  border-left: 0px solid var(--shadow) !important;
+
+}
+
+p {
+  color: var(--text-h1);
+
+  font-size: 14pt;
+
+  text-align: center;
+
+}
+
+a {
+  color: var(--focus-input);
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+}
+
+a:hover {
+  color: var(--text-h1);
+
+  transition: color, .3s ease-out;
+
+}
+
+svg {
+  position: absolute;
+
+  top: 20px;
+  right: 13px;
+
+  cursor: pointer;
+
+  color: var(--text-h1);
+
+}
+
+#msgErro {
+  text-align: center;
+
+  color: var(--warning-border);
+
+  background-color: var(--warning);
+
+  padding: 10px;
+
+  border-radius: 4px;
+  border: 2px solid var(--warning-border);
+
+  display: none;
+
+}
+
+#msgSucesso {
+  text-align: center;
+
+  color: var(--sucess-border);
+
+  background-color: var(--sucess);
+
+  padding: 10px;
+
+  border-radius: 4px;
+  border: 2px solid var(--sucess-border);
+
+  display: none;
+
+}
