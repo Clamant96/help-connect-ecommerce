@@ -1,18 +1,41 @@
+import { environment } from './../../environments/environment.prod';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Cliente } from '../model/Cliente';
+import { ClienteLogin } from '../model/ClienteLogin';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  /* GERA UMA URL DINAMICA TRAZENDO OS DADOS DO VALOR GLOBAL */
+  public endereco = environment.server + environment.port;
+
+  /* INJETA DEPENDENCIAS DENTRO DO SERVICE */
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  /* CONSOME A API METODO LOGAR (POST) | ClienteLogin */
+  entrar(clienteLogin: ClienteLogin): Observable<ClienteLogin> {
+
+    return this.http.post<ClienteLogin>(`${this.endereco}/clientes/logar`, clienteLogin);
+  }
+
+  /* CONSOME A API METODO CADASTRAR (POST) | Cliente */
+  cadastrar(cliente: Cliente): Observable<Cliente> {
+
+    return this.http.post<Cliente>(`${this.endereco}/clientes/cadastrar`, cliente);
+  }
 
   /* RETONA UM VALOR true OU false CASO O TOKEN ESTA PREENCHIDO, CASO ESTEJA VAZIO RETONA false, CASO ESTEJA COM DADOS RETONA true*/
   logado() {
     /* CRIA UMA VARIAVEL BOOLEAN */
-    let identificador:boolean = false;
+    let identificador: boolean = false;
 
-    if(window.document.URL != 'http://localhost:4200/login') {
+    if(environment.token != '') {
       identificador = true;
 
     }

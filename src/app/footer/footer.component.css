@@ -62,7 +62,7 @@ footer .footer .menu ul a {
 }
 
 footer .footer .menu ul a:hover {
-  color: var(--text-gray);
+  color: var(--text-input);
 
 }
 
@@ -73,7 +73,7 @@ footer .footer .menu ul a li {
 }
 
 footer .footer .social {
-  width: 190px;
+  width: 210px;
   height: auto;
 
 }
@@ -81,7 +81,7 @@ footer .footer .social {
 footer .footer .social .icon {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   flex-wrap: wrap;
 
@@ -93,12 +93,23 @@ footer .footer .social .icon {
 footer .footer .social .icon a {
   text-decoration: none;
 
-  color: var(--text-gray);
+  color: var(--text-input);
 
   width: 25%;
   height: auto;
 
   cursor: default;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: var(--button);
+
+  width: 30px;
+  height: 30px;
 
 }
 
@@ -108,7 +119,7 @@ footer .footer .social .icon a svg {
   width: 66%;
   height: auto;
 
-  transition: color, .5s;
+  transition: color, .3s ease-in-out;
 
   cursor: pointer;
 

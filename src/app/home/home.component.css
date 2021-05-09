@@ -153,7 +153,7 @@ section .sectionFerramentas p {
 
     text-align: center;
 
-    color: var(--text-gray);
+    color: var(--text-p);
 
     font-weight: 400;
 
@@ -218,7 +218,7 @@ section .sectionFerramentas .ferramentas .bloco .texto p {
     font-size: 15px;
     font-weight: 400;
 
-    color: var(--text-gray);
+    color: var(--text-p);
 
     text-align: left;
 
@@ -286,7 +286,7 @@ section .sectionLayout .layouts .coteudo p {
     margin-top: 2% !important;
     margin-bottom: 2% !important;
 
-    color: var(--text-gray);
+    color: var(--text-p);
 
     font-weight: 400;
 
@@ -799,7 +799,7 @@ section .apresentacao .localizacao .mapa iframe {
     font-size: 15px;
     font-weight: 400;
 
-    color: var(--text-gray);
+    color: var(--text-p);
 
     text-align: left;
 

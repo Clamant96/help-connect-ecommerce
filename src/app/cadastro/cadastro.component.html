@@ -1,0 +1,51 @@
+<div class="container-cadastro">
+  <div class="pagina">
+    <div class="icone">
+      <img src="../../assets/img/icone_login.png" alt="">
+    </div>
+    <div class="card-login">
+        <h1>Cadastrar</h1>
+
+        <div id="msgErro"></div>
+        <div id="msgSucesso"></div>
+
+        <div class="label-float">
+            <input [(ngModel)]='cliente.nome' type="text" id="nome" placeholder="Nome" required>
+        </div>
+
+        <div class="label-float">
+            <input [(ngModel)]='cliente.usuario' type="text" id="usuario" placeholder="Usuário" required>
+        </div>
+
+        <div class="label-float">
+          <input [(ngModel)]='cliente.email' type="email" id="email" placeholder="E-mail" required>
+        </div>
+
+        <div class="label-float">
+          <input [(ngModel)]='cliente.foto' type="text" id="foto" placeholder="Foto perfil" required>
+        </div>
+
+        <div class="label-float">
+            <input (input)='confirmarSenha($event)' type="password" id="senha" placeholder="Senha" required>
+        </div>
+
+        <div class="label-float">
+            <input [(ngModel)]='cliente.senha' type="password" id="confirmasenha" placeholder="Confirmar Senha" required>
+        </div>
+
+        <div class="label-float">
+            <select (change)='tipoUsuario($event)' name="tipo" id="tipo">
+                <option>Selecione um tipo de usuário:</option>
+                <option value="normal">Normal</option>
+                <option value="adm">Administrador</option>
+            </select>
+        </div>
+
+        <div class="botao">
+            <button type="submit" id="cadastrar" routerLink='/login'>Cancelar</button>
+            <button (click)='cadastrar()' type="submit" id="cadastrar">Cadastrar</button>
+        </div>
+
+    </div>
+  </div>
+</div>

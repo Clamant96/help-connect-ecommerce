@@ -1,37 +1,30 @@
-<div class="container-fluid">
-<div class="container">
-  <div class="card">
-      <h1>Login</h1>
-
-      <div id="msgErro"></div>
-      <div id="msgSucesso"></div>
-
-      <div class="label-float">
-          <input type="text" id="usuario" placeholder="" required>
-          <label id="labelUsuario" for="usuario">Usuario</label>
+<div class="container-login">
+    <div class="pagina">
+      <div class="icone">
+        <img src="../../assets/img/icone_login.png" alt="">
       </div>
+      <div class="card-login">
+          <h1>Login</h1>
 
-      <div class="label-float">
-          <input type="password" id="senha" placeholder="" required>
-          <label id="labelSenha" for="senha">Senha</label>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-          </svg>
+          <div class="label-float">
+              <input [(ngModel)]='clienteLogin.email' type="text" id="usuario" placeholder="Usuário" required>
+          </div>
+
+          <div class="label-float">
+              <input [(ngModel)]='clienteLogin.senha' type="password" id="senha" placeholder="Senha" required>
+          </div>
+
+          <div class="botao">
+              <button (click)='entrar()' >Login</button>
+          </div>
+
+          <p>
+              <a routerLink='/cadastro' >Crie uma conta</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+          </p>
+
       </div>
-
-      <div class="justify-center">
-          <button>Logar</button>
-      </div>
-
-      <div class="justify-center">
-          <hr />
-      </div>
-
-      <p>Nao tem uma conta?
-          <a href="cadastro.html">Cadastre-se</a>
-      </p>
-
-  </div>
-</div>
+    </div>
 </div>

@@ -1,4 +1,4 @@
-.container-login {
+.container-cadastro {
   width: 100%;
   height: 100%;
 
@@ -12,14 +12,14 @@
 
 }
 
-.container-login .pagina {
+.container-cadastro .pagina {
   background-color: var(--overlay);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 5%;
+  padding: 2% 5%;
 
   width: 60%;
   height: auto;
@@ -30,22 +30,22 @@
 
 }
 
-.container-login .pagina .icone {
+.container-cadastro .pagina .icone {
   width: 30%;
   height: auto;
 
 }
 
-.container-login .pagina .icone svg {
+.container-cadastro .pagina .icone svg {
   width: 100%;
   height: auto;
 
 }
 
-.container-login .pagina .card-login {
+.container-cadastro .pagina .card-login {
   padding: 2%;
 
-  width: 40%;
+  width: 45%;
   height: auto;
 
   display: flex;
@@ -55,7 +55,7 @@
 
 }
 
-.container-login .pagina .card-login h1 {
+.container-cadastro .pagina .card-login h1 {
   font-size: 1.5rem !important;
   font-weight: 800 !important;
 
@@ -70,7 +70,7 @@
 
 }
 
-.container-login .pagina .card-login .label-float {
+.container-cadastro .pagina .card-login .label-float {
   padding: 2%;
 
   margin: 2%;
@@ -94,7 +94,7 @@
 
 }
 
-.container-login .pagina .card-login .label-float input {
+.container-cadastro .pagina .card-login .label-float input {
   padding: 2%;
   margin-left: 10%;
 
@@ -108,28 +108,34 @@
 
 }
 
-.container-login .pagina .card-login .botao {
+.container-cadastro .pagina .card-login .label-float select {
   padding: 2%;
 
-  margin: 10% 2% 3% 2%;
+  background-color: transparent;
+
+  outline: none;
+
+  border: none;
+
+  font-weight: 700;
+
+}
+
+.container-cadastro .pagina .card-login .botao {
+  padding: 2%;
 
   width: 96%;
   height: auto;
-
-  background-color: var(--button);
-
-  border-radius: 50px !important;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0px 3px 5px -3px var(--text-black);
-
 }
 
-.container-login .pagina .card-login .botao  button {
+.container-cadastro .pagina .card-login .botao  button {
   padding: 2%;
+  margin: 2%;
 
   background-color: transparent;
 
@@ -142,12 +148,18 @@
 
   color: var(--text-white) !important;
 
-  width: 100%;
+  width: 50%;
   height: auto;
+
+  background-color: var(--button);
+
+  border-radius: 50px !important;
+
+  box-shadow: 0px 3px 5px -3px var(--text-black);
 
 }
 
-.container-login .pagina .card-login p {
+.container-cadastro .pagina .card-login p {
   width: 100%;
   height: auto;
 
@@ -163,7 +175,7 @@
 
 }
 
-.container-login .pagina .card-login p a {
+.container-cadastro .pagina .card-login p a {
   text-decoration: none;
 
   color: var(--text-white);
@@ -172,7 +184,7 @@
 
 }
 
-.container-login .pagina .card-login p svg {
+.container-cadastro .pagina .card-login p svg {
   color: var(--text-white);
 
 }

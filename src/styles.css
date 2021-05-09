@@ -32,11 +32,13 @@ html, body {
   --background-footer: #222222;
   --background-copyright: #191919;
   --background-menu-hover: #262626;
+  --background-input: #e6e6e6;
 
   --text-black: #262626;
   --text-white: #f1f1f1;
   --text-menu-hover: #f1f1f1;
-  --text-gray: #a6a8af;
+  --text-input: #c0bebe;
+  --text-p: #acacac;
 
   --color-hr: #c9cacc;
 
