@@ -6,6 +6,8 @@ import { DeletarCategoriaComponent } from './deletar/deletar-categoria/deletar-c
 import { EditarCategoriaComponent } from './editar/editar-categoria/editar-categoria.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,15 @@ const routes: Routes = [
   },
   {
     path: 'deletar-categoria/:id', component: DeletarCategoriaComponent
+  },
+  {
+    path: 'pedido', component: PedidoComponent
+  },
+  {
+    path: 'produto-pedido/produtos/:id-produto/pedidos/:id-pedido', component: PedidoComponent
+  },
+  {
+    path: 'produto', component: ProdutoComponent
   }
 
 ];

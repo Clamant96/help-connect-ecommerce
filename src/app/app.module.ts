@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { EditarCategoriaComponent } from './editar/editar-categoria/editar-categoria.component';
 import { DeletarCategoriaComponent } from './deletar/deletar-categoria/deletar-categoria.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DeletarCategoriaComponent } from './deletar/deletar-categoria/deletar-c
     CadastroComponent,
     CategoriaComponent,
     EditarCategoriaComponent,
-    DeletarCategoriaComponent
+    DeletarCategoriaComponent,
+    PedidoComponent,
+    ProdutoComponent
   ],
   imports: [
     BrowserModule,
