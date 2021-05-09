@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { EditarCategoriaComponent } from './editar/editar-categoria/editar-categoria.component';
+import { DeletarCategoriaComponent } from './deletar/deletar-categoria/deletar-categoria.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CategoriaComponent } from './categoria/categoria.component';
     FooterComponent,
     LoginComponent,
     CadastroComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    EditarCategoriaComponent,
+    DeletarCategoriaComponent
   ],
   imports: [
     BrowserModule,

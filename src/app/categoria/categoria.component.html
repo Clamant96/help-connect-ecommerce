@@ -40,8 +40,8 @@
                         <th>{{item.id}}</th>
                         <td>{{item.nome}}</td>
                         <td class="d-flex justify-content-end">
-                          <button class="btn botao-editar" >Editar</button>
-                          <button class="btn botao-apagar" >Apagar</button>
+                          <button class="btn botao-editar" [routerLink]="['/edit-categoria', item.id]" >Editar</button>
+                          <button class="btn botao-apagar" [routerLink]="['/deletar-categoria', item.id]" >Apagar</button>
                         </td>
                       </tr>
                     </tbody>
