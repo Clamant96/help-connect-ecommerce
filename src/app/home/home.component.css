@@ -258,6 +258,11 @@ section .sectionLayout .layouts .img {
 
 }
 
+section .sectionLayout .layouts .img .borda {
+  border-radius: 5px;
+
+}
+
 section .sectionLayout .layouts .img img {
     width: 100%;
     height: auto;
@@ -836,6 +841,11 @@ section .apresentacao .localizacao .mapa iframe {
 
     width: 342px;
     height: auto;
+
+  }
+
+  section .sectionLayout .layouts .img .borda {
+    border-radius: 5px;
 
   }
 
