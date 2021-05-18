@@ -30,6 +30,7 @@ export class CategoriaComponent implements OnInit {
 
   }
 
+  /* TRAZ TODOS OS ITENS CONTIDO DENTRO DA BASE DE DADOS DE CATEGORIA, DESSA FORMA RETORNANDO UM ARRAY */
   findAllCategorias() {
     this.categoriaService.findAllCategorias().subscribe((resp: Categoria[]) => {
       this.listaDeCategorias = resp;
@@ -38,6 +39,16 @@ export class CategoriaComponent implements OnInit {
 
   }
 
+  /* TRAZ UM ITEM ESPECIFICO DE CATEGORIA INFORMANDO COMO PARAMETRO UM ID */
+  findByIdCategoria(id: number) {
+    this.categoriaService.fintByIdCategoria(id).subscribe((resp: Categoria) => {
+      this.categoria = resp;
+
+    })
+
+  }
+
+  /* CRIAR UM NOVO ITEM DE CATEGORIA NA BASE DE DADOS */
   postCategoria() {
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
@@ -55,6 +66,37 @@ export class CategoriaComponent implements OnInit {
         console.log(`Erro: ${erro.status}, acesso nao autorizado, verifique seu login.`)
 
       }
+
+    })
+
+  }
+
+  /* ATUALIZA UM DADO DE CATEGORIA NA BASE DE DADOS POR MEIO DO ID */
+  putCategoria() {
+    this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) => {
+      this.categoria = resp;
+
+      this.categoria = new Categoria();
+      this.findAllCategorias();
+
+    }, erro => {
+      if(erro.status == 500) {
+        console.log(`Erro: ${erro.status}, algum dado esta sendo inserido incorretamente.`)
+
+      }else if(erro.status >= 400 && erro.status < 500){
+        console.log(`Erro: ${erro.status}, acesso nao autorizado, verifique seu login.`)
+
+      }
+
+    })
+
+  }
+
+  /* EXCLUI UM DADO DE CATEGORIA NA BASE DE DADOS POR MEIO DO ID */
+  deleteCategoria(id: number) {
+    this.categoriaService.deleteCategoria(id).subscribe(() => {
+
+      this.findAllCategorias();
 
     })
 

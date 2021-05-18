@@ -29,19 +29,17 @@
                   <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Descrição</th>
-                        <th scope="col">Modificação</th>
+                        <th scope="col">Edição</th>
                       </tr>
                     </thead>
-                    <tbody class="tr">
+                    <tbody>
                       <!-- CRIA UM LOOP PARA IMPRIMIR NA TELA TODOS OS DADOS CONTIDOS DENTRO DA listaTema ==> Resposavel por armazenar os dados vindos da tabela Tema -->
                       <tr *ngFor='let item of listaDeCategorias'>
-                        <th>{{item.id}}</th>
                         <td>{{item.nome}}</td>
-                        <td class="d-flex justify-content-end">
-                          <button class="btn botao-editar" [routerLink]="['/edit-categoria', item.id]" >Editar</button>
-                          <button class="btn botao-apagar" [routerLink]="['/deletar-categoria', item.id]" >Apagar</button>
+                        <td>
+                          <a class="btn botao-editar" data-bs-toggle="modal" data-bs-target="#putCategoria" (click)='findByIdCategoria(item.id)' >Editar</a>
+                          <a class="btn botao-editar" (click)='deleteCategoria(item.id)' >Excluir</a>
                         </td>
                       </tr>
                     </tbody>
@@ -50,5 +48,29 @@
           </div>
         </div>
     </div>
+  </div>
+</div>
+
+<!-- ######################### CAMPOS DE CATEGORIA - PUT ######################### -->
+<!-- MODAL DE CATEGORIA / PUT -->
+<div class="modal fade texto" id="putCategoria" tabindex="-1" role="dialog" aria-labelledby="modalPutCategoria" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title texto-bold" id="nomeCategoria">Atualizar Categoria</h2>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group texto">
+                <label for="putNome">Nome</label>
+                <input [(ngModel)]='categoria.nome' type="text" name="putNome" class="form-control texto-input" id="putNome" placeholder="Nome da Categoria">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="botao texto" id="publicacao" (click)='putCategoria()' data-bs-dismiss="modal" aria-label="Close" >Atualizar</button>
+        </div>
+      </div>
   </div>
 </div>

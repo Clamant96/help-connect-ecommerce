@@ -28,7 +28,7 @@ export class ProdutoService {
 
   findByIdProduto(id: number): Observable<Produto> {
 
-    return this.http.get<Produto>(`${this.endereco}/produtos${id}`, this.autorizacao);
+    return this.http.get<Produto>(`${this.endereco}/produtos/${id}`, this.autorizacao);
   }
 
   findAllByNomeProdutos(nome: string): Observable<Produto[]> {

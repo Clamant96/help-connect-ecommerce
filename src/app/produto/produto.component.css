@@ -118,6 +118,88 @@ h1 {
 
 }
 
+.form-control {
+  margin-top: 1% !important;
+  margin-bottom: 1% !important;
+
+}
+
+/* STYLE SECTION PRODUTOS */
+section {
+  padding-right: 10%;
+  padding-left: 10%;
+
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-wrap: wrap;
+
+}
+
+section .bloco {
+  margin: 2%;
+
+  width: 29.3333%;
+  height: auto;
+
+}
+
+section .bloco .img {
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco .img img {
+  width: 100%;
+  height: auto;
+
+  box-shadow: 0px 3px 5px -5px var(--text-black);
+
+}
+
+section .bloco .conteudo {
+  margin-top: 3%;
+
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco .conteudo h2 {
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+
+}
+
+section .bloco .conteudo h4 {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+
+  color: var(--text-p) !important;
+
+}
+
+section .bloco .conteudo h3 {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+
+  color: var(--text-black) !important;
+
+}
+
+section .bloco .conteudo h5 {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+
+  color: var(--text-p) !important;
+
+}
+
 @media(max-width: 600px){
   .texto-responsivo {
     display: flex;

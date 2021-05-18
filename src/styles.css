@@ -116,3 +116,16 @@ ul {
   padding: 0 !important;
 
 }
+
+.rota-link {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+
+  transition: color, .3s ease-in-out !important;
+
+}
+
+.rota-link:hover {
+  color: var(--button) !important;
+
+}

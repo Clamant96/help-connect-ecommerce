@@ -68,6 +68,12 @@ h1 {
 
 .table th, tr, td {
   border-top: 0px solid #dee2e6 !important;
+
+}
+
+tr, th, td {
+  text-align: center !important;
+
 }
 
 .resposividade-botao {
@@ -115,6 +121,21 @@ h1 {
   background-color: var(--button-hover) !important;
 
   color: var(--text-white) !important;
+
+}
+
+.close {
+  border: none;
+
+  background-color: transparent;
+
+  color: var(--button);
+
+}
+
+.texto-bold {
+  font-weight: 700;
+  font-size: 2rem;
 
 }
 
