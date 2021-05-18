@@ -1,1 +1,78 @@
-<p>produto works!</p>
+<!-- NOVO TESTE -->
+<div class="tela">
+  <div class="container texto">
+    <div class="row d-flex align-items-start justify-content-center">
+        <div class="col-md-5 texto">
+            <a routerLink='/home' class="texto rota-link">
+                <i class="bi bi-chevron-double-left"></i> Home
+            </a>
+            / Produto
+            <h1 class="fs-54 texto texto-responsivo">Produtos</h1>
+            <h5 class="fs-18 texto texto-responsivo">Veja aqui todos os produtos cadastrados ou cadastre um novo:</h5>
+
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="form-group resposividade-botao d-flex justify-content-center flex-column">
+                        <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+                        <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome" placeholder="Nome">
+                        <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+                        <input [(ngModel)]='produto.descricao' type="text" class="form-control" id="descricao" placeholder="Descricao">
+                        <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+                        <input [(ngModel)]='produto.marca' type="text" class="form-control" id="marca" placeholder="Marca">
+                        <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+                        <input [(ngModel)]='produto.img' type="url" class="form-control" id="img" placeholder="Imagem">
+                        <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+                        <input [(ngModel)]='produto.preco' type="number" class="form-control" id="preco" placeholder="Preco">
+                        <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+                        <input [(ngModel)]='produto.estoque' type="number" class="form-control" id="estoque" placeholder="Estoque">
+                        <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+                        <input [(ngModel)]='produto.qtdPedidoProduto' type="text" class="form-control" id="qtdPedidoProduto" placeholder="QTD Produtos">
+                        <!-- CHAMA A FUNCAO CRIADA cadastrar() DENTRO DA CLASSE, QUE TEM COMO FUNCAO, CADASTRAR O OBJETO TEMA -->
+                        <button class="botao margem-botao" (click)='postProduto()'>Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LISTA DE TEMAS -->
+        <div class="col-md-7 texto d-flex justify-content-center flex-column">
+          <div class="row mt-3 d-flex justify-content-center">
+              <div class="col-md-12">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descricao</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">IMG</th>
+                        <th scope="col">Preco</th>
+                        <th scope="col">Estoque</th>
+                        <th scope="col">QTD Produtos</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tr">
+                      <!-- CRIA UM LOOP PARA IMPRIMIR NA TELA TODOS OS DADOS CONTIDOS DENTRO DA listaTema ==> Resposavel por armazenar os dados vindos da tabela Tema -->
+                      <tr *ngFor='let item of listaDeProdutos'>
+                        <th>{{item.id}}</th>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.descricao}}</td>
+                        <td>{{item.marca}}</td>
+                        <td>{{item.img}}</td>
+                        <td>{{item.preco}}</td>
+                        <td>{{item.estoque}}</td>
+                        <td>{{item.qtdPedidoProduto}}</td>
+                        <td class="d-flex justify-content-end">
+                          <button class="btn botao-editar" [routerLink]="['/produto/:idProduto/pedido/:idPedido', item.id, item.pedidos.values()]" >Comprar</button>
+                          <button class="btn botao-editar" [routerLink]="['/edit-categoria', item.id]" >Editar</button>
+                          <button class="btn botao-apagar" [routerLink]="['/deletar-categoria', item.id]" >Apagar</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

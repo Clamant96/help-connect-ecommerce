@@ -46,6 +46,11 @@ export class ProdutoService {
     return this.http.put<Produto>(`${this.endereco}/produtos`, produto, this.autorizacao);
   }
 
+  compraProduto(idProduto: number, idPedido: number): Observable<Produto> {
+
+    return this.http.put<Produto>(`${this.endereco}/produtos/produto_pedido/produtos/${idProduto}/pedidos/${idPedido}`, this.autorizacao);
+  }
+
   deleteProduto(id: number): Observable<Produto> {
 
     return this.http.delete<Produto>(`${this.endereco}/produtos/${id}`, this.autorizacao);

@@ -5,6 +5,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { DeletarCategoriaComponent } from './deletar/deletar-categoria/deletar-categoria.component';
 import { EditarCategoriaComponent } from './editar/editar-categoria/editar-categoria.component';
 import { HomeComponent } from './home/home.component';
+import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
 import { LoginComponent } from './login/login.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { ProdutoComponent } from './produto/produto.component';
@@ -35,10 +36,10 @@ const routes: Routes = [
     path: 'pedido', component: PedidoComponent
   },
   {
-    path: 'produto-pedido/produtos/:id-produto/pedidos/:id-pedido', component: PedidoComponent
+    path: 'produto', component: ProdutoComponent
   },
   {
-    path: 'produto', component: ProdutoComponent
+    path: 'produto/:idProduto/pedido/:idPedido', component: InserirProdutoComponent
   }
 
 ];

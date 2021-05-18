@@ -27,7 +27,7 @@ export class ProdutoComponent implements OnInit {
 
     }
 
-    let id = this.route.snapshot.params['id'];
+    this.findAllByProdutos();
 
   }
 
@@ -59,7 +59,18 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
 
-      this.router.navigate(['/produto'])
+      this.produto = new Produto();
+
+      this.findAllByProdutos();
+
+    }, erro => {
+      if(erro.status == 500) {
+        console.log(`Erro: ${erro.status}, algum dado esta sendo inserido incorretamente.`)
+
+      }else if(erro.status >= 400 && erro.status < 500){
+        console.log(`Erro: ${erro.status}, acesso nao autorizado, verifique seu login.`)
+
+      }
 
     })
 
