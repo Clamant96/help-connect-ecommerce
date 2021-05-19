@@ -91,6 +91,25 @@ header nav ul a li {
 
 }
 
+header nav .logout {
+  cursor: pointer;
+
+}
+
+header nav .perfil {
+  width: 5%;
+  height: auto;
+
+}
+
+header nav .perfil img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 50%;
+
+}
+
 @media(max-width: 600px){
   header {
     padding: 2% 0%;

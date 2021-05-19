@@ -51,6 +51,11 @@ export class ProdutoService {
     return this.http.put<Produto>(`${this.endereco}/produtos/produto_pedido/produtos/${idProduto}/pedidos/${idPedido}`, this.autorizacao);
   }
 
+  adicionaItemListaDeDesejos(idProduto: number, idListaDeDesejo: number): Observable<Produto> {
+
+    return this.http.put<Produto>(`${this.endereco}/produtos/produto_lista/produtos/${idProduto}/listaDesejos/${idListaDeDesejo}`, this.autorizacao);
+  }
+
   deleteProduto(id: number): Observable<Produto> {
 
     return this.http.delete<Produto>(`${this.endereco}/produtos/${id}`, this.autorizacao);

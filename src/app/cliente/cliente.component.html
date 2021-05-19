@@ -1,0 +1,54 @@
+<!-- NOVO TESTE -->
+<div class="tela">
+  <div class="container texto">
+    <div class="row d-flex align-items-start justify-content-center">
+        <div class="col-md-5 texto">
+            <a routerLink='/home' class="texto rota-link">
+                <i class="bi bi-chevron-double-left"></i> Home
+            </a>
+            / Perfil
+            <h1 class="fs-54 texto texto-responsivo">{{nome}}</h1>
+            <h5 class="fs-18 texto texto-responsivo">{{email}}</h5>
+
+        </div>
+
+        <!-- LISTA DE TEMAS -->
+        <div class="col-md-7 texto d-flex justify-content-center flex-column">
+          <div class="row mt-3 d-flex justify-content-center">
+              <div class="col-md-12">
+                {{minhListaDeDesejos.id}}
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Preço</th>
+                      </tr>
+                    </thead>
+                    <tbody class="tr">
+                      <tr *ngFor='let item of listaDeDesejos'>
+                        <th>{{item.id}}</th>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.preco}}</td>
+                        <td>
+                          <a class="btn botao-editar" data-bs-toggle="modal" data-bs-target="#putProduto" >Editar</a>
+                          <a class="btn botao-editar" (click)='removerDaListaDeDesejos(item.id, idListaDeDesejos)' >Excluir</a>
+                        </td>
+                      </tr>
+                      <!--<tr *ngFor='let item of listaDeDesejos'>
+                        <th>{{item.id}}</th>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.preco}}</td>
+                        <td>
+                          <a class="btn botao-editar" data-bs-toggle="modal" data-bs-target="#putProduto" >Editar</a>
+                          <a class="btn botao-editar" >Excluir</a>
+                        </td>
+                      </tr>-->
+                    </tbody>
+                  </table>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

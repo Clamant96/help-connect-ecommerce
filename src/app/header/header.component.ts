@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  foto = environment.foto;
+  usuario = environment.usuario;
+  nome = environment.nome;
+
+  constructor(
+    public auth: AuthService
+
+  ) { }
 
   ngOnInit() {
 

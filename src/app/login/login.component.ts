@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClienteLogin } from '../model/ClienteLogin';
 import { AuthService } from '../service/auth.service';
+import { ListaDeDesejos } from '../model/ListaDeDesejos';
 
 @Component({
   selector: 'app-login',
@@ -28,18 +29,23 @@ export class LoginComponent implements OnInit {
     this.auth.entrar(this.clienteLogin).subscribe((resp: ClienteLogin) => {
       this.clienteLogin = resp;
 
-      environment.id = this.clienteLogin.id;
       environment.token = this.clienteLogin.token;
       environment.nome= this.clienteLogin.nome;
-      environment.usuario= this.clienteLogin.usuario;
       environment.email= this.clienteLogin.email;
       environment.foto=this.clienteLogin.foto;
+      environment.usuario= this.clienteLogin.usuario;
+      environment.id = this.clienteLogin.id;
+      environment.pedidos = this.clienteLogin.pedidos.id;
+      environment.listaDeDesejos = this.clienteLogin.listaDeDesejos.id;
 
-      console.log(environment.id );
-      console.log(environment.token);
-      console.log(environment.email);
-      console.log(environment.nome);
-      console.log(environment.usuario);
+      console.log("ID: "+ environment.id);
+      console.log("Token: "+ environment.token);
+      console.log("E-mail: "+ environment.email);
+      console.log("Nome: "+ environment.nome);
+      console.log("Usuario: "+ environment.usuario);
+      console.log("Foto: "+ environment.foto);
+      console.log("Pedido ID: "+ environment.pedidos);
+      console.log("Lista de Desejos ID: "+ environment.listaDeDesejos);
 
       this.router.navigate(['/home']);
 

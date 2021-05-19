@@ -126,5 +126,8 @@
       <h4>{{item.descricao}}</h4>
       <h3>R$ {{item.preco}}</h3>
     </div>
+    <div class="botoes">
+      <button (click)='adicionaItemListaDeDesejos(item.id, idListaDeDesejos)' >Lista de Desejos</button>
+    </div>
   </div>
 </section>

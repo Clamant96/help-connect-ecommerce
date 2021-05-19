@@ -8,6 +8,8 @@ export const environment = {
   foto: '',
   tipo: '',
   token: '',
+  pedidos: 0,
+  listaDeDesejos: 0,
   server: 'http://localhost:',
   port: '8080'
 

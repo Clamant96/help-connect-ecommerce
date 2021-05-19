@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
+import { ListaDeDesejos } from '../model/ListaDeDesejos';
 import { Produto } from '../model/Produto';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -15,10 +16,13 @@ export class ProdutoComponent implements OnInit {
 
   produto: Produto = new Produto();
   listaDeProdutos: Produto[];
+  idListaDeDesejos = environment.listaDeDesejos;
 
   categoria: Categoria = new Categoria();
   listaDeCategoria: Categoria[];
   idCategoria: number;
+
+  listaDeDesejos: ListaDeDesejos = new ListaDeDesejos();
 
   constructor(
     private produtoService: ProdutoService,
@@ -125,6 +129,15 @@ export class ProdutoComponent implements OnInit {
         console.log(`Erro: ${erro.status}, acesso nao autorizado, verifique seu login.`)
 
       }
+
+    })
+
+  }
+
+  /* ADICIONA PRODUTOS A LISTA DE DESEJOS DO USUARIO */
+  adicionaItemListaDeDesejos(idProduto: number, idLista: number) {
+    this.produtoService.adicionaItemListaDeDesejos(idProduto, idLista).subscribe(() => {
+      this.findAllByProdutos();
 
     })
 

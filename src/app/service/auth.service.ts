@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../model/Cliente';
 import { ClienteLogin } from '../model/ClienteLogin';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,9 @@ export class AuthService {
 
   /* INJETA DEPENDENCIAS DENTRO DO SERVICE */
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
+
   ) { }
 
   /* CONSOME A API METODO LOGAR (POST) | ClienteLogin */
@@ -42,5 +45,22 @@ export class AuthService {
 
     /* RETORNA O VALOR DA VARIAVEL */
     return identificador;
+  }
+
+  /* DELOGA DA SESSAO */
+  logout() {
+    environment.id = 0;
+    environment.nome = '';
+    environment.usuario = '';
+    environment.email = '';
+    environment.senha = '';
+    environment.foto = '';
+    environment.tipo = '';
+    environment.token = '';
+    environment.pedidos = 0;
+    environment.listaDeDesejos = 0;
+
+    this.router.navigate(['/login']);
+
   }
 }
