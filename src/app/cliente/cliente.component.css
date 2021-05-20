@@ -88,6 +88,12 @@ tr, th, td {
 
 }
 
+.margem {
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
+
 .botao-editar {
   background-color: var(--button) !important;
 

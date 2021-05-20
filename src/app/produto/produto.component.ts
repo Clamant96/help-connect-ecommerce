@@ -17,6 +17,7 @@ export class ProdutoComponent implements OnInit {
   produto: Produto = new Produto();
   listaDeProdutos: Produto[];
   idListaDeDesejos = environment.listaDeDesejos;
+  idPedido = environment.pedidos;
 
   categoria: Categoria = new Categoria();
   listaDeCategoria: Categoria[];
@@ -137,6 +138,15 @@ export class ProdutoComponent implements OnInit {
   /* ADICIONA PRODUTOS A LISTA DE DESEJOS DO USUARIO */
   adicionaItemListaDeDesejos(idProduto: number, idLista: number) {
     this.produtoService.adicionaItemListaDeDesejos(idProduto, idLista).subscribe(() => {
+      this.findAllByProdutos();
+
+    })
+
+  }
+
+  /* ADICIONA PRODUTOS AO CARRINHO DO USUARIO */
+  adicionaItemCarrinho(idProduto: number, idCarrinho: number) {
+    this.produtoService.adicionaItemCarrinho(idProduto, idCarrinho).subscribe(() => {
       this.findAllByProdutos();
 
     })

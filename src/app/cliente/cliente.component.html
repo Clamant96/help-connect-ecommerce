@@ -10,13 +10,39 @@
             <h1 class="fs-54 texto texto-responsivo">{{nome}}</h1>
             <h5 class="fs-18 texto texto-responsivo">{{email}}</h5>
 
+            <div class="row mt-4">
+              <div class="col-md-12">
+                  <div class="form-group resposividade-botao d-flex justify-content-center flex-column">
+
+                    <input [(ngModel)]='usuario.nome' class="form-control margem" type="text" name="nome" id="nome" placeholder="Nome">
+
+                    <input [(ngModel)]='usuario.usuario' class="form-control margem" type="text" name="usuario" id="usuario" placeholder="Usuário">
+
+                    <input [(ngModel)]='usuario.email' class="form-control margem" type="email" id="email" placeholder="E-mail" required>
+
+                    <input [(ngModel)]='usuario.foto' class="form-control margem" type="text" name="foto" id="foto" placeholder="Link de seu perfil">
+
+                    <input (input)='confirmeSenha($event)' class="form-control margem" type="password" name="senha" id="senha" placeholder="Senha">
+
+                    <input [(ngModel)]='usuario.senha' class="form-control margem" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua Senha">
+
+                    <select class="form-control margem" name="tipo" id="tipo" (change)='tipoUser($event)'>
+                        <option>Selecione um tipo de Usuário</option>
+                        <option value="normal">Normal</option>
+                        <option value="adm">Administador</option>
+                    </select>
+                    <button type="submit" class="botao margem" id="botaoCadastrar" (click)='atualizar()'>Atualizar</button>
+                  </div>
+              </div>
+          </div>
+
         </div>
 
         <!-- LISTA DE TEMAS -->
         <div class="col-md-7 texto d-flex justify-content-center flex-column">
           <div class="row mt-3 d-flex justify-content-center">
               <div class="col-md-12">
-                {{minhListaDeDesejos.id}}
+
                   <table class="table table-hover">
                     <thead>
                       <tr>
@@ -35,15 +61,6 @@
                           <a class="btn botao-editar" (click)='removerDaListaDeDesejos(item.id, idListaDeDesejos)' >Excluir</a>
                         </td>
                       </tr>
-                      <!--<tr *ngFor='let item of listaDeDesejos'>
-                        <th>{{item.id}}</th>
-                        <td>{{item.nome}}</td>
-                        <td>{{item.preco}}</td>
-                        <td>
-                          <a class="btn botao-editar" data-bs-toggle="modal" data-bs-target="#putProduto" >Editar</a>
-                          <a class="btn botao-editar" >Excluir</a>
-                        </td>
-                      </tr>-->
                     </tbody>
                   </table>
               </div>

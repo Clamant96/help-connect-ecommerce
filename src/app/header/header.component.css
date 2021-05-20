@@ -100,6 +100,10 @@ header nav .perfil {
   width: 5%;
   height: auto;
 
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
 }
 
 header nav .perfil img {
@@ -107,6 +111,36 @@ header nav .perfil img {
   height: auto;
 
   border-radius: 50%;
+
+  cursor: pointer;
+
+}
+
+header nav .perfil .carrinho {
+  width: 20px;
+  height: 20px;
+
+  background-color: var(--button);
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: var(--text-white);
+
+}
+
+header nav .perfil .carrinho svg {
+  padding: 10%;
+
+  width: 80%;
+  height: auto;
 
 }
 

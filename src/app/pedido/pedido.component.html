@@ -6,46 +6,43 @@
             <a routerLink='/home' class="texto rota-link">
                 <i class="bi bi-chevron-double-left"></i> Home
             </a>
-            / Tema
-            <h1 class="fs-54 texto texto-responsivo">Categorias</h1>
-            <h5 class="fs-18 texto texto-responsivo">Veja aqui todos os temas cadastrados ou cadastre um novo:</h5>
+            / Carrinho
+            <h1 class="fs-54 texto texto-responsivo">{{nome}}</h1>
+            <h5 class="fs-18 texto texto-responsivo">{{email}}</h5>
+
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h5 class="fs-18 texto texto-responsivo" >R$ {{pedido.valorTotal}}</h5>
+              </div>
+          </div>
+
         </div>
 
         <!-- LISTA DE TEMAS -->
         <div class="col-md-7 texto d-flex justify-content-center flex-column">
           <div class="row mt-3 d-flex justify-content-center">
               <div class="col-md-12">
-                  <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Valor Total</th>
-                        <th scope="col">QTD Produtos</th>
-                        <th scope="col">Produtos</th>
-                        <th scope="col">ID Cliente</th>
-                      </tr>
-                    </thead>
-                    <tbody class="tr">
-                      <!-- CRIA UM LOOP PARA IMPRIMIR NA TELA TODOS OS DADOS CONTIDOS DENTRO DA listaTema ==> Resposavel por armazenar os dados vindos da tabela Tema -->
-                      <tr *ngFor='let item of listaDePedidos'>
-                        <th>{{item.id}}</th>
-                        <td>{{item.data}}</td>
-                        <th>{{item.valorTotal}}</th>
-                        <td>{{item.qtdProduto}}</td>
-                        <th>{{item.produtos}}</th>
-                        <td>{{item.cliente}}</td>
-                        <td class="d-flex justify-content-end">
-                          <button class="btn botao-editar" >Editar</button>
-                          <button class="btn botao-apagar" >Apagar</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+
+                  <!-- NOVO TESTE -->
+                  <div class="bloco" *ngFor='let item of listaDeProdutos'>
+                    <div class="img">
+                      <img src="{{item.img}}" alt="{{item.nome}}">
+                    </div>
+                    <div class="conteudo">
+                      <h2>{{item.nome}}</h2>
+                      <h4>{{item.descricao}}</h4>
+                      <h3>R$ {{item.preco}}</h3>
+                    </div>
+                    <div class="deletar" (click)='removerDoCarrinho(item.id, idCarrinho)' >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                      </svg>
+                    </div>
+                  </div>
+
               </div>
           </div>
         </div>
     </div>
   </div>
 </div>
-

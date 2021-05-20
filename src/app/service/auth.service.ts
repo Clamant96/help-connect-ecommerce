@@ -1,5 +1,5 @@
 import { environment } from './../../environments/environment.prod';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../model/Cliente';
@@ -14,12 +14,23 @@ export class AuthService {
   /* GERA UMA URL DINAMICA TRAZENDO OS DADOS DO VALOR GLOBAL */
   public endereco = environment.server + environment.port;
 
+  autorizacao = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
+
+  }
+
   /* INJETA DEPENDENCIAS DENTRO DO SERVICE */
   constructor(
     private http: HttpClient,
     private router: Router
 
   ) { }
+
+  /* PESQUISA UM USUARIO POR ID */
+  findByIdListaDeDesejos(id: number): Observable<Cliente> {
+
+    return this.http.get<Cliente>(`${this.endereco}/listadesejo/${id}`, this.autorizacao);
+  }
 
   /* CONSOME A API METODO LOGAR (POST) | ClienteLogin */
   entrar(clienteLogin: ClienteLogin): Observable<ClienteLogin> {

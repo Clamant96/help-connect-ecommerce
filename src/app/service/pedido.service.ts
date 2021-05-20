@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+import { Produto } from '../model/Produto';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,12 @@ export class PedidoService {
     return this.http.get<Pedido>(`${this.endereco}/pedidos/${id}`, this.autorizacao);
   }
 
+  /* PESQUISA OS PRODUTOS INSERIDOS NO CARRINHO DO USUARIO */
+  findAllByProdutosPedidos(idPedido: number): Observable<Produto[]> {
+
+    return this.http.get<Produto[]>(`${this.endereco}/pedidos/meuspedidos/${idPedido}`, this.autorizacao);
+  }
+
   /* INSERE UM NOVO DADO DENTRO DA BASE DE DADOS */
   postPedido(pedido: Pedido): Observable<Pedido> { //PARA PEDIDO NAO UTILIZAREMOS O POST DE PEDIDO
 
@@ -53,6 +60,11 @@ export class PedidoService {
 
   /* DELETA UM PRODUTO DA BASE DE DADOS POR MEIO DE TABELAS MANY TO MANY */
   putProduto(idProduto: number, idPedido: number): Observable<Pedido> {
+
+    return this.http.delete<Pedido>(`${this.endereco}/pedidos/produto_pedido/produtos/${idProduto}/pedidos/${idPedido}`, this.autorizacao);
+  }
+
+  removerItemDoCarrinho(idProduto: number, idPedido: number): Observable<Pedido> {
 
     return this.http.delete<Pedido>(`${this.endereco}/pedidos/produto_pedido/produtos/${idProduto}/pedidos/${idPedido}`, this.autorizacao);
   }
