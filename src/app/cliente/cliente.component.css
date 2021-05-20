@@ -145,6 +145,86 @@ tr, th, td {
 
 }
 
+.bloco {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.bloco .img {
+  width: 20%;
+  height: auto;
+
+}
+
+.bloco .img img {
+  margin: 5%;
+
+  width: 90%;
+  height: auto;
+
+}
+
+.bloco .conteudo {
+  width: 60%;
+  height: auto;
+
+}
+
+.bloco .conteudo h2 {
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+
+}
+
+.bloco .conteudo h4 {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+
+  color: var(--text-p) !important;
+
+}
+
+.bloco .conteudo h3 {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+
+  color: var(--text-black) !important;
+
+}
+
+.bloco .conteudo h5 {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+
+  color: var(--text-p) !important;
+
+}
+
+.deletar {
+  cursor: pointer;
+
+  width: 5%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.deletar svg {
+  padding: 10%;
+
+  width: 80%;
+  height: auto;
+
+}
+
 @media(max-width: 600px){
   .texto-responsivo {
     display: flex;

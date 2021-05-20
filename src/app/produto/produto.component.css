@@ -200,6 +200,37 @@ section .bloco .conteudo h5 {
 
 }
 
+section .botoes {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+section .botoes button {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1% 3%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: var(--button);
+
+  color: var(--text-white);
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  outline: none;
+
+}
+
 @media(max-width: 600px){
   .texto-responsivo {
     display: flex;

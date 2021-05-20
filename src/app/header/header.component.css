@@ -144,6 +144,45 @@ header nav .perfil .carrinho svg {
 
 }
 
+header nav .perfil .qtdProdutos {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  width: 10px;
+  height: 10px;
+
+  background-color: var(--background-copyright);
+
+  border-radius: 50%;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+}
+
+header nav .perfil .qtdProdutos p {
+  margin-top: 1px !important;
+  padding: 0 !important;
+
+  color: var(--text-white);
+
+  font-size: 5px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+}
+
 @media(max-width: 600px){
   header {
     padding: 2% 0%;
