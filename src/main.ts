@@ -10,3 +10,9 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+/* FICA OBSERVANDO SEMPRE QUE A PAGINA E RECARREGADA */
+window.addEventListener('beforeunload', function(event) {
+  localStorage.removeItem('token');
+
+}, false);

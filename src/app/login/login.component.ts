@@ -14,6 +14,9 @@ export class LoginComponent implements OnInit {
 
   clienteLogin: ClienteLogin = new ClienteLogin();
 
+  /* ARMAZENA O TOKEN DO USUARIO */
+  tokenUsuario: string;
+
   constructor(
     private auth: AuthService,
     private router: Router
@@ -38,6 +41,12 @@ export class LoginComponent implements OnInit {
       environment.id = this.clienteLogin.id;
       environment.pedidos = this.clienteLogin.pedidos.id;
       environment.listaDeDesejos = this.clienteLogin.listaDeDesejos.id;
+
+      /* ARMAZENA O TOKEN DO USUARIO NA VARIAVEL */
+      this.tokenUsuario = this.clienteLogin.token;
+
+      /* ARMAZENA O TOKEN DO USUARIO NO LOCAL STORAGE */
+      localStorage.setItem('token', this.tokenUsuario);
 
       console.log("ID: "+ environment.id);
       console.log("Token: "+ environment.token);

@@ -15,7 +15,8 @@ export class AuthService {
   public endereco = environment.server + environment.port;
 
   autorizacao = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
+    //headers: new HttpHeaders().set('Authorization', environment.token)
+    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token') || '')
 
   }
 
@@ -70,6 +71,9 @@ export class AuthService {
     environment.token = '';
     environment.pedidos = 0;
     environment.listaDeDesejos = 0;
+
+    /* ARMAZENA O TOKEN DO USUARIO NO LOCAL STORAGE */
+    localStorage.removeItem('token');
 
     this.router.navigate(['/login']);
 

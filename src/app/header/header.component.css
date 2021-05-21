@@ -133,6 +133,13 @@ header nav .perfil img {
 
   cursor: pointer;
 
+  transition: filter, .3s ease-in-out;
+
+}
+
+header nav .perfil img:hover {
+  filter: saturate(0)
+
 }
 
 header nav .perfil .carrinho {

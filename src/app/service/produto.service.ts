@@ -12,7 +12,8 @@ export class ProdutoService {
   endereco = environment.server + environment.port;
 
   autorizacao = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
+    //headers: new HttpHeaders().set('Authorization', environment.token)
+    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token') || '')
 
   }
 

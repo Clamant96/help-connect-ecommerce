@@ -21,7 +21,12 @@ export class EditarCategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(environment.token == '') {
+    /*if(environment.token == '') {
+      this.router.navigate(['/login']);
+
+    }*/
+
+    if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);
 
     }
