@@ -17,6 +17,8 @@ export class ClienteComponent implements OnInit {
 
   nome = environment.nome;
   email = environment.email;
+  idUsuario = environment.id;
+  idPedido = environment.pedidos;
 
   minhListaDeDesejos: ListaDeDesejos = new ListaDeDesejos();
   listaDeDesejosItens: ListaDeDesejos[];
@@ -33,7 +35,8 @@ export class ClienteComponent implements OnInit {
   constructor(
     private router: Router,
     private listaDeDesejosService: ClienteService,
-    private authService: AuthService
+    private authService: AuthService,
+    private produtoService: ProdutoService
 
   ) { }
 
@@ -50,8 +53,10 @@ export class ClienteComponent implements OnInit {
   }
 
   findByIdUsuario(id: number) {
-    this.authService.findByIdListaDeDesejos(id).subscribe((resp: Cliente) => {
+    this.authService.findByIdCliente(id).subscribe((resp: Cliente) => {
       this.usuario = resp;
+
+      console.log("Nome: "+ this.usuario.nome);
 
     })
 
@@ -130,20 +135,12 @@ export class ClienteComponent implements OnInit {
 
   }
 
-  /*findByIdProdutos(id: number) {
-    this.produtoService.findByIdProduto(id).subscribe((resp: Produto) => {
-      this.produto = resp;
+  /* ADICIONA PRODUTOS AO CARRINHO DO USUARIO */
+  adicionaItemCarrinho(idProduto: number, idCarrinho: number) {
+    this.produtoService.adicionaItemCarrinho(idProduto, idCarrinho).subscribe(() => {
 
     })
 
   }
-
-  findAllByProduto() {
-    this.produtoService.findAllByProdutos().subscribe((resp: Produto[]) => {
-      this.listaDeProdutoMemoria = resp;
-
-    })
-
-  }*/
 
 }

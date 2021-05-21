@@ -211,14 +211,16 @@ section .botoes {
 section .botoes button {
   margin-top: 1%;
   margin-bottom: 1%;
-  padding: 1% 3%;
+
+  width: 60% !important;
+  height: auto !important;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   border: none;
-  border-radius: 5px;
+  border-radius: 5px 3px 3px 5px;
 
   background-color: var(--button);
 
@@ -228,6 +230,52 @@ section .botoes button {
   font-size: 1rem;
 
   outline: none;
+
+  transition: background-color, .3s ease-in-out;
+
+}
+
+section .botoes button .icone {
+  padding: 1%;
+
+  width: 14%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--button-orange);
+
+  border-radius: 3px 0px 0px 3px;
+
+}
+
+section .botoes button .icone > svg {
+  padding: 5%;
+
+  width: 90%;
+  height: auto;
+
+}
+
+section .botoes button p {
+  font-size: 1rem !important;
+
+  margin: 0 !important;
+  padding: 1% !important;
+
+  width: 86%;
+  height: auto;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+}
+
+section .botoes button:hover {
+  background-color: var(--button-orange-hover);
 
 }
 

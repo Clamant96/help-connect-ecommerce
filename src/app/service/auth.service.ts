@@ -27,9 +27,9 @@ export class AuthService {
   ) { }
 
   /* PESQUISA UM USUARIO POR ID */
-  findByIdListaDeDesejos(id: number): Observable<Cliente> {
+  findByIdCliente(id: number): Observable<Cliente> {
 
-    return this.http.get<Cliente>(`${this.endereco}/listadesejo/${id}`, this.autorizacao);
+    return this.http.get<Cliente>(`${this.endereco}/clientes/${id}`, this.autorizacao);
   }
 
   /* CONSOME A API METODO LOGAR (POST) | ClienteLogin */

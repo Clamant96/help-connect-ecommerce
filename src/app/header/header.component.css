@@ -92,7 +92,26 @@ header nav ul a li {
 }
 
 header nav .logout {
+  padding: 0.5%;
+
   cursor: pointer;
+
+  background-color: var(--button);
+
+  color: var(--text-white);
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  border-radius: 3px;
+
+  transition: background-color, .3s ease-in-out;
+
+}
+
+header nav .logout:hover {
+  background-color: var(--button-orange-hover);
 
 }
 
@@ -134,6 +153,8 @@ header nav .perfil .carrinho {
 
   color: var(--text-white);
 
+  transition: background-color, .3s ease-in-out;
+
 }
 
 header nav .perfil .carrinho svg {
@@ -141,6 +162,11 @@ header nav .perfil .carrinho svg {
 
   width: 80%;
   height: auto;
+
+}
+
+header nav .perfil .carrinho:hover {
+  background-color: var(--button-orange-hover);
 
 }
 
