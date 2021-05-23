@@ -19,8 +19,12 @@ export class PedidoComponent implements OnInit {
   listaDePedidos: Pedido[];
 
   listaDeProdutos: Produto[];
+  memoria: Produto[] = [];
+  memoriaV: Produto[] = [];
 
   idCarrinho = environment.pedidos;
+
+  idMemoria: number;
 
   constructor(
     private pedidoService: PedidoService,
@@ -71,6 +75,51 @@ export class PedidoComponent implements OnInit {
   findByIdProdutosCarrinho() {
     this.pedidoService.findAllByProdutosPedidos(environment.pedidos).subscribe((resp: Produto[]) => {
       this.listaDeProdutos = resp;
+
+      let contador: number = 0;
+      let repeticao: number = 0;
+
+      // CRIA UM VETOR PARA SERVIR DE REFERENCIA NAS VALIDACOES
+      let pivo: number[] = [this.listaDeProdutos.length];
+
+      for(let i = 0; i < this.listaDeProdutos.length; i++) {
+        // ARMAZENA O ID DENTRO DO PIVO PARA SERVIR DE REFERENCIA
+        pivo[i] = this.listaDeProdutos[i].id;
+
+        // ENTRA NO LOOP DO PRODUTO TRABALHO NO MOMENTO
+        for(let item of this.listaDeProdutos) {
+          // VERIFICA SE O VALOR DO PIVO E O MESMO DO ID DO LOOP ATUAL NO QUAL ESTAMOS TRABALHANDO
+          if(pivo[i] == item.id) {
+            // ADICIONA UM AO CONTADOR
+            contador++;
+
+          }
+
+          // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
+          this.listaDeProdutos[i].qtdPedidoProduto = contador;
+
+        }
+
+        // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
+        this.memoria = this.listaDeProdutos;
+
+        /*for(let q = 0; q < this.listaDeProdutos.length; q++) {
+          for(let w = 0; w < this.listaDeProdutos.length; w++) {
+            if(pivo[i] != repeticao && this.listaDeProdutos[pivo[q]] == this.memoriaV[w] ) {
+              repeticao = pivo[i];
+
+              this.memoriaV.push(this.listaDeProdutos[repeticao]);
+
+            }
+
+          }
+
+        }*/
+
+        // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
+        contador = 0;
+
+			}
 
     })
 
