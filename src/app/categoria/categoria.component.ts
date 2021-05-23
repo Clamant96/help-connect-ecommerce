@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class CategoriaComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -57,7 +59,7 @@ export class CategoriaComponent implements OnInit {
   postCategoria() {
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
-      alert(`Categoria: ${this.categoria.nome} cadastrada com sucesso!`)
+      this.alertas.alertaMensagem(`Categoria: ${this.categoria.nome} cadastrada com sucesso!`);
 
       this.categoria = new Categoria();
 
@@ -65,10 +67,10 @@ export class CategoriaComponent implements OnInit {
 
     }, erro => {
       if(erro.status == 500) {
-        console.log(`Erro: ${erro.status}, algum dado esta sendo inserido incorretamente.`)
+        console.log(`Erro: ${erro.status}, algum dado esta sendo inserido incorretamente.`);
 
       }else if(erro.status >= 400 && erro.status < 500){
-        console.log(`Erro: ${erro.status}, acesso nao autorizado, verifique seu login.`)
+        console.log(`Erro: ${erro.status}, acesso nao autorizado, verifique seu login.`);
 
       }
 
@@ -80,6 +82,8 @@ export class CategoriaComponent implements OnInit {
   putCategoria() {
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
+
+      this.alertas.alertaMensagem(`Categoria: ${this.categoria.nome} atualizada com sucesso!`);
 
       this.categoria = new Categoria();
       this.findAllCategorias();
@@ -100,6 +104,7 @@ export class CategoriaComponent implements OnInit {
   /* EXCLUI UM DADO DE CATEGORIA NA BASE DE DADOS POR MEIO DO ID */
   deleteCategoria(id: number) {
     this.categoriaService.deleteCategoria(id).subscribe(() => {
+      this.alertas.alertaMensagem('Categoria excluida com sucesso!');
 
       this.findAllCategorias();
 

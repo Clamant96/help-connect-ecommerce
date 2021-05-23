@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ClienteLogin } from '../model/ClienteLogin';
 import { AuthService } from '../service/auth.service';
 import { ListaDeDesejos } from '../model/ListaDeDesejos';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
 
   ) { }
 
@@ -31,6 +33,8 @@ export class LoginComponent implements OnInit {
   entrar() {
     this.auth.entrar(this.clienteLogin).subscribe((resp: ClienteLogin) => {
       this.clienteLogin = resp;
+
+      this.alertas.alertaMensagem('Login realizado com sucesso!');
 
       environment.token = this.clienteLogin.token;
       environment.nome= this.clienteLogin.nome;

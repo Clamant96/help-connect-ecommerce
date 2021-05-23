@@ -8,6 +8,8 @@ import { ClienteService } from '../service/cliente.service';
 import { Cliente } from '../model/Cliente';
 import { AuthService } from '../service/auth.service';
 import { AlertasService } from '../service/alertas.service';
+import { Pedido } from '../model/Pedido';
+import { PedidoService } from '../service/pedido.service';
 
 @Component({
   selector: 'app-cliente',
@@ -18,6 +20,7 @@ export class ClienteComponent implements OnInit {
 
   nome = environment.nome;
   email = environment.email;
+  foto = environment.foto
   idUsuario = environment.id;
   idPedido = environment.pedidos;
 
@@ -33,12 +36,28 @@ export class ClienteComponent implements OnInit {
   confirmarSenha: string;
   tipoUsuario: string;
 
+  /* DADOS CARRINHO USUARIO */
+  pedido: Pedido = new Pedido();
+  listaDePedidos: Pedido[];
+
+  listaDeProdutos: Produto[];
+  memoria: Produto[] = [];
+  memoriaV: Produto[] = [];
+
+  idCarrinho = environment.pedidos;
+
+  idMemoria: number;
+  /* ###################### */
+
   constructor(
     private router: Router,
     private listaDeDesejosService: ClienteService,
     private authService: AuthService,
     private produtoService: ProdutoService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+
+    /* DADOS CARRINHO USUARIO */
+    private pedidoService: PedidoService,
 
   ) { }
 
@@ -56,6 +75,10 @@ export class ClienteComponent implements OnInit {
     this.findByIdListaDeDesejos();
     this.findByIdUsuario(environment.id);
     //this.findAllByProduto();
+
+    /* DADOS CARRINHO USUARIO */
+    this.findByIdProdutosCarrinho();
+    this.findByIdPedido();
 
   }
 
@@ -89,7 +112,7 @@ export class ClienteComponent implements OnInit {
     /* VERIFICA SE AS SENHAS DIGITADAS, SAO IGUAIS */
     if(this.usuario.senha != this.confirmarSenha) {
       /* INFORMA UM ALERTA AO USUARIO */
-      alert('As senhas estao incorretas!');
+      this.alertas.alertaMensagem('As senhas estao incorretas!');
 
     }else {
       /* CHAMA O METODO CADASTRAR CRIADO NO NOSSO SERVICE */
@@ -99,7 +122,7 @@ export class ClienteComponent implements OnInit {
         /* POR SUA VEZ ATRIBUI OS DADOS DE resp AO USUARIO DENTRO DA BASE DE DADOS*/
         this.usuario = resp;
         /* INFORMA UM ALERTA AO USUARIO DE CADASTRO BEM SUCEDIDO */
-        alert('Dados atualizados com sucesso, faça login novamente!');
+        this.alertas.alertaMensagem('Dados atualizados com sucesso, faça login novamente!');
 
         environment.id = 0;
         environment.nome = '';
@@ -147,6 +170,83 @@ export class ClienteComponent implements OnInit {
   /* ADICIONA PRODUTOS AO CARRINHO DO USUARIO */
   adicionaItemCarrinho(idProduto: number, idCarrinho: number) {
     this.produtoService.adicionaItemCarrinho(idProduto, idCarrinho).subscribe(() => {
+      /* DADOS CARRINHO USUARIO */
+      this.findByIdProdutosCarrinho();
+
+    })
+
+  }
+
+  /* ################################################################################# */
+  /* ################## DADOS CARRINHO USUARIO ################## */
+
+  findByIdProdutosCarrinho() {
+    this.pedidoService.findAllByProdutosPedidos(environment.pedidos).subscribe((resp: Produto[]) => {
+      this.listaDeProdutos = resp;
+
+      let contador: number = 0;
+      let repeticao: number = 0;
+
+      // CRIA UM VETOR PARA SERVIR DE REFERENCIA NAS VALIDACOES
+      let pivo: number[] = [this.listaDeProdutos.length];
+
+      for(let i = 0; i < this.listaDeProdutos.length; i++) {
+        // ARMAZENA O ID DENTRO DO PIVO PARA SERVIR DE REFERENCIA
+        pivo[i] = this.listaDeProdutos[i].id;
+
+        // ENTRA NO LOOP DO PRODUTO TRABALHO NO MOMENTO
+        for(let item of this.listaDeProdutos) {
+          // VERIFICA SE O VALOR DO PIVO E O MESMO DO ID DO LOOP ATUAL NO QUAL ESTAMOS TRABALHANDO
+          if(pivo[i] == item.id) {
+            // ADICIONA UM AO CONTADOR
+            contador++;
+
+          }
+
+          // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
+          this.listaDeProdutos[i].qtdPedidoProduto = contador;
+
+        }
+
+        // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
+        this.memoria = this.listaDeProdutos;
+
+        // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
+        contador = 0;
+
+			}
+
+    })
+
+  }
+
+  findByIdPedido() {
+    this.pedidoService.findByIdPedido(environment.pedidos).subscribe((resp: Pedido) => {
+      this.pedido = resp;
+
+    })
+
+  }
+
+  removerDoCarrinho(idProduto: number, idPedido: number) {
+    this.pedidoService.removerItemDoCarrinho(idProduto, idPedido).subscribe(() => {
+      this.alertas.alertaMensagem('Item removido do carrinho!');
+
+      this.findByIdProdutosCarrinho();
+      this.findByIdPedido();
+
+    })
+
+  }
+
+  /* EM NOSSA ESTRUTURA ESSE METODO NAO SERA UTILIZADO, ESTA MAIS AQUI POR FINS DIDATICOS */
+  postPedido() {
+    this.pedidoService.postPedido(this.pedido).subscribe((resp: Pedido) => {
+      this.pedido = resp;
+
+      this.alertas.alertaMensagem('Pedido cadastrado com sucesso');
+
+      this.router.navigate(['/pedido']);
 
     })
 

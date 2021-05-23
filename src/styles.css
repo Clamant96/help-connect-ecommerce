@@ -49,12 +49,8 @@ html, body {
   --button-orange: #d17708;
   --button-orange-hover: #bd6c08;
 
-  /*--warning: #cc3300;
-  --ok: #339900;*/
-
   --textarea: #767676;
 
-  /* LOGIN / CADASTRO*/
   --background-card: #f9f9f9;
 
   --shadow: #262626;
@@ -67,6 +63,45 @@ html, body {
   --sucess-border:#339900;
   --warning: 	#cc330080;
   --sucess: #33990080;
+
+  /*NOVO LAYOUT*/
+  --background-body: #f1f1f1;
+  --background-black: #000000;
+
+  --text-purple: #38095c;
+  --text-purple-tranparent: #38095c9a;
+  --text-gray: #919496;
+  --text-gray2: #4e5461;
+  --text-gray3: #a6a8af;
+  --text-light-gray: #e0e0e0;
+  --text-light-gray2: #d4d4d4;
+  --text-light-gray3: #dfe4ee;
+  --text-light-gray4: #ffffff;
+  --text-blue-light: #07a4dc;
+  --text-blue: #166386;
+  --text-green: #0d9d10;
+  --text-light-green: #1aa21d;
+  --text-light-orange: #ff881a;
+  --text-orange: #ff5d01;
+  --text-light-orange-plus: #e07644;
+  --text-orange-plus: #a42903;
+  --text-light-blue-cart: #4480c1;
+  --text-blue-cart: #032a63;
+  --text-light-white: #fdfdfd;
+  --text-dark-white: #dddddd;
+  --text-yellow: #ecebb0;
+
+  --alert-gren: #99cc333a;
+  --alert-text-gren: #339900;
+  --alert-red: #d453283a;
+  --alert-text-red: #a32a02;
+
+  --box-shadown: #262626;
+  --box-smooth-shadown: #2626269a;
+
+  --mandatory-red: #ad3737;
+  --mandatory-input: #de1616;
+  --mandatory-input-ok: #44cc3d;
 
 }
 
@@ -170,4 +205,29 @@ ul {
   border-top-left-radius: calc(.25rem - 1px);
   border-top-right-radius: calc(.25rem - 1px);
   border-radius: 5px !important;
+}
+
+/* ATILIZACAO NAV / TABS */
+section[_ngcontent-wlk-c51] .exibirPerfil[_ngcontent-wlk-c51] .perfil[_ngcontent-wlk-c51] .gerenciarPerfil[_ngcontent-wlk-c51] .menu[_ngcontent-wlk-c51] .botoes[_ngcontent-wlk-c51] .comprar[_ngcontent-wlk-c51] button[_ngcontent-wlk-c51] {
+  text-decoration: none;
+  width: 100%;
+  height: 100% !important;
+  box-shadow: 0px 3px 5px -5px var(--box-shadown);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: transparent !important;
+  border-color: none !important;
+}
+.nav-tabs .nav-link {
+  margin-bottom: 0px !important;
+  background: 0 0;
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
 }

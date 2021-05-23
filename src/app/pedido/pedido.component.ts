@@ -151,7 +151,7 @@ export class PedidoComponent implements OnInit {
     this.pedidoService.postPedido(this.pedido).subscribe((resp: Pedido) => {
       this.pedido = resp;
 
-      alert('Pedido cadastrado com sucesso');
+      this.alertas.alertaMensagem('Pedido cadastrado com sucesso');
 
       this.router.navigate(['/pedido']);
 
@@ -159,12 +159,12 @@ export class PedidoComponent implements OnInit {
 
   }
 
-  putProduto(idProduto: number, idPedido: number) {
+  /*putProduto(idProduto: number, idPedido: number) {
     this.pedidoService.putProduto(idProduto, idPedido).subscribe(() => {
       this.router.navigate(['/pedido']);
 
     })
 
-  }
+  }*/
 
 }

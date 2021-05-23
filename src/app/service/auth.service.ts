@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Cliente } from '../model/Cliente';
 import { ClienteLogin } from '../model/ClienteLogin';
 import { Router } from '@angular/router';
+import { AlertasService } from './alertas.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,8 @@ export class AuthService {
   /* INJETA DEPENDENCIAS DENTRO DO SERVICE */
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
 
   ) { }
 
@@ -74,6 +76,8 @@ export class AuthService {
 
     /* ARMAZENA O TOKEN DO USUARIO NO LOCAL STORAGE */
     localStorage.removeItem('token');
+
+    this.alertas.alertaMensagem('Logout realizado com sucesso!');
 
     this.router.navigate(['/login']);
 

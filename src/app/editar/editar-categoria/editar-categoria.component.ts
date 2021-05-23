@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -16,7 +17,8 @@ export class EditarCategoriaComponent implements OnInit {
   constructor(
     private router: Router,
     private categoriaServie: CategoriaService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
 
   ) { }
 
@@ -47,7 +49,7 @@ export class EditarCategoriaComponent implements OnInit {
   putCategoria() {
     this.categoriaServie.putCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
-      alert('Categoria altarad com sucesso!');
+      this.alertas.alertaMensagem('Categoria altarada com sucesso!');
 
       this.router.navigate(['/categoria']);
 

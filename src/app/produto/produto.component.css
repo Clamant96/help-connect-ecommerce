@@ -222,7 +222,8 @@ section .botoes button {
   border: none;
   border-radius: 5px 3px 3px 5px;
 
-  background-color: var(--button);
+  background-color: var(--text-light-blue-cart);
+  background-image: linear-gradient(var(--text-light-blue-cart) , var(--text-blue-cart));
 
   color: var(--text-white);
 
@@ -245,7 +246,8 @@ section .botoes button .icone {
   align-items: center;
   justify-content: center;
 
-  background-color: var(--button-orange);
+  background-color: var(--text-light-orange);
+    background-image: linear-gradient(var(--text-light-orange) , var(--text-orange));
 
   border-radius: 3px 0px 0px 3px;
 

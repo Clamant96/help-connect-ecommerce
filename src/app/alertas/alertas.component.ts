@@ -20,7 +20,7 @@ export class AlertasComponent implements OnInit {
       this.modal.hide();
       console.log("Aplicou o hide!");
 
-    }, 2000);
+    }, 1000);
   }
 
   onClose() {

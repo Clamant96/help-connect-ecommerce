@@ -102,6 +102,8 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
 
+      this.alertas.alertaMensagem('Produto adicionado com sucesso!');
+
       this.produto = new Produto();
       this.findAllByProdutos();
 
@@ -125,6 +127,8 @@ export class ProdutoComponent implements OnInit {
 
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
+
+      this.alertas.alertaMensagem('Produto atualizado com sucesso!');
 
       this.produto = new Produto();
       this.findAllByProdutos();
@@ -167,6 +171,7 @@ export class ProdutoComponent implements OnInit {
   /* EXCLUI DA BASE DE DADOS UM PRODUTO JA EXISTENTE */
   deleteProduto(id: number) {
     this.produtoService.deleteProduto(id).subscribe(() => {
+      this.alertas.alertaMensagem('Produto deleteado com sucesso!');
 
       this.findAllByProdutos();
     })

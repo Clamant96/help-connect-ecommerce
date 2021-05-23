@@ -1,5 +1,5 @@
 <!-- NOVO TESTE -->
-<div class="tela">
+<!--<div class="tela">
   <div class="container texto">
     <div class="row d-flex align-items-start justify-content-center">
         <div class="col-md-5 texto">
@@ -47,12 +47,10 @@
 
         </div>
 
-        <!-- LISTA DE TEMAS -->
         <div class="col-md-7 texto d-flex justify-content-center flex-column">
           <div class="row mt-3 d-flex justify-content-center">
               <div class="col-md-12">
 
-                  <!-- NOVO TESTE -->
                   <div class="lista-vazia" routerLink='/produto' *ngIf='listaDeDesejos.length == 0'>
                     <div class="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
@@ -90,11 +88,11 @@
         </div>
     </div>
   </div>
-</div>
+</div>-->
 
 <!-- ######################### CAMPOS DE USUARIO - PUT ######################### -->
 <!-- MODAL DE USUARIO / PUT -->
-<div class="modal fade texto" id="putUsuario" tabindex="-1" role="dialog" aria-labelledby="modalputUsuario" aria-hidden="true">
+<!--<div class="modal fade texto" id="putUsuario" tabindex="-1" role="dialog" aria-labelledby="modalputUsuario" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -129,4 +127,286 @@
         </div>
       </div>
   </div>
-</div>
+</div>-->
+
+<section>
+  <div class="exibirPerfil">
+      <div class="perfil">
+          <div class="informacao">
+              <h2>Facilite seu dia com <b>solucoes inteligentes.</b></h2>
+          </div>
+          <div class="gerenciarPerfil">
+              <div class="menu">
+                  <!-- DADOS PERFIL CAMPO MENU -->
+                  <div class="dadosLogin">
+                      <div class="img">
+                          <img src="{{foto}}" alt="{{nome}}">
+                      </div>
+                      <div class="nome">
+                          <p>{{nome}}</p>
+                      </div>
+                      <div class="email">
+                          <p>{{email}}</p>
+                      </div>
+                  </div>
+                  <!--<div class="botoes">-->
+                    <ul class="botoes nav nav-tabs" id="myTab" role="tablist">
+                      <li class="comprar nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+
+                        <!--<div class="comprar">
+                          <a>-->
+                              <p>Perfil</p>
+                          <!--</a>
+                        </div>-->
+
+                        </button>
+                        <button class="nav-link botao-editar-perfil" id="profile-tab" data-bs-toggle="tab" data-bs-target="#editprofile" type="button" role="tab" aria-controls="editprofile" aria-selected="false">
+
+                        <!--<div class="comprar">
+                          <a>-->
+                              <p (click)='findByIdUsuario(idUsuario)' >Editar</p>
+                          <!--</a>
+                        </div>-->
+
+                        </button>
+                      </li>
+                      <li class="comprar nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+
+                        <!--<div class="comprar">
+                        <a>-->
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                  <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                                </svg>
+                            </div>
+                            <div class="hr">
+                                <hr />
+                            </div>
+                            <p>Lista de Desejos</p>
+                        <!--</a>
+                      </div>-->
+
+                        </button>
+                      </li>
+                      <li class="comprar nav-item" role="presentation">
+                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+
+                        <!--<div class="comprar">
+                            <a>-->
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                    </svg>
+                                </div>
+                                <div class="hr">
+                                    <hr />
+                                </div>
+                                <p>Pedidos</p>
+                            <!--</a>
+                        </div>-->
+
+                        </button>
+                      </li>
+                      <li class="comprar nav-item" role="presentation">
+                        <!-- ADICIONAR O LINK PARA O DASHBOARD -->
+                        <button class="nav-link" type="button">
+                        <!--<div class="comprar">
+                            <a>-->
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layout-text-sidebar-reverse" viewBox="0 0 16 16">
+                                        <path d="M12.5 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm0 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm.5 3.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"/>
+                                        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2zM4 1v14H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h2zm1 0h9a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5V1z"/>
+                                    </svg>
+                                </div>
+                                <div class="hr">
+                                    <hr />
+                                </div>
+                                <p>Dashboard</p>
+                            <!--</a>
+                        </div>-->
+                        </button>
+                      </li>
+                    </ul>
+                  <!--</div>-->
+                  <div class="atendimento">
+                      <h2>Atendimento ao Cliente</h2>
+                      <p>kevin.helpconnect@gmail.com</p>
+                  </div>
+              </div>
+              <div class="dados">
+                  <div class="minhaConta">
+                      <h2>Minha Conta</h2>
+                      <h3>Administre seus dados, endereco e pedidos.</h3>
+                      <p>Se houver duvidas, entre em contato com nossa central de atendimento</p>
+                  </div>
+                  <div class="dadosCadastrais">
+                      <h2>Dados Cadastrais</h2>
+                      <h3>Todos os campos sao obrigatorios</h3>
+                  </div>
+                  <div class="painel">
+                      <div class="opcao">
+                          <p>Dados Pessoais</p>
+                          <!--<div class="botoes">
+                              <div class="comprar">
+                                  <a>
+                                      <div class="icon">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                                              <path d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+                                          </svg>
+                                      </div>
+                                      <p data-bs-toggle="modal" data-bs-target="#putUsuario" (click)='findByIdUsuario(idUsuario)' >Editar</p>
+                                  </a>
+                              </div>
+                          </div>-->
+                      </div>
+                      <div class="dadosPerfil">
+                          <div class="cadastro">
+
+                              <!-- NAV AND TABS -->
+                              <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                  <!-- PERFIL USUARIO -->
+                                  <div class="input">
+                                    <p>Nome</p>
+                                      <input [(ngModel)]='usuario.nome' type="text" name="nome" id="nome" placeholder="Nome" disabled>
+                                  </div>
+                                  <div class="input">
+                                      <p>E-mail</p>
+                                      <input [(ngModel)]='usuario.email' type="email" id="email" placeholder="E-mail" disabled>
+                                  </div>
+                                  <div class="input">
+                                      <p>Endereço</p>
+                                      <div class="endereco">
+                                        <input [(ngModel)]='usuario.endereco' type="text" name="endereco" id="endereco" placeholder="Endereço" disabled>
+                                        <input [(ngModel)]='usuario.numero' type="text" name="numero" id="numero" placeholder="Numero" disabled>
+                                        <input [(ngModel)]='usuario.complemento' type="text" name="complemento" id="complemento" placeholder="Complemento" disabled>
+                                        <input [(ngModel)]='usuario.bairro' type="text" name="bairro" id="bairro" placeholder="Bairro" disabled>
+                                        <input [(ngModel)]='usuario.estado' type="text" name="estado" id="estado" placeholder="Estado" disabled>
+                                        <input [(ngModel)]='usuario.cidade' type="text" name="cidade" id="cidade" placeholder="Cidade" disabled>
+                                        <input [(ngModel)]='usuario.pais' type="text" name="pais" id="pais" placeholder="Pais" disabled>
+                                        <input [(ngModel)]='usuario.cep' type="text" name="cep" id="cep" placeholder="CEP" disabled>
+                                      </div>
+                                  </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                    <!-- LISTA DE DESEJOS USUARIO -->
+                                    <div class="lista-vazia" routerLink='/produto' *ngIf='listaDeDesejos.length == 0'>
+                                      <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                                          <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                        </svg>
+                                      </div>
+                                      <h2>Sua lista de desejos esta vazia!</h2>
+                                    </div>
+                                    <div class="bloco" *ngFor='let item of listaDeDesejos'>
+                                      <div class="img">
+                                        <img src="{{item.img}}" alt="{{item.nome}}">
+                                      </div>
+                                      <div class="conteudo">
+                                        <h2>{{item.nome}}</h2>
+                                        <h4>{{item.descricao}}</h4>
+                                        <h3>R$ {{item.preco}}</h3>
+                                        <div class="comprar" id="liveToastBtn" (click)='adicionaItemCarrinho(item.id, idPedido)' (click)='removerDaListaDeDesejos(item.id, idListaDeDesejos)' >
+                                          <div class="icone">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                            </svg>
+                                          </div>
+                                          <p>Adicionar ao Carrinho</p>
+                                        </div>
+                                      </div>
+                                      <div class="deletar" id="liveToastBtn" (click)='removerDaListaDeDesejos(item.id, idListaDeDesejos)' >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                        </svg>
+                                      </div>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                                    <!-- CARRINHO USUARIO -->
+                                    <div class="carrinho-vazio" routerLink='/produto' *ngIf='listaDeProdutos.length == 0' >
+                                      <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                                          <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                        </svg>
+                                      </div>
+                                      <h2>Seu carrinho esta vazio!</h2>
+                                    </div>
+                                    <div class="bloco" *ngFor='let item of listaDeProdutos'>
+
+                                      <div class="img">
+                                        <img src="{{item.img}}" alt="{{item.nome}}">
+                                      </div>
+                                      <div class="conteudo">
+                                        <h2>{{item.nome}}</h2>
+                                        <h4>{{item.descricao}}</h4>
+                                        <h3>R$ {{item.preco}}</h3>
+                                        <p>x {{item.qtdPedidoProduto}}</p>
+                                      </div>
+                                      <div class="deletar" id="liveToastBtn" (click)='removerDoCarrinho(item.id, idCarrinho)' >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                        </svg>
+                                      </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="editprofile" role="tabpanel" aria-labelledby="editprofile-tab">
+
+                                   <!-- EDITAR PERFIL USUARIO -->
+                                   <div class="input">
+                                    <p>Nome</p>
+                                    <input [(ngModel)]='usuario.nome' type="text" name="nome" id="nome" placeholder="Nome">
+                                    <p>E-mail</p>
+                                    <input [(ngModel)]='usuario.email' type="email" id="email" placeholder="E-mail">
+                                    <p>Usuario</p>
+                                    <input [(ngModel)]='usuario.usuario' type="text" id="usuario" placeholder="Usuário">
+                                    <p>Foto</p>
+                                    <input [(ngModel)]='usuario.foto' type="text" id="foto" placeholder="Link de seu perfil">
+                                  </div>
+                                  <div class="input">
+                                      <p>Endereço</p>
+                                      <div class="endereco">
+                                        <input [(ngModel)]='usuario.endereco' type="text" name="endereco" id="endereco" placeholder="Endereço" >
+                                        <input [(ngModel)]='usuario.numero' type="text" name="numero" id="numero" placeholder="Numero" >
+                                        <input [(ngModel)]='usuario.complemento' type="text" name="complemento" id="complemento" placeholder="Complemento" >
+                                        <input [(ngModel)]='usuario.bairro' type="text" name="bairro" id="bairro" placeholder="Bairro" >
+                                        <input [(ngModel)]='usuario.estado' type="text" name="estado" id="estado" placeholder="Estado" >
+                                        <input [(ngModel)]='usuario.cidade' type="text" name="cidade" id="cidade" placeholder="Cidade" >
+                                        <input [(ngModel)]='usuario.pais' type="text" name="pais" id="pais" placeholder="Pais" >
+                                        <input [(ngModel)]='usuario.cep' type="text" name="cep" id="cep" placeholder="CEP" >
+                                      </div>
+                                  </div>
+                                  <div class="input">
+                                    <p>Senha</p>
+                                    <input (input)='confirmeSenha($event)' type="password" id="senha" placeholder="Senha">
+                                    <p>Confirmar Senha</p>
+                                    <input [(ngModel)]='usuario.senha' type="password" id="confirmeSenha" placeholder="Confirme sua Senha">
+                                  </div>
+                                  <div class="input">
+                                    <select class="form-control input" id="tipo" (change)='tipoUser($event)'>
+                                      <option>Selecione um tipo de Usuário</option>
+                                      <option value="normal">Normal</option>
+                                      <option value="adm">Administador</option>
+                                    </select>
+                                  </div>
+
+                                </div>
+                              </div>
+                              <!-- ############# -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
