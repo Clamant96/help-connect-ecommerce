@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { ListaDeDesejos } from '../model/ListaDeDesejos';
 import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -28,7 +29,8 @@ export class ProdutoComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -143,6 +145,8 @@ export class ProdutoComponent implements OnInit {
   /* ADICIONA PRODUTOS A LISTA DE DESEJOS DO USUARIO */
   adicionaItemListaDeDesejos(idProduto: number, idLista: number) {
     this.produtoService.adicionaItemListaDeDesejos(idProduto, idLista).subscribe(() => {
+      this.alertas.alertaMensagem('Produto adicionado a lista de desejos!');
+
       this.findAllByProdutos();
 
     })
@@ -152,6 +156,8 @@ export class ProdutoComponent implements OnInit {
   /* ADICIONA PRODUTOS AO CARRINHO DO USUARIO */
   adicionaItemCarrinho(idProduto: number, idCarrinho: number) {
     this.produtoService.adicionaItemCarrinho(idProduto, idCarrinho).subscribe(() => {
+      this.alertas.alertaMensagem('Produto adicionado ao carrinho!');
+
       this.findAllByProdutos();
 
     })

@@ -131,3 +131,43 @@ ul {
   color: var(--button) !important;
 
 }
+
+.modal-content {
+  position: fixed !important;
+  bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end !important;
+  justify-content: flex-end !important;
+  width: 100%;
+  pointer-events: auto;
+  background-color: var(--overlay) !important;
+  background-clip: padding-box;
+  border: 0px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: none !important;
+
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent !important;
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  padding: .5rem .75rem;
+  color: var(--text-white) !important;
+  background-color: #032a63 !important;
+  background-clip: padding-box;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+  border-radius: 5px !important;
+}

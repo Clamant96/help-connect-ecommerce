@@ -7,6 +7,7 @@ import { Produto } from '../model/Produto';
 import { ClienteService } from '../service/cliente.service';
 import { Cliente } from '../model/Cliente';
 import { AuthService } from '../service/auth.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-cliente',
@@ -36,7 +37,8 @@ export class ClienteComponent implements OnInit {
     private router: Router,
     private listaDeDesejosService: ClienteService,
     private authService: AuthService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -134,6 +136,8 @@ export class ClienteComponent implements OnInit {
 
   removerDaListaDeDesejos(idProduto: number, idLista: number) {
     this.listaDeDesejosService.removerItemListaDeDesejos(idProduto, idLista).subscribe(() => {
+      this.alertas.alertaMensagem('Item removido da lista de desejos');
+
       this.findByIdListaDeDesejos();
 
     })

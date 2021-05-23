@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Pedido } from '../model/Pedido';
 import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
 import { PedidoService } from '../service/pedido.service';
 
 @Component({
@@ -29,7 +30,8 @@ export class PedidoComponent implements OnInit {
   constructor(
     private pedidoService: PedidoService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
 
   ) { }
 
@@ -135,6 +137,8 @@ export class PedidoComponent implements OnInit {
 
   removerDoCarrinho(idProduto: number, idPedido: number) {
     this.pedidoService.removerItemDoCarrinho(idProduto, idPedido).subscribe(() => {
+      this.alertas.alertaMensagem('Item removido do carrinho!');
+
       this.findByIdProdutosCarrinho();
       this.findByIdPedido();
 

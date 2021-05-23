@@ -18,6 +18,8 @@ import { PedidoComponent } from './pedido/pedido.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -33,13 +35,15 @@ import { ClienteComponent } from './cliente/cliente.component';
     PedidoComponent,
     ProdutoComponent,
     InserirProdutoComponent,
-    ClienteComponent
+    ClienteComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
