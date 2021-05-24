@@ -1,0 +1,271 @@
+<section>
+  <div class="exibirPerfil">
+      <div class="perfil">
+          <div class="informacao">
+              <h2>Facilite seu dia com <b>solucoes inteligentes.</b></h2>
+          </div>
+          <div class="gerenciarPerfil">
+              <div class="menu">
+                  <!-- DADOS PERFIL CAMPO MENU -->
+                  <div class="dadosLogin">
+                      <div class="img">
+                          <img src="{{foto}}" alt="{{nome}}">
+                      </div>
+                      <div class="nome">
+                          <p>{{nome}}</p>
+                      </div>
+                      <div class="email">
+                          <p>{{email}}</p>
+                      </div>
+                  </div>
+                  <ul class="botoes nav nav-tabs" id="myTab" role="tablist">
+                    <li class="comprar nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                            <p>Produtos</p>
+                        </button>
+                        <button class="nav-link botao-editar-perfil" id="novoproduto-tab" data-bs-toggle="tab" data-bs-target="#novoproduto" type="button" role="tab" aria-controls="novoproduto" aria-selected="false">
+                            <p>Novo</p>
+                        </button>
+                    </li>
+                    <li class="comprar nav-item" role="presentation">
+                        <button class="nav-link" id="categoria-tab" data-bs-toggle="tab" data-bs-target="#categoria" type="button" role="tab" aria-controls="categoria" aria-selected="false">
+                            <p>Categorias</p>
+                        </button>
+                        <button class="nav-link botao-editar-perfil" id="novacategoria-tab" data-bs-toggle="tab" data-bs-target="#novacategoria" type="button" role="tab" aria-controls="novacategoria" aria-selected="false">
+                          <p>Nova</p>
+                        </button>
+                    </li>
+                    <li class="comprar nav-item" routerLink='/cliente' >
+                      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                          <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                            </svg>
+                          </div>
+                          <div class="hr">
+                              <hr />
+                          </div>
+                          <p>Perfil</p>
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="atendimento">
+                      <h2>Atendimento ao Cliente</h2>
+                      <p>kevin.helpconnect@gmail.com</p>
+                  </div>
+              </div>
+              <div class="dados">
+                  <div class="painel">
+                      <div class="opcao">
+                          <p>Gerencia Sistema</p>
+                      </div>
+                      <div class="dadosPerfil">
+                          <div class="cadastro">
+
+                              <!-- NAV AND TABS -->
+                              <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                  <!-- LISTAGEM DE PRODUTOS -->
+                                  <section>
+                                    <div class="bloco" *ngFor='let item of listaDeProdutos'>
+                                      <div class="img">
+                                        <img src="{{item.img}}" alt="{{item.nome}}">
+                                      </div>
+                                      <div class="conteudo">
+                                        <h5>{{item.categoria.nome}}</h5>
+                                        <h2>{{item.nome}}</h2>
+                                        <h4>{{item.descricao}}</h4>
+                                        <h4>Estoque: {{item.estoque}}</h4>
+                                        <h3>R$ {{item.preco}}</h3>
+                                        <hr>
+                                      </div>
+                                      <div class="botoes">
+                                        <a class="acao-link" data-bs-toggle="modal" data-bs-target="#putProduto" (click)='findByIdProduto(item.id)' >
+                                          <div class="icone">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                            </svg>
+                                          </div>
+                                          <p>Editar</p>
+                                        </a>
+                                        <a class="acao-link" (click)='deleteProduto(item.id)' >
+                                          <div class="icone">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                              <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                            </svg>
+                                          </div>
+                                        <p>Excluir</p>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </section>
+
+                                </div>
+                                <div class="tab-pane fade" id="categoria" role="tabpanel" aria-labelledby="categoria-tab">
+
+                                  <!-- LISTAGEM DE CATEGORIAS -->
+                                  <section>
+                                    <div class="categorias" *ngFor='let item of listaDeCategoria'>
+                                      <div class="conteudo">
+                                        <h2>Nome: {{item.nome}}</h2>
+                                      </div>
+                                      <div class="botoes">
+                                        <a class="acao-link" data-bs-toggle="modal" data-bs-target="#putCategoria" (click)='findByIdCategoriaPut(item.id)' >
+                                          <div class="icone">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                            </svg>
+                                          </div>
+                                          <p>Editar</p>
+                                        </a>
+                                        <a class="acao-link" (click)='deleteCategoria(item.id)' >
+                                          <div class="icone">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                              <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                            </svg>
+                                          </div>
+                                        <p>Excluir</p>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </section>
+
+                                </div>
+                                <div class="tab-pane fade" id="novacategoria" role="tabpanel" aria-labelledby="novacategoria-tab">
+
+                                  <!-- EDITAR PERFIL USUARIO -->
+                                  <div class="input">
+                                    <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+                                    <input [(ngModel)]='categoria.nome' class="mb-1" type="text" id="nome" placeholder="Digite a nome da categoria">
+                                  </div>
+
+                                  <div class="input">
+                                    <!-- CHAMA A FUNCAO CRIADA cadastrar() DENTRO DA CLASSE, QUE TEM COMO FUNCAO, CADASTRAR O OBJETO TEMA -->
+                                    <button class="botao texto" (click)='postCategoria()'>Cadastrar</button>
+                                  </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="novoproduto" role="tabpanel" aria-labelledby="novoproduto-tab">
+
+                                  <!-- EDITAR PERFIL USUARIO -->
+                                  <div class="input">
+                                    <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+
+                                    <input [(ngModel)]='produto.nome' class="mb-1" type="text" id="nome" placeholder="Nome">
+                                    <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+
+                                    <input [(ngModel)]='produto.descricao' class="mb-1" type="text" id="descricao" placeholder="Descricao">
+                                    <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+
+                                    <input [(ngModel)]='produto.marca' class="mb-1" type="text" id="marca" placeholder="Marca">
+                                    <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+
+                                    <input [(ngModel)]='produto.img' class="mb-1" type="url" id="img" placeholder="Imagem">
+                                    <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+
+                                    <input [(ngModel)]='produto.preco' class="mb-1" type="number" id="preco" placeholder="Preco">
+                                    <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+
+                                    <input [(ngModel)]='produto.estoque' class="mb-1" type="number" id="estoque" placeholder="Estoque">
+                                    <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+
+                                    <input [(ngModel)]='produto.qtdPedidoProduto' class="mb-1" type="text" id="qtdPedidoProduto" placeholder="QTD Produtos">
+                                  </div>
+
+                                  <!-- POR MEIO DA ESCOLHA DO USUARIO E PELO METODO (CHANGE) E CAPITURADO O ID DA OPCAO ESCOLHIDA PELO USUARIO -->
+                                  <div class="input">
+                                    <select [(ngModel)]='idCategoria' class="form-control input" name="categoria" id="categoria" (change)='findByIdCategoria()'>
+                                      <!-- CRIA UM LOOP FOR PARA MOSTRAR TODAS AS OPCOES CONTIDAS DENTRO DA BADE DE DADOS DE TEMA -->
+                                      <!-- TRAZ O VALOR DO ID DE CADA TEMA E DEIXA-O ARMAZENDO DENTRO DO VALUE="id" -->
+                                      <option *ngFor='let item of listaDeCategoria' value="{{item.id}}">{{item.nome}}</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="input">
+                                    <!-- CHAMA A FUNCAO CRIADA cadastrar() DENTRO DA CLASSE, QUE TEM COMO FUNCAO, CADASTRAR O OBJETO TEMA -->
+                                    <button class="botao texto" (click)='postProduto()'>Cadastrar</button>
+                                  </div>
+
+                                </div>
+                              </div>
+                              <!-- ############# -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- ######################### CAMPOS DE PRODUTO - PUT ######################### -->
+<!-- MODAL DE PRODUTO / PUT -->
+<div class="modal fade texto" id="putProduto" tabindex="-1" role="dialog" aria-labelledby="modalputProduto" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title texto-bold" id="nomeProduto">Atualizar Produto</h2>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group texto">
+              <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+              <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome" placeholder="Nome">
+              <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+              <input [(ngModel)]='produto.descricao' type="text" class="form-control" id="descricao" placeholder="Descricao">
+              <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+              <input [(ngModel)]='produto.marca' type="text" class="form-control" id="marca" placeholder="Marca">
+              <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+              <input [(ngModel)]='produto.img' type="url" class="form-control" id="img" placeholder="Imagem">
+              <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+              <input [(ngModel)]='produto.preco' type="number" class="form-control" id="preco" placeholder="Preco">
+              <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+              <input [(ngModel)]='produto.estoque' type="number" class="form-control" id="estoque" placeholder="Estoque">
+              <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
+              <input [(ngModel)]='produto.qtdPedidoProduto' type="text" class="form-control" id="qtdPedidoProduto" placeholder="QTD Produtos">
+              <!-- POR MEIO DA ESCOLHA DO USUARIO E PELO METODO (CHANGE) E CAPITURADO O ID DA OPCAO ESCOLHIDA PELO USUARIO -->
+              <select [(ngModel)]='idCategoria' class="form-control texto-input" name="categoria" id="categoria" (change)='findByIdCategoria()'>
+                  <!-- CRIA UM LOOP FOR PARA MOSTRAR TODAS AS OPCOES CONTIDAS DENTRO DA BADE DE DADOS DE TEMA -->
+                  <!-- TRAZ O VALOR DO ID DE CADA TEMA E DEIXA-O ARMAZENDO DENTRO DO VALUE="id" -->
+                  <option *ngFor='let item of listaDeCategoria' value="{{item.id}}">{{item.nome}}</option>
+              </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="botao texto" id="publicacao" (click)='putProduto()' data-bs-dismiss="modal" aria-label="Close" >Atualizar</button>
+      </div>
+      </div>
+  </div>
+</div>
+
+<!-- ######################### CAMPOS DE CATEGORIA - PUT ######################### -->
+<!-- MODAL DE CATEGORIA / PUT -->
+<div class="modal fade texto" id="putCategoria" tabindex="-1" role="dialog" aria-labelledby="modalPutCategoria" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title texto-bold" id="nomeCategoria">Atualizar Categoria</h2>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group texto">
+                <label for="putNome">Nome</label>
+                <input [(ngModel)]='categoria.nome' type="text" name="putNome" class="form-control texto-input" id="putNome" placeholder="Nome da Categoria">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="botao texto" id="publicacao" (click)='putCategoria()' data-bs-dismiss="modal" aria-label="Close" >Atualizar</button>
+        </div>
+      </div>
+  </div>
+</div>

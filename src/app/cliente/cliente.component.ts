@@ -62,6 +62,8 @@ export class ClienteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
+
     /*if(environment.token == '') {
       this.router.navigate(['/login']);
 
@@ -161,6 +163,7 @@ export class ClienteComponent implements OnInit {
     this.listaDeDesejosService.removerItemListaDeDesejos(idProduto, idLista).subscribe(() => {
       this.alertas.alertaMensagem('Item removido da lista de desejos');
 
+      this.findByIdPedido();
       this.findByIdListaDeDesejos();
 
     })

@@ -20,6 +20,7 @@ import { InserirProdutoComponent } from './inserir-produto/inserir-produto.compo
 import { ClienteComponent } from './cliente/cliente.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ProdutoComponent,
     InserirProdutoComponent,
     ClienteComponent,
-    AlertasComponent
+    AlertasComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

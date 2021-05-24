@@ -435,9 +435,10 @@ section {
 }
 
 section .exibirPerfil {
-  padding: 1%;
+  padding: 0 !important;
+  margin: 0 !important;
 
-  width: 88%;
+  width: 100% !important;
   height: auto;
 
   display: flex;
@@ -461,7 +462,7 @@ section .exibirPerfil .perfil {
 section .exibirPerfil .perfil .informacao {
   padding: 1%;
 
-  width: 98%;
+  width: 100% !important;
   height: auto;
 
   background-image: url(https://i.imgur.com/ySu1Rs6.png);
@@ -514,7 +515,7 @@ section .exibirPerfil .perfil .gerenciarPerfil {
 section .exibirPerfil .perfil .gerenciarPerfil .menu {
   padding: 1%;
 
-  width: 28%;
+  width: 20%;
   height: auto;
 
   position: sticky !important;
@@ -767,7 +768,7 @@ section .exibirPerfil .perfil .gerenciarPerfil .menu .atendimento p {
 /*DADOS PERFIL*/
 
 section .exibirPerfil .perfil .gerenciarPerfil .dados {
-  width: 70%;
+  width: 80%;
   height: auto;
 
   display: flex;
@@ -954,36 +955,6 @@ section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .opcao .botoes {
   cursor: pointer;
 
   border: none;
-
-}
-
-section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .opcao .botoes .meu-carrinho {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .opcao .botoes .meu-carrinho p {
-  padding: 0 !important;
-  margin-top: 5px !important;
-  margin-left: 5px !important;
-
-}
-
-section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .opcao .botoes .meu-carrinho .icone {
-  padding: 1%;
-
-  width: 12%;
-  height: auto;
-
-}
-
-section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .opcao .botoes .meu-carrinho .icone svg {
-  width: 100%;
-  height: auto;
-
-  color: var(--text-white);
 
 }
 
@@ -1177,5 +1148,192 @@ section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .dadosPerfil .cada
 
   border-radius: 3px;
   border: 1px solid var(--text-light-gray2);
+
+}
+
+/* ADICAO PRODUTOS */
+section .bloco {
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco .img {
+  width: 15%;
+  height: auto;
+
+}
+
+section .bloco .img img {
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco .botoes {
+  width: 10%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+section .bloco .botoes .acao-link {
+  text-decoration: none;
+
+  background-color: var(--text-light-blue-cart);
+  background-image: linear-gradient(var(--text-light-blue-cart) , var(--text-blue-cart));
+
+  margin: 2%;
+
+  width: 96%;
+  height: 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-white) !important;
+
+  border-radius: 3px;
+
+}
+
+section .bloco .botoes .acao-link .icone {
+  width: 20%;
+  height: 100%;
+
+  background-color: var(--text-light-orange);
+  background-image: linear-gradient(var(--text-light-orange) , var(--text-orange));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 3px 0px 0px 3px;
+
+}
+
+section .bloco .botoes .acao-link .icone svg {
+  padding: 10%;
+
+  width: 100%;
+  height: auto;
+
+}
+
+section .bloco .botoes .acao-link p {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  width: 80%;
+  height: auto;
+
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+
+  color: var(--text-white) !important;
+
+  text-align: center;
+
+}
+
+/* ADICAO CATEGORIAS */
+section .categorias {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+section .categorias .conteudo {
+  margin: 1%;
+
+  width: 78%;
+  height: auto;
+
+}
+
+section .categorias .conteudo h2 {
+  font-size: 1.2rem !important;
+
+}
+
+section .categorias .botoes {
+  width: 20%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+section .categorias .botoes .acao-link {
+  text-decoration: none;
+
+  background-color: var(--text-light-blue-cart);
+  background-image: linear-gradient(var(--text-light-blue-cart) , var(--text-blue-cart));
+
+  margin: 2%;
+
+  width: 96%;
+  height: 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-white) !important;
+
+  border-radius: 3px;
+
+}
+
+section .categorias .botoes .acao-link .icone {
+  width: 20%;
+  height: 100%;
+
+  background-color: var(--text-light-orange);
+  background-image: linear-gradient(var(--text-light-orange) , var(--text-orange));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 3px 0px 0px 3px;
+
+}
+
+section .categorias .botoes .acao-link .icone svg {
+  padding: 10%;
+
+  width: 100%;
+  height: auto;
+
+}
+
+section .categorias .botoes .acao-link p {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  width: 80%;
+  height: auto;
+
+  font-size: 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+
+  color: var(--text-white) !important;
+
+  text-align: center;
 
 }

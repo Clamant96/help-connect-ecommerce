@@ -167,7 +167,7 @@ ul {
 
 }
 
-.modal-content {
+/*.modal-content {
   position: fixed !important;
   bottom: 0 !important;
   display: flex;
@@ -182,6 +182,19 @@ ul {
   border-radius: .3rem;
   outline: none !important;
 
+}*/
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: none !important;
+  border-radius: .3rem !important;
+  outline: 0;
 }
 
 .modal-backdrop {

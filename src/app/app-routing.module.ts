@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeletarCategoriaComponent } from './deletar/deletar-categoria/deletar-categoria.component';
 import { EditarCategoriaComponent } from './editar/editar-categoria/editar-categoria.component';
 import { HomeComponent } from './home/home.component';
@@ -41,6 +42,9 @@ const routes: Routes = [
   },
   {
     path: 'produto', component: ProdutoComponent
+  },
+  {
+    path: 'dashboard', component: DashboardComponent
   },
   {
     path: 'produto/:idProduto/pedido/:idPedido', component: InserirProdutoComponent
