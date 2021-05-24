@@ -252,4 +252,17 @@ export class ClienteComponent implements OnInit {
 
   }
 
+  /* PEMISSAO DE ADMINISTRADOR */
+  adm (){
+    let permissao = false;
+
+    if(environment.tipo == 'adm') {
+      permissao = true;
+
+    }
+
+    return permissao;
+
+  }
+
 }
