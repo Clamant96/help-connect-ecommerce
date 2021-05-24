@@ -504,8 +504,8 @@ section .exibirPerfil .perfil .gerenciarPerfil {
   height: auto;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start !important;
+  justify-content: center !important;
 
 }
 
