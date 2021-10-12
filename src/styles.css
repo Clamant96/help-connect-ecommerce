@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap');
 
 /*
 font-family: 'Vollkorn', serif;
@@ -103,6 +104,9 @@ html, body {
   --mandatory-input: #de1616;
   --mandatory-input-ok: #44cc3d;
 
+  --font-Amaranth: 'Amaranth', sans-serif;
+  --font-Montserrat: 'Montserrat', sans-serif;
+
 }
 
 ::-webkit-scrollbar {
@@ -111,21 +115,22 @@ html, body {
 }
 
 h1 {
-  font-family: 'Vollkorn', serif !important;
+  font-family: var(--font-Amaranth) !important;
   font-size: 4rem !important;
 
 }
 
 h2 {
-  font-family: 'Vollkorn', serif !important;
+  font-family: var(--font-Amaranth) !important;
   font-size: 3rem !important;
+  font-weight: 700 !important;
 
 }
 
 h3 {
-  font-family: 'Vollkorn', serif !important;
+  font-family: var(--font-Amaranth) !important;
   font-size: 1.5rem !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
 
   color: var(--text-white) !important;
 

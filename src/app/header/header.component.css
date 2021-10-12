@@ -38,9 +38,9 @@ header nav {
 }
 
 header nav p {
-  font-family: 'Vollkorn', serif;
-  font-size: 2rem;
-  font-weight: 800;
+  font-family: 'Amaranth', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
 
   width: 475px;
   height: auto;
@@ -216,7 +216,15 @@ header nav .perfil .qtdProdutos p {
 
 }
 
-@media(max-width: 600px){
+@media(max-width: 600px) {
+  /* HEADER - MENU */
+  .active {
+    color: var(--text-white) !important;
+
+    background-color: var(--button) !important;
+
+  }
+
   header {
     padding: 2% 0%;
 
@@ -237,9 +245,194 @@ header nav .perfil .qtdProdutos p {
   }
 
   header nav {
-      width: 100%;
+    width: 100%;
+    height: auto;
 
-      justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  header nav p {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    width: auto;
+    height: auto;
+
+    text-align: left;
+
+  }
+
+  header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    list-style: none;
+
+    width: 100%;
+    height: auto;
+
+    text-align: center;
+
+  }
+
+  header nav ul a {
+    padding: 1% 3%;
+    margin: 0% 2%;
+
+    text-decoration: none;
+
+    color: var(--text-black);
+
+    transition: color, .4s ease-in-out;
+
+    border-radius: 3px;
+
+  }
+
+  header nav ul a:hover {
+    color: var(--text-white);
+
+    background-color: var(--button);
+
+  }
+
+  header nav ul a li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+  }
+
+  header nav .logout {
+    padding: 0.5%;
+    margin: 4%;
+
+    cursor: pointer;
+
+    background-color: var(--button);
+
+    color: var(--text-white);
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    border-radius: 3px;
+
+    transition: background-color, .3s ease-in-out;
+
+  }
+
+  header nav .logout:hover {
+    background-color: var(--button-orange-hover);
+
+  }
+
+  header nav .perfil {
+    width: 20%;
+    height: auto;
+
+    margin-left: 5%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+  }
+
+  header nav .perfil img {
+    width: 80%;
+    height: auto;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: filter, .3s ease-in-out;
+
+  }
+
+  header nav .perfil img:hover {
+    filter: saturate(0)
+
+  }
+
+  header nav .perfil .carrinho {
+    width: 20px;
+    height: 20px;
+
+    background-color: var(--button);
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: var(--text-white);
+
+    transition: background-color, .3s ease-in-out;
+
+  }
+
+  header nav .perfil .carrinho svg {
+    padding: 10%;
+
+    width: 80%;
+    height: auto;
+
+  }
+
+  header nav .perfil .carrinho:hover {
+    background-color: var(--button-orange-hover);
+
+  }
+
+  header nav .perfil .qtdProdutos {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: var(--background-copyright);
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+  }
+
+  header nav .perfil .qtdProdutos p {
+    margin-top: 1px !important;
+    padding: 0 !important;
+
+    color: var(--text-white);
+
+    font-size: 5px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
 
   }
 

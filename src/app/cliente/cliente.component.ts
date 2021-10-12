@@ -44,6 +44,11 @@ export class ClienteComponent implements OnInit {
   memoria: Produto[] = [];
   memoriaV: Produto[] = [];
 
+  qtdItensProdutos: number;
+  qtdItensListaDeDesejos: number;
+
+  valorCarrinho: number;
+
   idCarrinho = environment.pedidos;
 
   idMemoria: number;
@@ -155,6 +160,13 @@ export class ClienteComponent implements OnInit {
     this.listaDeDesejosService.findAllByProdutosListaDeDesejos(environment.listaDeDesejos).subscribe((resp: Produto[]) => {
       this.listaDeDesejos = resp;
 
+      try {
+        this.qtdItensListaDeDesejos = resp.length;
+
+      }catch(erro){
+        //console.log('NAO FOI POSSIVEL CALCULAR OS ITENS!!');
+      }
+
     })
 
   }
@@ -187,37 +199,63 @@ export class ClienteComponent implements OnInit {
     this.pedidoService.findAllByProdutosPedidos(environment.pedidos).subscribe((resp: Produto[]) => {
       this.listaDeProdutos = resp;
 
-      let contador: number = 0;
-      let repeticao: number = 0;
+      try {
+        this.qtdItensProdutos = this.listaDeProdutos.length;
 
-      // CRIA UM VETOR PARA SERVIR DE REFERENCIA NAS VALIDACOES
-      let pivo: number[] = [this.listaDeProdutos.length];
+      }catch(erro){
+        //console.log('NAO FOI POSSIVEL CALCULAR OS ITENS!!');
+      }
 
-      for(let i = 0; i < this.listaDeProdutos.length; i++) {
-        // ARMAZENA O ID DENTRO DO PIVO PARA SERVIR DE REFERENCIA
-        pivo[i] = this.listaDeProdutos[i].id;
+      try {
+        let contador: number = 0;
+        let repeticao: number = 0;
 
-        // ENTRA NO LOOP DO PRODUTO TRABALHO NO MOMENTO
-        for(let item of this.listaDeProdutos) {
-          // VERIFICA SE O VALOR DO PIVO E O MESMO DO ID DO LOOP ATUAL NO QUAL ESTAMOS TRABALHANDO
-          if(pivo[i] == item.id) {
-            // ADICIONA UM AO CONTADOR
-            contador++;
+        // CRIA UM VETOR PARA SERVIR DE REFERENCIA NAS VALIDACOES
+        let pivo: number[] = [this.listaDeProdutos.length];
+
+        for(let i = 0; i < this.listaDeProdutos.length; i++) {
+          // ARMAZENA O ID DENTRO DO PIVO PARA SERVIR DE REFERENCIA
+          pivo[i] = this.listaDeProdutos[i].id;
+
+          // ENTRA NO LOOP DO PRODUTO TRABALHO NO MOMENTO
+          for(let item of this.listaDeProdutos) {
+            // VERIFICA SE O VALOR DO PIVO E O MESMO DO ID DO LOOP ATUAL NO QUAL ESTAMOS TRABALHANDO
+            if(pivo[i] == item.id) {
+              // ADICIONA UM AO CONTADOR
+              contador++;
+
+            }
+
+            // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
+            this.listaDeProdutos[i].qtdPedidoProduto = contador;
 
           }
 
-          // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
-          this.listaDeProdutos[i].qtdPedidoProduto = contador;
+          // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
+          this.memoria = this.listaDeProdutos;
+
+          // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
+          contador = 0;
 
         }
 
-        // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
-        this.memoria = this.listaDeProdutos;
+      }catch(erro){
+        //console.log('OCORREU UM ERRO AO GERAR A LISTA DE PRODUTOS');
 
-        // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
-        contador = 0;
+      }
 
-			}
+      try{
+        /* AGRUPA OS ITENS REPETIDOS DENTRO DO ARRAY */
+        this.listaDeProdutos = this.listaDeProdutos.filter((item, index, self) =>
+          index === self.findIndex((t) => (
+            t.nome === item.nome && t.descricao === item.descricao
+          ))
+        )
+
+      }catch(erro){
+        //console.log('OCORREU UM ERRO AO AGRUPAR O ARRAY);
+
+      }
 
     })
 
@@ -226,6 +264,9 @@ export class ClienteComponent implements OnInit {
   findByIdPedido() {
     this.pedidoService.findByIdPedido(environment.pedidos).subscribe((resp: Pedido) => {
       this.pedido = resp;
+
+      /* ARREDONDA O VALOR DECIMAL DEIXANDO SOMENTE 2 CASAS APOS A VIRGULA */
+      this.valorCarrinho = Number(this.pedido.valorTotal.toFixed(2));
 
     })
 

@@ -105,6 +105,24 @@ export class PedidoComponent implements OnInit {
         // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
         this.memoria = this.listaDeProdutos;
 
+        let ids = [];
+
+        for(let i = 0; i < this.memoria.length; i++) {
+          ids.push(this.memoria[i].nome);
+        }
+
+        for(let i = 0; i < this.memoria.length; i++) {
+          for(let j = 0; j < this.memoria.length; j++) {
+            if(ids.indexOf(this.memoria[j].nome) == -1) {
+              this.memoriaV.push(this.memoria[i]);
+            }
+          }
+        }
+
+        console.log(this.memoriaV);
+
+        this.listaDeProdutos = this.memoriaV;
+
         /*for(let q = 0; q < this.listaDeProdutos.length; q++) {
           for(let w = 0; w < this.listaDeProdutos.length; w++) {
             if(pivo[i] != repeticao && this.listaDeProdutos[pivo[q]] == this.memoriaV[w] ) {

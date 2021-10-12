@@ -104,7 +104,8 @@ section .sectionApresentacao .overlay .apresentacao a button {
     background-color: transparent;
 
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
+    font-family: var(--font-Amaranth) !important;
 
     color: var(--text-white);
 
@@ -204,9 +205,9 @@ section .sectionFerramentas .ferramentas .bloco .texto {
 }
 
 section .sectionFerramentas .ferramentas .bloco .texto .titulo {
-    font-family: 'Vollkorn', serif;
+    font-family: var(--font-Amaranth);
     font-size: 26px;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
 
     color: var(--text-black);
 
@@ -260,6 +261,8 @@ section .sectionLayout .layouts .img {
 
 section .sectionLayout .layouts .img .borda {
   border-radius: 5px;
+
+  box-shadow: 0px 3px 5px -3px var(--shadow);
 
 }
 
@@ -334,7 +337,8 @@ section .sectionLayout .layouts .coteudo a button {
     background-color: transparent;
 
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
+    font-family: var(--font-Amaranth);
 
     color: var(--text-white);
 
@@ -562,6 +566,8 @@ section .apresentacao .formulario forms a button {
     background-color: transparent;
 
     font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-Amaranth) !important;
 
     color: var(--text-white);
 
@@ -610,7 +616,7 @@ section .apresentacao .localizacao .mapa iframe {
       background-image: url(../../assets/img/planejamento.jpg);
       background-position: center left;
       background-repeat: no-repeat;
-      background-size: 180%;
+      background-size: 220%;
 
   }
 
@@ -663,7 +669,7 @@ section .apresentacao .localizacao .mapa iframe {
 
       padding: 1.5% !important;
 
-      width: 27%;
+      width: 40%;
       height: auto;
 
       border-radius: 5px;
@@ -673,7 +679,7 @@ section .apresentacao .localizacao .mapa iframe {
   }
 
   section .sectionApresentacao .overlay .apresentacao a:hover {
-      width: 30%;
+      width: 45%;
       height: auto;
 
   }
@@ -790,7 +796,7 @@ section .apresentacao .localizacao .mapa iframe {
   }
 
   section .sectionFerramentas .ferramentas .bloco .texto .titulo {
-    font-family: 'Vollkorn', serif;
+    font-family: var(--font-Amaranth);
     font-size: 26px;
     font-weight: 700 !important;
 
@@ -902,7 +908,7 @@ section .apresentacao .localizacao .mapa iframe {
 
     padding: 1% 1.5% !important;
 
-    width: 31%;
+    width: 40%;
     height: auto;
 
     border-radius: 5px;
@@ -912,7 +918,7 @@ section .apresentacao .localizacao .mapa iframe {
   }
 
   section .sectionLayout .layouts .coteudo a:hover {
-    width: 34%;
+    width: 45%;
     height: auto;
 
   }
@@ -926,7 +932,8 @@ section .apresentacao .localizacao .mapa iframe {
     background-color: transparent;
 
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
+    font-family: var(--font-Amaranth);
 
     color: var(--text-white);
 

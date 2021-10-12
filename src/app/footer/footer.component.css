@@ -33,9 +33,9 @@ footer .footer .logo {
 }
 
 footer .footer .logo p {
-  font-family: 'Vollkorn', serif;
+  font-family: var(--font-Amaranth);
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 700;
 
   color: var(--text-white);
 
@@ -106,8 +106,6 @@ footer .footer .social .icon a {
 
   border-radius: 50%;
 
-  background-color: var(--button);
-
   width: 30px;
   height: 30px;
 
@@ -142,7 +140,7 @@ footer .copyright {
 
   background-color: var(--background-copyright);
 
-  font-family: 'Vollkorn', serif;
+  font-family: var(--font-Amaranth);
 
   color: var(--text-white);
 
@@ -176,7 +174,7 @@ footer .copyright strong {
   }
 
   footer .footer .logo p {
-    font-family: 'Vollkorn', serif;
+    font-family: var(--font-Amaranth);
     font-size: 2rem;
     font-weight: 800;
 
@@ -248,10 +246,34 @@ footer .copyright strong {
 
     color: var(--text-gray);
 
-    width: 10%;
+    width: 20%;
+    height: auto;
+
+    margin: 2%;
+
+    cursor: default;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  footer .footer .social .icon a svg {
+    text-decoration: none;
+
+    color: var(--text-gray);
+
+    padding: 10%;
+
+    width: 100%;
     height: auto;
 
     cursor: default;
+
+    background-color: var(--button);
+
+    border-radius: 50%;
 
   }
 
@@ -260,14 +282,14 @@ footer .copyright strong {
     align-items: center;
     justify-content: center;
 
-    padding: 1%;
+    padding: 5%;
 
     width: 100%;
     height: auto;
 
     background-color: var(--background-copyright);
 
-    font-family: 'Vollkorn', serif;
+    font-family: var(--font-Amaranth);
     font-size: 0.8rem !important;
 
     color: var(--text-white);

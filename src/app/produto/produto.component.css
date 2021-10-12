@@ -304,4 +304,290 @@ section .botoes button:hover {
 
   }
 
+  .tela {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .container {
+    margin: 5% 5% !important;
+
+    width: 80%;
+    height: auto;
+
+  }
+
+  h1 {
+    font-weight: 700 !important;
+
+  }
+
+  .texto {
+    font-family: 'Vollkorn', serif;
+
+    color: var(--text-link);
+
+  }
+
+  .rota-link {
+    color: var(--text-link);
+
+    text-decoration: none;
+
+    transition: color, .5s ease-in-out;
+
+  }
+
+  .rota-link:hover {
+    color: var(--background-color-button);
+
+  }
+
+  .botao {
+    background-color: var(--button);
+
+    border: none;
+
+    color: var(--text-white);
+
+    padding: 1.5% 3%;
+
+    transition: background-color, .3s ease-in-out;
+
+    border-radius: 5px;
+
+    font-weight: 700;
+
+  }
+
+  .botao:hover {
+    background-color: var(--button-hover);
+
+  }
+
+  .text-center {
+    font-weight: 700;
+
+  }
+
+  .table th, tr, td {
+    border-top: 0px solid #dee2e6 !important;
+  }
+
+  .resposividade-botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .margem-botao {
+    margin: 1% !important;
+
+  }
+
+  .botao-editar {
+    background-color: var(--button) !important;
+
+    color: var(--text-white) !important;
+
+    margin: 1%;
+
+    font-weight: 700;
+
+  }
+
+  .botao-editar:hover {
+    background-color: var(--button-hover) !important;
+
+    color: var(--text-white) !important;
+
+  }
+
+  .botao-apagar {
+    background-color: var(--button) !important;
+
+    color: var(--text-white) !important;
+
+    margin: 1%;
+
+    font-weight: 700;
+
+  }
+
+  .botao-apagar:hover {
+    background-color: var(--button-hover) !important;
+
+    color: var(--text-white) !important;
+
+  }
+
+  .form-control {
+    margin-top: 1% !important;
+    margin-bottom: 1% !important;
+
+  }
+
+  /* STYLE SECTION PRODUTOS */
+  section {
+    padding-right: 10%;
+    padding-left: 10%;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+  }
+
+  section .bloco {
+    margin: 2%;
+
+    width: 100%;
+    height: auto;
+
+  }
+
+  section .bloco .img {
+    width: 100%;
+    height: auto;
+
+  }
+
+  section .bloco .img img {
+    width: 100%;
+    height: auto;
+
+    box-shadow: 0px 3px 5px -5px var(--text-black);
+
+  }
+
+  section .bloco .conteudo {
+    margin-top: 3%;
+
+    width: 100%;
+    height: auto;
+
+  }
+
+  section .bloco .conteudo h2 {
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+
+  }
+
+  section .bloco .conteudo h4 {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+
+    color: var(--text-p) !important;
+
+  }
+
+  section .bloco .conteudo h3 {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+
+    color: var(--text-black) !important;
+
+  }
+
+  section .bloco .conteudo h5 {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+
+    color: var(--text-p) !important;
+
+  }
+
+  section .botoes {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+
+  }
+
+  section .botoes button {
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    width: 100% !important;
+    height: auto !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: none;
+    border-radius: 5px 3px 3px 5px;
+
+    background-color: var(--text-light-blue-cart);
+    background-image: linear-gradient(var(--text-light-blue-cart) , var(--text-blue-cart));
+
+    color: var(--text-white);
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: background-color, .3s ease-in-out;
+
+  }
+
+  section .botoes button .icone {
+    padding: 1%;
+
+    width: 14%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--text-light-orange);
+      background-image: linear-gradient(var(--text-light-orange) , var(--text-orange));
+
+    border-radius: 3px 0px 0px 3px;
+
+  }
+
+  section .botoes button .icone > svg {
+    padding: 5%;
+
+    width: 90%;
+    height: auto;
+
+  }
+
+  section .botoes button p {
+    font-size: 1rem !important;
+
+    margin: 0 !important;
+    padding: 1% !important;
+
+    width: 86%;
+    height: auto;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+  }
+
+  section .botoes button:hover {
+    background-color: var(--button-orange-hover);
+
+  }
+
 }
