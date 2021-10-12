@@ -1231,18 +1231,25 @@ section .categorias {
 section .categorias .conteudo {
   margin: 1%;
 
-  width: 78%;
+  width: 100%;
   height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
 section .categorias .conteudo h2 {
   font-size: 1.2rem !important;
 
+  width: 100%;
+  height: auto;
+
 }
 
 section .categorias .botoes {
-  width: 20%;
+  width: 100%;
   height: auto;
 
   display: flex;

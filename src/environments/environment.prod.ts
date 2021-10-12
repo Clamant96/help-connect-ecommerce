@@ -11,6 +11,8 @@ export const environment = {
   pedidos: 0,
   listaDeDesejos: 0,
   server: 'http://localhost:',
+  //server: 'https://helpconnect-ecommerce.',
   port: '8080'
+  //port: 'herokuapp.com'
 
 }
