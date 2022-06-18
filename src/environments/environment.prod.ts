@@ -8,8 +8,8 @@ export const environment = {
   foto: '',
   tipo: '',
   token: '',
-  pedidos: 0,
-  listaDeDesejos: 0,
+  // pedidos: 0,
+  // listaDeDesejos: 0,
   server: 'http://localhost:',
   //server: 'https://helpconnect-ecommerce.',
   port: '8080'

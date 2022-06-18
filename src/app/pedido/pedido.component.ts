@@ -13,19 +13,18 @@ import { PedidoService } from '../service/pedido.service';
 })
 export class PedidoComponent implements OnInit {
 
-  nome = environment.nome;
-  email = environment.email;
+  public nome = environment.nome;
+  public email = environment.email;
+  public id = environment.id;
 
-  pedido: Pedido = new Pedido();
-  listaDePedidos: Pedido[];
+  public pedido: Pedido = new Pedido();
+  public listaDePedidos: Pedido[];
 
-  listaDeProdutos: Produto[];
-  memoria: Produto[] = [];
-  memoriaV: Produto[] = [];
+  public listaDeProdutos: Produto[];
+  public memoria: Produto[] = [];
+  public memoriaV: Produto[] = [];
 
-  idCarrinho = environment.pedidos;
-
-  idMemoria: number;
+  public idMemoria: number;
 
   constructor(
     private pedidoService: PedidoService,
@@ -36,46 +35,19 @@ export class PedidoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    /*if(environment.token == '') {
-      this.router.navigate(['/login']);
-
-    }*/
 
     if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);
 
     }
 
-    /*let idProduto = this.route.snapshot.params['id-produto'];
-    let idPedido = this.route.snapshot.params['id-pedido'];
-
-    this.putProduto(idProduto, idPedido);*/
-
     this.findByIdProdutosCarrinho();
     this.findByIdPedido();
 
   }
 
-  /* LISTA TODOS OS PEDIDOS CONTIDOS NA BASE DE DADOS */
-  /*findAllByPedidos() {
-    this.pedidoService.findAllByPedidos().subscribe((resp: Pedido[]) => {
-      this.listaDePedidos = resp;
-
-    })
-
-  }*/
-
-  /* POR MEIO DO ID TRAS SOMENTE OS DADOS DE UM UNICO PEDIDO */
-  /*findByIdPedido(id: number) {
-    this.pedidoService.findByIdPedido(id).subscribe((resp: Pedido) => {
-      this.pedido = resp;
-
-    })
-
-  }*/
-
   findByIdProdutosCarrinho() {
-    this.pedidoService.findAllByProdutosPedidos(environment.pedidos).subscribe((resp: Produto[]) => {
+    this.pedidoService.findAllByProdutosPedidos(this.id).subscribe((resp: Produto[]) => {
       this.listaDeProdutos = resp;
 
       let contador: number = 0;
@@ -123,19 +95,6 @@ export class PedidoComponent implements OnInit {
 
         this.listaDeProdutos = this.memoriaV;
 
-        /*for(let q = 0; q < this.listaDeProdutos.length; q++) {
-          for(let w = 0; w < this.listaDeProdutos.length; w++) {
-            if(pivo[i] != repeticao && this.listaDeProdutos[pivo[q]] == this.memoriaV[w] ) {
-              repeticao = pivo[i];
-
-              this.memoriaV.push(this.listaDeProdutos[repeticao]);
-
-            }
-
-          }
-
-        }*/
-
         // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
         contador = 0;
 
@@ -146,7 +105,7 @@ export class PedidoComponent implements OnInit {
   }
 
   findByIdPedido() {
-    this.pedidoService.findByIdPedido(environment.pedidos).subscribe((resp: Pedido) => {
+    this.pedidoService.findByIdPedido(this.id).subscribe((resp: Pedido) => {
       this.pedido = resp;
 
     })
@@ -176,13 +135,5 @@ export class PedidoComponent implements OnInit {
     })
 
   }
-
-  /*putProduto(idProduto: number, idPedido: number) {
-    this.pedidoService.putProduto(idProduto, idPedido).subscribe(() => {
-      this.router.navigate(['/pedido']);
-
-    })
-
-  }*/
 
 }

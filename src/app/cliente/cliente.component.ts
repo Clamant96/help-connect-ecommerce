@@ -18,84 +18,48 @@ import { PedidoService } from '../service/pedido.service';
 })
 export class ClienteComponent implements OnInit {
 
-  nome = environment.nome;
-  email = environment.email;
-  foto = environment.foto
-  idUsuario = environment.id;
-  idPedido = environment.pedidos;
+  public nome = environment.nome;
+  public email = environment.email;
+  public foto = environment.foto
+  public idUsuario = environment.id;
 
-  minhListaDeDesejos: ListaDeDesejos = new ListaDeDesejos();
-  listaDeDesejosItens: ListaDeDesejos[];
-  idListaDeDesejos = environment.listaDeDesejos;
+  public produto: Produto = new Produto();
+  public listaDeDesejos: Produto[];
+  public listaDeProdutoMemoria: Produto[];
 
-  produto: Produto = new Produto();
-  listaDeDesejos: Produto[];
-  listaDeProdutoMemoria: Produto[];
+  public usuario: Cliente = new Cliente();
+  public confirmarSenha: string;
+  public tipoUsuario: string;
 
-  usuario: Cliente = new Cliente();
-  confirmarSenha: string;
-  tipoUsuario: string;
-
-  /* DADOS CARRINHO USUARIO */
-  pedido: Pedido = new Pedido();
-  listaDePedidos: Pedido[];
-
-  listaDeProdutos: Produto[];
-  memoria: Produto[] = [];
-  memoriaV: Produto[] = [];
-
-  qtdItensProdutos: number;
-  qtdItensListaDeDesejos: number;
-
-  valorCarrinho: number;
-
-  idCarrinho = environment.pedidos;
-
-  idMemoria: number;
-  /* ###################### */
+  public qtdItensProdutos: number;
+  public qtdItensListaDeDesejos: number;
 
   constructor(
     private router: Router,
-    private listaDeDesejosService: ClienteService,
-    private authService: AuthService,
     private produtoService: ProdutoService,
     private alertas: AlertasService,
-
-    /* DADOS CARRINHO USUARIO */
-    private pedidoService: PedidoService,
+    private clienteService: ClienteService
 
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0);
 
-    /*if(environment.token == '') {
-      this.router.navigate(['/login']);
-
-    }*/
-
     if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);
 
     }
 
-    this.findByIdListaDeDesejos();
-    this.findByIdUsuario(environment.id);
-    //this.findAllByProduto();
-
-    /* DADOS CARRINHO USUARIO */
-    this.findByIdProdutosCarrinho();
-    this.findByIdPedido();
+    this.findByIdUsuario(this.idUsuario);
 
   }
 
+  // CARREGA DADOS DO USUARIO
   findByIdUsuario(id: number) {
-    this.authService.findByIdCliente(id).subscribe((resp: Cliente) => {
+    this.clienteService.findByIdCliente(id).subscribe((resp: Cliente) => {
       this.usuario = resp;
 
-      console.log("Nome: "+ this.usuario.nome);
-
-    })
+    });
 
   }
 
@@ -112,6 +76,7 @@ export class ClienteComponent implements OnInit {
 
   }
 
+  // ATUALIZA DADOS USUARIO
   atualizar() {
     /* INSERE O TIPO DE USUARIO SELECIONADO, AO ATRIBUTO NA BASE DE DADOS */
     this.usuario.tipo = this.tipoUsuario;
@@ -125,7 +90,7 @@ export class ClienteComponent implements OnInit {
       /* CHAMA O METODO CADASTRAR CRIADO NO NOSSO SERVICE */
       /* subscribe ==> CONVERTE UM ARQUIVO TypeScript EM UM ARQUIVO JSON/JavaScript */
       /* ARMAZENA OS DADOS DENTRO DE UM ATRIBUTO TEMPORARIO CHAMADO resp */
-      this.authService.cadastrar(this.usuario).subscribe((resp: Cliente) => {
+      this.clienteService.atualizar(this.usuario).subscribe((resp: Cliente) => {
         /* POR SUA VEZ ATRIBUI OS DADOS DE resp AO USUARIO DENTRO DA BASE DE DADOS*/
         this.usuario = resp;
         /* INFORMA UM ALERTA AO USUARIO DE CADASTRO BEM SUCEDIDO */
@@ -139,8 +104,6 @@ export class ClienteComponent implements OnInit {
         environment.foto = '';
         environment.tipo = '';
         environment.token = '';
-        environment.pedidos = 0;
-        environment.listaDeDesejos = 0;
 
         /* REDIRECIONA O USUARIO A PAGINA DE login APOS O CADASTRO TER SIDO REALIZADO COM SUCESSO */
         this.router.navigate(['/login']);
@@ -156,147 +119,42 @@ export class ClienteComponent implements OnInit {
 
   }
 
-  findByIdListaDeDesejos() {
-    this.listaDeDesejosService.findAllByProdutosListaDeDesejos(environment.listaDeDesejos).subscribe((resp: Produto[]) => {
-      this.listaDeDesejos = resp;
-
-      try {
-        this.qtdItensListaDeDesejos = resp.length;
-
-      }catch(erro){
-        //console.log('NAO FOI POSSIVEL CALCULAR OS ITENS!!');
-      }
-
-    })
-
-  }
-
+  // REMOVE ITEM DA LSITA DE DESEJOS
   removerDaListaDeDesejos(idProduto: number, idLista: number) {
-    this.listaDeDesejosService.removerItemListaDeDesejos(idProduto, idLista).subscribe(() => {
+    this.clienteService.removerItemListaDeDesejos(idProduto, idLista).subscribe(() => {
       this.alertas.alertaMensagem('Item removido da lista de desejos');
 
-      this.findByIdPedido();
-      this.findByIdListaDeDesejos();
+      // CARREGA DADOS CARRINHO USUARIO
+      this.findByIdUsuario(this.idUsuario);
 
     })
 
   }
 
-  /* ADICIONA PRODUTOS AO CARRINHO DO USUARIO */
-  adicionaItemCarrinho(idProduto: number, idCarrinho: number) {
-    this.produtoService.adicionaItemCarrinho(idProduto, idCarrinho).subscribe(() => {
-      /* DADOS CARRINHO USUARIO */
-      this.findByIdProdutosCarrinho();
+  // ADICIONA PRODUTOS AO CARRINHO DO USUARIO
+  adicionaItemCarrinho(idProduto: number, idUsuario: number) {
+    this.produtoService.adicionaItemCarrinho(idProduto, idUsuario).subscribe(() => {
+
+      // CARREGA DADOS CARRINHO USUARIO
+      this.findByIdUsuario(this.idUsuario);
 
     })
 
   }
 
-  /* ################################################################################# */
-  /* ################## DADOS CARRINHO USUARIO ################## */
-
-  findByIdProdutosCarrinho() {
-    this.pedidoService.findAllByProdutosPedidos(environment.pedidos).subscribe((resp: Produto[]) => {
-      this.listaDeProdutos = resp;
-
-      try {
-        this.qtdItensProdutos = this.listaDeProdutos.length;
-
-      }catch(erro){
-        //console.log('NAO FOI POSSIVEL CALCULAR OS ITENS!!');
-      }
-
-      try {
-        let contador: number = 0;
-        let repeticao: number = 0;
-
-        // CRIA UM VETOR PARA SERVIR DE REFERENCIA NAS VALIDACOES
-        let pivo: number[] = [this.listaDeProdutos.length];
-
-        for(let i = 0; i < this.listaDeProdutos.length; i++) {
-          // ARMAZENA O ID DENTRO DO PIVO PARA SERVIR DE REFERENCIA
-          pivo[i] = this.listaDeProdutos[i].id;
-
-          // ENTRA NO LOOP DO PRODUTO TRABALHO NO MOMENTO
-          for(let item of this.listaDeProdutos) {
-            // VERIFICA SE O VALOR DO PIVO E O MESMO DO ID DO LOOP ATUAL NO QUAL ESTAMOS TRABALHANDO
-            if(pivo[i] == item.id) {
-              // ADICIONA UM AO CONTADOR
-              contador++;
-
-            }
-
-            // ATRIBUI O VALOR DO CONTADOR A QTD DE UM DETERMINADO PRODUTO DE ACORDO COM A QTD DESSE MESMO PRODUTO NA LISTA
-            this.listaDeProdutos[i].qtdPedidoProduto = contador;
-
-          }
-
-          // INSERE O PRIMEIRO VALOR PARA INICIALIZAR OS VALORES NO VETOR
-          this.memoria = this.listaDeProdutos;
-
-          // ZERA O CONTADO PARA REMOCMECAR UMA NOVA CONTAGEM
-          contador = 0;
-
-        }
-
-      }catch(erro){
-        //console.log('OCORREU UM ERRO AO GERAR A LISTA DE PRODUTOS');
-
-      }
-
-      try{
-        /* AGRUPA OS ITENS REPETIDOS DENTRO DO ARRAY */
-        this.listaDeProdutos = this.listaDeProdutos.filter((item, index, self) =>
-          index === self.findIndex((t) => (
-            t.nome === item.nome && t.descricao === item.descricao
-          ))
-        )
-
-      }catch(erro){
-        //console.log('OCORREU UM ERRO AO AGRUPAR O ARRAY);
-
-      }
-
-    })
-
-  }
-
-  findByIdPedido() {
-    this.pedidoService.findByIdPedido(environment.pedidos).subscribe((resp: Pedido) => {
-      this.pedido = resp;
-
-      /* ARREDONDA O VALOR DECIMAL DEIXANDO SOMENTE 2 CASAS APOS A VIRGULA */
-      this.valorCarrinho = Number(this.pedido.valorTotal.toFixed(2));
-
-    })
-
-  }
-
-  removerDoCarrinho(idProduto: number, idPedido: number) {
-    this.pedidoService.removerItemDoCarrinho(idProduto, idPedido).subscribe(() => {
+  // REMOVE ITEM DO CARRINHO
+  removerDoCarrinho(idProduto: number, idUsuario: number) {
+    this.clienteService.removerItemDoCarrinho(idProduto, idUsuario).subscribe(() => {
       this.alertas.alertaMensagem('Item removido do carrinho!');
 
-      this.findByIdProdutosCarrinho();
-      this.findByIdPedido();
+      // CARREGA DADOS CARRINHO USUARIO
+      this.findByIdUsuario(this.idUsuario);
 
     })
 
   }
 
-  /* EM NOSSA ESTRUTURA ESSE METODO NAO SERA UTILIZADO, ESTA MAIS AQUI POR FINS DIDATICOS */
-  postPedido() {
-    this.pedidoService.postPedido(this.pedido).subscribe((resp: Pedido) => {
-      this.pedido = resp;
-
-      this.alertas.alertaMensagem('Pedido cadastrado com sucesso');
-
-      this.router.navigate(['/pedido']);
-
-    })
-
-  }
-
-  /* PEMISSAO DE ADMINISTRADOR */
+  // PEMISSAO DE ADMINISTRADOR
   adm (){
     let permissao = false;
 

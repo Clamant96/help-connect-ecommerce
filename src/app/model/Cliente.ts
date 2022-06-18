@@ -1,3 +1,4 @@
+import { Produto } from './Produto';
 import { ListaDeDesejos } from "./ListaDeDesejos";
 import { Pedido } from "./Pedido";
 
@@ -19,7 +20,8 @@ export class Cliente {
     public pais: string;
     public foto: string;
     public tipo: string;
-    public pedidos: Pedido;
-    public listaDeDesejos: ListaDeDesejos;
+    public pedidos: Produto[];
+    public listaDeDesejos: Produto[];
+    public valorTotal: number;
 
 }

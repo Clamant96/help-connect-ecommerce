@@ -1,3 +1,4 @@
+import { ClienteService } from './../service/cliente.service';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   tokenUsuario: string;
 
   constructor(
-    private auth: AuthService,
+    private clienteService: ClienteService,
     private router: Router,
     private alertas: AlertasService
 
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   /* LOGA O USUARIO NA SESSAO */
   entrar() {
-    this.auth.entrar(this.clienteLogin).subscribe((resp: ClienteLogin) => {
+    this.clienteService.entrar(this.clienteLogin).subscribe((resp: ClienteLogin) => {
       this.clienteLogin = resp;
 
       this.alertas.alertaMensagem('Login realizado com sucesso!');
@@ -43,8 +44,6 @@ export class LoginComponent implements OnInit {
       environment.tipo=this.clienteLogin.tipo;
       environment.usuario= this.clienteLogin.usuario;
       environment.id = this.clienteLogin.id;
-      environment.pedidos = this.clienteLogin.pedidos.id;
-      environment.listaDeDesejos = this.clienteLogin.listaDeDesejos.id;
 
       /* ARMAZENA O TOKEN DO USUARIO NA VARIAVEL */
       this.tokenUsuario = this.clienteLogin.token;
@@ -58,8 +57,6 @@ export class LoginComponent implements OnInit {
       console.log("Nome: "+ environment.nome);
       console.log("Usuario: "+ environment.usuario);
       console.log("Foto: "+ environment.foto);
-      console.log("Pedido ID: "+ environment.pedidos);
-      console.log("Lista de Desejos ID: "+ environment.listaDeDesejos);
 
       this.router.navigate(['/home']);
 

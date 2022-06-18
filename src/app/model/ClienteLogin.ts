@@ -20,7 +20,6 @@ export class ClienteLogin {
     public foto: string;
     public tipo: string;
     public token: string;
-    public pedidos: Pedido;
-    public listaDeDesejos: ListaDeDesejos;
+    public valorTotal: number;
 
 }

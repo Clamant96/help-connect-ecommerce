@@ -15,16 +15,15 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class ProdutoComponent implements OnInit {
 
-  produto: Produto = new Produto();
-  listaDeProdutos: Produto[];
-  idListaDeDesejos = environment.listaDeDesejos;
-  idPedido = environment.pedidos;
+  public produto: Produto = new Produto();
+  public listaDeProdutos: Produto[];
+  public idCliente = environment.id;
 
-  categoria: Categoria = new Categoria();
-  listaDeCategoria: Categoria[];
-  idCategoria: number;
+  public categoria: Categoria = new Categoria();
+  public listaDeCategoria: Categoria[];
+  public idCategoria: number;
 
-  listaDeDesejos: ListaDeDesejos = new ListaDeDesejos();
+  public listaDeDesejos: ListaDeDesejos = new ListaDeDesejos();
 
   constructor(
     private produtoService: ProdutoService,
@@ -35,10 +34,6 @@ export class ProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    /*if(environment.token == '') {
-      this.router.navigate(['/login']);
-
-    }*/
 
     if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);
@@ -147,8 +142,8 @@ export class ProdutoComponent implements OnInit {
   }
 
   /* ADICIONA PRODUTOS A LISTA DE DESEJOS DO USUARIO */
-  adicionaItemListaDeDesejos(idProduto: number, idLista: number) {
-    this.produtoService.adicionaItemListaDeDesejos(idProduto, idLista).subscribe(() => {
+  adicionaItemListaDeDesejos(idProduto: number, idCliente: number) {
+    this.produtoService.adicionaItemListaDeDesejos(idProduto, idCliente).subscribe(() => {
       this.alertas.alertaMensagem('Produto adicionado a lista de desejos!');
 
       this.findAllByProdutos();
@@ -158,8 +153,8 @@ export class ProdutoComponent implements OnInit {
   }
 
   /* ADICIONA PRODUTOS AO CARRINHO DO USUARIO */
-  adicionaItemCarrinho(idProduto: number, idCarrinho: number) {
-    this.produtoService.adicionaItemCarrinho(idProduto, idCarrinho).subscribe(() => {
+  adicionaItemCarrinho(idProduto: number, idCliente: number) {
+    this.produtoService.adicionaItemCarrinho(idProduto, idCliente).subscribe(() => {
       this.alertas.alertaMensagem('Produto adicionado ao carrinho!');
 
       this.findAllByProdutos();

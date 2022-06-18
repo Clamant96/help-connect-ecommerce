@@ -1,3 +1,4 @@
+import { ClienteService } from './service/cliente.service';
 import { Component } from '@angular/core';
 import { AuthService } from './service/auth.service';
 
@@ -8,7 +9,7 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent {
   constructor(
-    public auth: AuthService
+    public clienteService: ClienteService
 
   ){}
 

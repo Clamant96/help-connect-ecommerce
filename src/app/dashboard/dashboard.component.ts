@@ -14,17 +14,18 @@ import { AlertasService } from '../service/alertas.service';
 })
 export class DashboardComponent implements OnInit {
 
-  nome = environment.nome;
-  email = environment.email;
-  foto = environment.foto;
-  tipo = environment.tipo;
+  public nome = environment.nome;
+  public email = environment.email;
+  public foto = environment.foto;
+  public tipo = environment.tipo;
+  public id = environment.id;
 
-  listaDeProdutos: Produto[];
-  produto: Produto = new Produto();
+  public listaDeProdutos: Produto[];
+  public produto: Produto = new Produto();
 
-  categoria: Categoria = new Categoria();
-  listaDeCategoria: Categoria[];
-  idCategoria: number;
+  public categoria: Categoria = new Categoria();
+  public listaDeCategoria: Categoria[];
+  public idCategoria: number;
 
   constructor(
     private router: Router,

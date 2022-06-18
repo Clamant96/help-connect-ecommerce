@@ -44,7 +44,13 @@ export class AuthService {
   /* CONSOME A API METODO CADASTRAR (POST) | Cliente */
   cadastrar(cliente: Cliente): Observable<Cliente> {
 
-    return this.http.post<Cliente>(`${this.endereco}/clientes/cadastrar`, cliente);
+    return this.http.post<Cliente>(`${this.endereco}/clientes/cadastrar`, cliente, this.autorizacao);
+  }
+
+  /* CONSOME A API METODO ATUALIZA (POST) | Cliente */
+  atualizar(cliente: Cliente): Observable<Cliente> {
+
+    return this.http.put<Cliente>(`${this.endereco}/clientes/atualizar`, cliente, this.autorizacao);
   }
 
   /* RETONA UM VALOR true OU false CASO O TOKEN ESTA PREENCHIDO, CASO ESTEJA VAZIO RETONA false, CASO ESTEJA COM DADOS RETONA true*/
@@ -71,8 +77,6 @@ export class AuthService {
     environment.foto = '';
     environment.tipo = '';
     environment.token = '';
-    environment.pedidos = 0;
-    environment.listaDeDesejos = 0;
 
     /* ARMAZENA O TOKEN DO USUARIO NO LOCAL STORAGE */
     localStorage.removeItem('token');
@@ -82,4 +86,5 @@ export class AuthService {
     this.router.navigate(['/login']);
 
   }
+
 }
