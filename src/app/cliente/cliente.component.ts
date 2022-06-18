@@ -59,6 +59,9 @@ export class ClienteComponent implements OnInit {
     this.clienteService.findByIdCliente(id).subscribe((resp: Cliente) => {
       this.usuario = resp;
 
+      this.qtdItensListaDeDesejos = this.usuario.listaDeDesejos.length;
+      this.qtdItensProdutos = this.usuario.pedidos.length;
+
     });
 
   }

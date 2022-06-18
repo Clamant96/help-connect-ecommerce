@@ -322,15 +322,20 @@ tr, th, td {
 .lista-vazia {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 
-  cursor: pointer;
+  width: 600px;
+  height: auto;
 
 }
 
 .lista-vazia .icon {
   width: 10%;
   height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -351,7 +356,12 @@ tr, th, td {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 700 !important;
 
-  margin-top: 2.5% !important;
+  width: 90%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -359,7 +369,10 @@ tr, th, td {
 .carrinho-vazio {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+
+  width: 500px;
+  height: auto;
 
   cursor: pointer;
 
@@ -368,6 +381,10 @@ tr, th, td {
 .carrinho-vazio .icon {
   width: 10%;
   height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -388,7 +405,12 @@ tr, th, td {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 700 !important;
 
-  margin-top: 2.5% !important;
+  width: 90%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 

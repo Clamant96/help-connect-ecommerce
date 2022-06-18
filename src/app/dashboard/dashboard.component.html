@@ -140,12 +140,9 @@
                                 <div class="tab-pane fade" id="novacategoria" role="tabpanel" aria-labelledby="novacategoria-tab">
 
                                   <!-- EDITAR PERFIL USUARIO -->
-                                  <div class="input">
+                                  <div class="input cadatro-input-categoria">
                                     <!-- VERIFICA SE OS DADOS INSERIDOS TEPO USUARIO, REALMENTE PERTENCEM A CLASSE TEMA -->
                                     <input [(ngModel)]='categoria.nome' class="mb-1" type="text" id="nome" placeholder="Digite a nome da categoria">
-                                  </div>
-
-                                  <div class="input">
                                     <!-- CHAMA A FUNCAO CRIADA cadastrar() DENTRO DA CLASSE, QUE TEM COMO FUNCAO, CADASTRAR O OBJETO TEMA -->
                                     <button class="botao texto" (click)='postCategoria()'>Cadastrar</button>
                                   </div>
@@ -259,8 +256,7 @@
         </div>
         <div class="modal-body">
             <div class="form-group texto">
-                <label for="putNome">Nome</label>
-                <input [(ngModel)]='categoria.nome' type="text" name="putNome" class="form-control texto-input" id="putNome" placeholder="Nome da Categoria">
+                <input [(ngModel)]='categoria.nome' type="text" name="putNome" class="form-control" id="putNome" placeholder="Nome da Categoria">
             </div>
         </div>
         <div class="modal-footer">

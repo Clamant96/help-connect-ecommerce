@@ -1,3 +1,19 @@
+.modal-content {
+  box-shadow: 0px 3px 10px -10px var(--box-shadown);
+}
+
+.cadatro-input-categoria {
+  width: 60vw !important;
+  height: auto !important;
+
+}
+
+.cadatro-input-categoria input {
+  width: 100% !important;
+  height: auto !important;
+
+}
+
 .tela {
   display: flex;
   align-items: center;
@@ -19,9 +35,27 @@ h1 {
 }
 
 .texto {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Montserrat', sans-serif;
 
   color: var(--text-link);
+
+  font-size: 16px !important;
+  font-weight: 700 !important;
+
+  width: 100%;
+  height: auto;
+
+}
+
+.texto input {
+  padding: 0.5% 2%;
+  margin: 0.5% 0%;
+
+  width: 100%;
+  height: auto;
+
+  font-size: 16px !important;
+  font-weight: 700 !important;
 
 }
 
@@ -138,6 +172,10 @@ tr, th, td {
   background-color: transparent;
 
   color: var(--button);
+
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -1175,6 +1213,8 @@ section .bloco .botoes .acao-link {
 
   border-radius: 3px;
 
+  cursor: pointer;
+
 }
 
 section .bloco .botoes .acao-link .icone {
@@ -1219,7 +1259,7 @@ section .bloco .botoes .acao-link p {
 
 /* ADICAO CATEGORIAS */
 section .categorias {
-  width: 100%;
+  width: 400px;
   height: auto;
 
   display: flex;
@@ -1272,7 +1312,7 @@ section .categorias .botoes .acao-link {
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   color: var(--text-white) !important;
 
@@ -1281,7 +1321,7 @@ section .categorias .botoes .acao-link {
 }
 
 section .categorias .botoes .acao-link .icone {
-  width: 20%;
+  width: 10%;
   height: 100%;
 
   background-color: var(--text-light-orange);
