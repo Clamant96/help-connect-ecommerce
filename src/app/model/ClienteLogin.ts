@@ -1,6 +1,3 @@
-import { ListaDeDesejos } from "./ListaDeDesejos";
-import { Pedido } from "./Pedido";
-
 export class ClienteLogin {
     public id: number;
     public nome: string;

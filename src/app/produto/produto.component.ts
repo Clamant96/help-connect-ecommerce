@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
-import { ListaDeDesejos } from '../model/ListaDeDesejos';
 import { Produto } from '../model/Produto';
 import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
@@ -22,8 +21,6 @@ export class ProdutoComponent implements OnInit {
   public categoria: Categoria = new Categoria();
   public listaDeCategoria: Categoria[];
   public idCategoria: number;
-
-  public listaDeDesejos: ListaDeDesejos = new ListaDeDesejos();
 
   constructor(
     private produtoService: ProdutoService,

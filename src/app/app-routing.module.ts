@@ -9,7 +9,6 @@ import { EditarCategoriaComponent } from './editar/editar-categoria/editar-categ
 import { HomeComponent } from './home/home.component';
 import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
 import { LoginComponent } from './login/login.component';
-import { PedidoComponent } from './pedido/pedido.component';
 import { ProdutoComponent } from './produto/produto.component';
 
 const routes: Routes = [
@@ -36,9 +35,6 @@ const routes: Routes = [
   },
   {
     path: 'deletar-categoria/:id', component: DeletarCategoriaComponent
-  },
-  {
-    path: 'pedido', component: PedidoComponent
   },
   {
     path: 'produto', component: ProdutoComponent

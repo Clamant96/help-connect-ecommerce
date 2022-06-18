@@ -1,6 +1,4 @@
 import { Produto } from './Produto';
-import { ListaDeDesejos } from "./ListaDeDesejos";
-import { Pedido } from "./Pedido";
 
 export class Cliente {
     public id: number;

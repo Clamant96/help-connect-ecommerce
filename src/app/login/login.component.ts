@@ -3,8 +3,6 @@ import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClienteLogin } from '../model/ClienteLogin';
-import { AuthService } from '../service/auth.service';
-import { ListaDeDesejos } from '../model/ListaDeDesejos';
 import { AlertasService } from '../service/alertas.service';
 
 @Component({

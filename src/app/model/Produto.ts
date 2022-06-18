@@ -1,6 +1,5 @@
+import { Cliente } from './Cliente';
 import { Categoria } from "./Categoria";
-import { ListaDeDesejos } from "./ListaDeDesejos";
-import { Pedido } from "./Pedido";
 
 export class Produto {
     public id: number;
@@ -12,7 +11,7 @@ export class Produto {
     public estoque: number;
     public qtdPedidoProduto: number;
     public categoria: Categoria;
-    public pedidos: Pedido[];
-    public listaDesejos: ListaDeDesejos[];
+    public pedidos: Cliente[];
+    public listaDesejos: Cliente[];
 
 }

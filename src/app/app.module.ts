@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { EditarCategoriaComponent } from './editar/editar-categoria/editar-categoria.component';
 import { DeletarCategoriaComponent } from './deletar/deletar-categoria/deletar-categoria.component';
-import { PedidoComponent } from './pedido/pedido.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
 import { ClienteComponent } from './cliente/cliente.component';
@@ -33,7 +32,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CategoriaComponent,
     EditarCategoriaComponent,
     DeletarCategoriaComponent,
-    PedidoComponent,
     ProdutoComponent,
     InserirProdutoComponent,
     ClienteComponent,

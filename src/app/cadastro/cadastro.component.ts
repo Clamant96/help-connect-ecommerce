@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente } from '../model/Cliente';
 import { AlertasService } from '../service/alertas.service';
-import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-cadastro',

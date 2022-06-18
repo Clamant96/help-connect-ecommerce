@@ -2,14 +2,10 @@ import { ProdutoService } from './../service/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { ListaDeDesejos } from '../model/ListaDeDesejos';
 import { Produto } from '../model/Produto';
 import { ClienteService } from '../service/cliente.service';
 import { Cliente } from '../model/Cliente';
-import { AuthService } from '../service/auth.service';
 import { AlertasService } from '../service/alertas.service';
-import { Pedido } from '../model/Pedido';
-import { PedidoService } from '../service/pedido.service';
 
 @Component({
   selector: 'app-cliente',

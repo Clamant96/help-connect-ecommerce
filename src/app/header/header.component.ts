@@ -1,8 +1,6 @@
 import { ClienteService } from './../service/cliente.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
-import { Produto } from '../model/Produto';
-import { PedidoService } from '../service/pedido.service';
 
 @Component({
   selector: 'app-header',

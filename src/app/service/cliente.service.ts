@@ -6,7 +6,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { ListaDeDesejos } from '../model/ListaDeDesejos';
 import { Produto } from '../model/Produto';
 
 @Injectable({
@@ -53,9 +52,9 @@ export class ClienteService {
     return this.http.put<Cliente>(`${this.api}/clientes`, cliente, this.autorizacao);
   }
 
-  findByIdListaDeDesejos(id: number): Observable<ListaDeDesejos> {
+  findByIdListaDeDesejos(id: number): Observable<Cliente> {
 
-    return this.http.get<ListaDeDesejos>(`${this.api}/listadesejo/${id}`, this.autorizacao);
+    return this.http.get<Cliente>(`${this.api}/listadesejo/${id}`, this.autorizacao);
   }
 
   findAllByProdutosListaDeDesejos(id: number): Observable<Produto[]> {
@@ -63,9 +62,9 @@ export class ClienteService {
     return this.http.get<Produto[]>(`${this.api}/listadesejo/listaDeDesejo/${id}`, this.autorizacao);
   }
 
-  findAllByListaDeDesejos(): Observable<ListaDeDesejos[]> {
+  findAllByListaDeDesejos(): Observable<Cliente[]> {
 
-    return this.http.get<ListaDeDesejos[]>(`${this.api}/listadesejo`, this.autorizacao);
+    return this.http.get<Cliente[]>(`${this.api}/listadesejo`, this.autorizacao);
   }
 
   removerItemListaDeDesejos(idProduto: number, idCliente: number): Observable<Produto[]> {
