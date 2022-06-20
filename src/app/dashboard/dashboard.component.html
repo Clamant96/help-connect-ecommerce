@@ -78,7 +78,7 @@
                                         <h2>{{item.nome}}</h2>
                                         <h4>{{item.descricao}}</h4>
                                         <h4>Estoque: {{item.estoque}}</h4>
-                                        <h3>R$ {{item.preco}}</h3>
+                                        <h3>R$ {{item.preco.toFixed(2).replace('.', ',')}}</h3>
                                         <hr>
                                       </div>
                                       <div class="botoes">

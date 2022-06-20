@@ -80,6 +80,9 @@ export class ClienteComponent implements OnInit {
     /* INSERE O TIPO DE USUARIO SELECIONADO, AO ATRIBUTO NA BASE DE DADOS */
     this.usuario.tipo = this.tipoUsuario;
 
+    this.usuario.pedidos = []; // EVITA QUE SEJA DELETADO OS ITENS JA INCLUSOS NOS CARRINHO PELAS TABELAS ASSOCIATIVAS
+    this.usuario.listaDeDesejos = []; // EVITA QUE SEJA DELETADO OS ITENS JA INCLUSOS NOS CARRINHO PELAS TABELAS ASSOCIATIVAS
+
     /* VERIFICA SE AS SENHAS DIGITADAS, SAO IGUAIS */
     if(this.usuario.senha != this.confirmarSenha) {
       /* INFORMA UM ALERTA AO USUARIO */

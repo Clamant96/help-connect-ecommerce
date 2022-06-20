@@ -49,7 +49,7 @@ export class ClienteService {
   /* CONSOME A API METODO ATUALIZA (PUT) | Cliente */
   atualizar(cliente: Cliente): Observable<Cliente> {
 
-    return this.http.put<Cliente>(`${this.api}/clientes`, cliente, this.autorizacao);
+    return this.http.put<Cliente>(`${this.api}/clientes/atualizar`, cliente, this.autorizacao);
   }
 
   findByIdListaDeDesejos(id: number): Observable<Cliente> {
