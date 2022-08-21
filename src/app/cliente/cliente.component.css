@@ -1173,6 +1173,12 @@ section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .dadosPerfil .cada
 
 }
 
+section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .dadosPerfil .cadastro .endereco .cep-carregar {
+  width: 96%;
+  height: auto;
+
+}
+
 section .exibirPerfil .perfil .gerenciarPerfil .dados .painel .dadosPerfil .cadastro .endereco input {
   margin-top: 0.5%;
   margin-bottom: 0.5%;

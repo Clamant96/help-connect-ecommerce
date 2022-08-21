@@ -127,11 +127,13 @@ export class ProdutoComponent implements OnInit {
 
     }, erro => {
       if(erro.status == 500) {
-        console.log(`Erro: ${erro.status}, algum dado esta sendo inserido incorretamente.`)
+        console.log(`Erro: ${erro.status}, algum dado esta sendo inserido incorretamente.`);
 
       }else if(erro.status >= 400 && erro.status < 500){
-        console.log(`Erro: ${erro.status}, acesso nao autorizado, verifique seu login.`)
+        console.log(`Erro: ${erro.status}, acesso nao autorizado, verifique seu login.`);
 
+      }else {
+        console.log(`Erro: ${erro.status}.`);
       }
 
     })

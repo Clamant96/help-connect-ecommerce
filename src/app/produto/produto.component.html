@@ -38,7 +38,7 @@
 
 <section>
   <div class="bloco" *ngFor='let item of listaDeProdutos'>
-    <div class="img">
+    <div class="img" [routerLink]="['/produto/', item.id]" >
       <img src="{{item.img}}" alt="{{item.nome}}">
     </div>
     <div class="conteudo">

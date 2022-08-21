@@ -133,28 +133,30 @@ section {
   height: auto;
 
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 
   flex-wrap: wrap;
 
 }
 
-section .bloco {
+/*section {
   margin: 2%;
 
   width: 29.3333%;
   height: auto;
 
-}
+}*/
 
-section .bloco .img {
-  width: 100%;
+section .img {
+  padding: 2%;
+
+  width: 46%;
   height: auto;
 
 }
 
-section .bloco .img img {
+section .img img {
   width: 100%;
   height: auto;
 
@@ -162,7 +164,15 @@ section .bloco .img img {
 
 }
 
-section .bloco .conteudo {
+section .dados-produto {
+  padding: 2%;
+
+  width: 46%;
+  height: 80vh;
+
+}
+
+section .dados-produto .conteudo {
   margin-top: 3%;
 
   width: 100%;
@@ -170,13 +180,13 @@ section .bloco .conteudo {
 
 }
 
-section .bloco .conteudo h2 {
+section .dados-produto .conteudo h2 {
   font-size: 1.8rem !important;
   font-weight: 800 !important;
 
 }
 
-section .bloco .conteudo h4 {
+section .dados-produto .conteudo h4 {
   font-size: 1rem !important;
   font-weight: 500 !important;
 
@@ -184,7 +194,7 @@ section .bloco .conteudo h4 {
 
 }
 
-section .bloco .conteudo h3 {
+section .dados-produto .conteudo h3 {
   font-size: 1.1rem !important;
   font-weight: 600 !important;
 
@@ -192,7 +202,7 @@ section .bloco .conteudo h3 {
 
 }
 
-section .bloco .conteudo h5 {
+section .dados-produto .conteudo h5 {
   font-size: 0.8rem !important;
   font-weight: 600 !important;
 
@@ -200,7 +210,7 @@ section .bloco .conteudo h5 {
 
 }
 
-section .botoes {
+section .dados-produto .botoes {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -208,7 +218,7 @@ section .botoes {
 
 }
 
-section .botoes button {
+section .dados-produto .botoes button {
   margin-top: 1%;
   margin-bottom: 1%;
 
@@ -236,7 +246,7 @@ section .botoes button {
 
 }
 
-section .botoes button .icone {
+section .dados-produto .botoes button .icone {
   padding: 1%;
 
   width: 14%;
@@ -253,7 +263,7 @@ section .botoes button .icone {
 
 }
 
-section .botoes button .icone > svg {
+section .dados-produto .botoes button .icone > svg {
   padding: 5%;
 
   width: 90%;
@@ -261,7 +271,7 @@ section .botoes button .icone > svg {
 
 }
 
-section .botoes button p {
+section .dados-produto .botoes button p {
   font-size: 1rem !important;
 
   margin: 0 !important;
@@ -276,8 +286,55 @@ section .botoes button p {
 
 }
 
-section .botoes button:hover {
+section .dados-produto .botoes button:hover {
   background-color: var(--button-orange-hover);
+
+}
+
+section .dados-produto .botoes .calculo-frete {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  flex-wrap: wrap !important;
+
+  width: 100%;
+  height: auto;
+
+}
+
+section .dados-produto .botoes .calculo-frete input {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  margin-right: 0.5%;
+  padding: 1%;
+
+  width: 60%;
+  height: auto;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  color: var(--text-gray2);
+
+  border-radius: 3px;
+  border: 1px solid var(--text-light-gray2);
+
+}
+
+section .dados-produto .botoes .frete {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  margin-right: 0.5%;
+  padding: 1% 1% 1% 0%;
+
+  width: 60%;
+  height: auto;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--text-gray2);
 
 }
 
@@ -446,7 +503,7 @@ section .botoes button:hover {
 
   }
 
-  section .bloco {
+  section {
     margin: 2%;
 
     width: 100%;
@@ -454,13 +511,13 @@ section .botoes button:hover {
 
   }
 
-  section .bloco .img {
+  section .img {
     width: 100%;
     height: auto;
 
   }
 
-  section .bloco .img img {
+  section .img img {
     width: 100%;
     height: auto;
 
@@ -468,7 +525,13 @@ section .botoes button:hover {
 
   }
 
-  section .bloco .conteudo {
+  section .dados-produto {
+    width: 100%;
+    height: auto;
+
+  }
+
+  section .dados-produto .conteudo {
     margin-top: 3%;
 
     width: 100%;
@@ -476,13 +539,13 @@ section .botoes button:hover {
 
   }
 
-  section .bloco .conteudo h2 {
+  section .dados-produto .conteudo h2 {
     font-size: 1.8rem !important;
     font-weight: 800 !important;
 
   }
 
-  section .bloco .conteudo h4 {
+  section .dados-produto .conteudo h4 {
     font-size: 1rem !important;
     font-weight: 500 !important;
 
@@ -490,7 +553,7 @@ section .botoes button:hover {
 
   }
 
-  section .bloco .conteudo h3 {
+  section .dados-produto .conteudo h3 {
     font-size: 1.1rem !important;
     font-weight: 600 !important;
 
@@ -498,7 +561,7 @@ section .botoes button:hover {
 
   }
 
-  section .bloco .conteudo h5 {
+  section .dados-produto .conteudo h5 {
     font-size: 0.8rem !important;
     font-weight: 600 !important;
 
@@ -506,7 +569,7 @@ section .botoes button:hover {
 
   }
 
-  section .botoes {
+  section .dados-produto .botoes {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -517,7 +580,7 @@ section .botoes button:hover {
 
   }
 
-  section .botoes button {
+  section .dados-produto .botoes button {
     margin-top: 1%;
     margin-bottom: 1%;
 
@@ -545,7 +608,7 @@ section .botoes button:hover {
 
   }
 
-  section .botoes button .icone {
+  section .dados-produto .botoes button .icone {
     padding: 1%;
 
     width: 14%;
@@ -562,7 +625,7 @@ section .botoes button:hover {
 
   }
 
-  section .botoes button .icone > svg {
+  section .dados-produto .botoes button .icone > svg {
     padding: 5%;
 
     width: 90%;
@@ -570,7 +633,7 @@ section .botoes button:hover {
 
   }
 
-  section .botoes button p {
+  section .dados-produto .botoes button p {
     font-size: 1rem !important;
 
     margin: 0 !important;
@@ -585,8 +648,39 @@ section .botoes button:hover {
 
   }
 
-  section .botoes button:hover {
+  section .dados-produto .botoes button:hover {
     background-color: var(--button-orange-hover);
+
+  }
+
+  section .dados-produto .botoes .calculo-frete {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    flex-wrap: wrap !important;
+
+    width: 100%;
+    height: auto;
+
+  }
+
+  section .dados-produto .botoes .calculo-frete input {
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-right: 0.5%;
+    padding: 1%;
+
+    width: 60%;
+    height: auto;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: var(--text-gray2);
+
+    border-radius: 3px;
+    border: 1px solid var(--text-light-gray2);
 
   }
 

@@ -20,6 +20,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FocoProdutoComponent } from './foco-produto/foco-produto.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     InserirProdutoComponent,
     ClienteComponent,
     AlertasComponent,
-    DashboardComponent
+    DashboardComponent,
+    FocoProdutoComponent
   ],
   imports: [
     BrowserModule,

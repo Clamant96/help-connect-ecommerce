@@ -72,6 +72,8 @@ export class DashboardComponent implements OnInit {
     this.categoria.id = this.idCategoria;
     this.produto.categoria = this.categoria;
 
+    console.log(this.produto);
+
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
 

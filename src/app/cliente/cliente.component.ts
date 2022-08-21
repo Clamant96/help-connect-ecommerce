@@ -1,3 +1,5 @@
+import { EnderecoEntrega } from './../model/EnderecoEntrega';
+import { CorreioService } from './../service/correio.service';
 import { ProdutoService } from './../service/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -34,7 +36,8 @@ export class ClienteComponent implements OnInit {
     private router: Router,
     private produtoService: ProdutoService,
     private alertas: AlertasService,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private correioService: CorreioService
 
   ) { }
 
@@ -166,6 +169,26 @@ export class ClienteComponent implements OnInit {
     }
 
     return permissao;
+
+  }
+
+  carregaEndereco(event: any) {
+    this.usuario.cep = event.target.value;
+
+    event.target.value = event.target.value.replace("-", "");
+
+    if(event.target.value.length == 8) {
+      this.correioService.carregaEnderecoPorCEP(event.target.value).subscribe((resp: EnderecoEntrega) => {
+
+        this.usuario.endereco = resp.logradouro;
+        this.usuario.bairro = resp.bairro;
+        this.usuario.cidade = resp.localidade;
+        this.usuario.estado = resp.uf;
+        this.usuario.pais = "Brasil";
+
+      });
+
+    }
 
   }
 

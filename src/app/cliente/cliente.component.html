@@ -242,14 +242,15 @@
                                   <div class="input">
                                       <p>Endereço</p>
                                       <div class="endereco">
-                                        <input [(ngModel)]='usuario.endereco' type="text" name="endereco" id="endereco" placeholder="Endereço" >
-                                        <input [(ngModel)]='usuario.numero' type="text" name="numero" id="numero" placeholder="Numero" >
-                                        <input [(ngModel)]='usuario.complemento' type="text" name="complemento" id="complemento" placeholder="Complemento" >
-                                        <input [(ngModel)]='usuario.bairro' type="text" name="bairro" id="bairro" placeholder="Bairro" >
-                                        <input [(ngModel)]='usuario.estado' type="text" name="estado" id="estado" placeholder="Estado" >
-                                        <input [(ngModel)]='usuario.cidade' type="text" name="cidade" id="cidade" placeholder="Cidade" >
-                                        <input [(ngModel)]='usuario.pais' type="text" name="pais" id="pais" placeholder="Pais" >
-                                        <input [(ngModel)]='usuario.cep' type="text" name="cep" id="cep" placeholder="CEP" >
+                                        <input class="cep-carregar" [(ngModel)]='usuario.cep' type="text" name="cep" id="cep" placeholder="CEP" (input)='carregaEndereco($event)' />
+
+                                        <input [(ngModel)]='usuario.endereco' type="text" name="endereco" id="endereco" placeholder="Endereço" disabled />
+                                        <input [(ngModel)]='usuario.numero' type="text" name="numero" id="numero" placeholder="Numero" />
+                                        <input [(ngModel)]='usuario.complemento' type="text" name="complemento" id="complemento" placeholder="Complemento" />
+                                        <input [(ngModel)]='usuario.bairro' type="text" name="bairro" id="bairro" placeholder="Bairro" disabled />
+                                        <input [(ngModel)]='usuario.estado' type="text" name="estado" id="estado" placeholder="Estado" disabled />
+                                        <input [(ngModel)]='usuario.cidade' type="text" name="cidade" id="cidade" placeholder="Cidade" disabled />
+                                        <input [(ngModel)]='usuario.pais' type="text" name="pais" id="pais" placeholder="Pais" disabled />
                                       </div>
                                   </div>
                                   <div class="input">

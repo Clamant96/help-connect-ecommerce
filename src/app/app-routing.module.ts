@@ -1,3 +1,4 @@
+import { FocoProdutoComponent } from './foco-produto/foco-produto.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -44,6 +45,9 @@ const routes: Routes = [
   },
   {
     path: 'produto/:idProduto/pedido/:idPedido', component: InserirProdutoComponent
+  },
+  {
+    path: 'produto/:id', component: FocoProdutoComponent
   }
 
 ];

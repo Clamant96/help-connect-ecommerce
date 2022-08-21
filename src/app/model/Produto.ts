@@ -14,4 +14,9 @@ export class Produto {
     public pedidos: Cliente[];
     public listaDesejos: Cliente[];
 
+    public peso: number;
+    public comprimento: number;
+    public altura: number;
+    public largura: number;
+
 }
