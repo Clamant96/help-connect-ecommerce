@@ -1,3 +1,4 @@
+import { Compras } from './Compras';
 import { Cliente } from './Cliente';
 import { Categoria } from "./Categoria";
 
@@ -13,6 +14,7 @@ export class Produto {
     public categoria: Categoria;
     public pedidos: Cliente[];
     public listaDesejos: Cliente[];
+    public compra: Compras[];
 
     public peso: number;
     public comprimento: number;

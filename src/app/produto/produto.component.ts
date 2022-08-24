@@ -1,3 +1,4 @@
+import { ComprasService } from './../service/compras.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -26,7 +27,8 @@ export class ProdutoComponent implements OnInit {
     private produtoService: ProdutoService,
     private router: Router,
     private categoriaService: CategoriaService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    private comprasService: ComprasService
 
   ) { }
 

@@ -21,6 +21,7 @@ import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FocoProdutoComponent } from './foco-produto/foco-produto.component';
+import { CompraComponent } from './compra/compra.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FocoProdutoComponent } from './foco-produto/foco-produto.component';
     ClienteComponent,
     AlertasComponent,
     DashboardComponent,
-    FocoProdutoComponent
+    FocoProdutoComponent,
+    CompraComponent
   ],
   imports: [
     BrowserModule,

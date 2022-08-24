@@ -1,3 +1,6 @@
+import { ComprasService } from './../service/compras.service';
+import { Compras } from './../model/Compras';
+import { Correio } from './../model/Correio';
 import { EnderecoEntrega } from './../model/EnderecoEntrega';
 import { CorreioService } from './../service/correio.service';
 import { ProdutoService } from './../service/produto.service';
@@ -20,24 +23,33 @@ export class ClienteComponent implements OnInit {
   public email = environment.email;
   public foto = environment.foto
   public idUsuario = environment.id;
+  public cep = environment.cep;
 
   public produto: Produto = new Produto();
   public listaDeDesejos: Produto[];
   public listaDeProdutoMemoria: Produto[];
 
   public usuario: Cliente = new Cliente();
+  public usuarioFrete: Cliente = new Cliente();
+  public correio: Correio = new Correio();
+  public compra: Compras = new Compras();
   public confirmarSenha: string;
   public tipoUsuario: string;
 
   public qtdItensProdutos: number;
   public qtdItensListaDeDesejos: number;
+  public qtdCompras: number;
+
+  public valorFrete: string = "vazio";
+  public frete: number = 0;
 
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
     private alertas: AlertasService,
     private clienteService: ClienteService,
-    private correioService: CorreioService
+    private correioService: CorreioService,
+    private comprasService: ComprasService
 
   ) { }
 
@@ -51,6 +63,10 @@ export class ClienteComponent implements OnInit {
 
     this.findByIdUsuario(this.idUsuario);
 
+    setTimeout(() => {
+      this.calculaFreteAutomatico();
+    }, 500);
+
   }
 
   // CARREGA DADOS DO USUARIO
@@ -60,6 +76,7 @@ export class ClienteComponent implements OnInit {
 
       this.qtdItensListaDeDesejos = this.usuario.listaDeDesejos.length;
       this.qtdItensProdutos = this.usuario.pedidos.length;
+      this.qtdCompras = this.usuario.compras.length;
 
     });
 
@@ -190,6 +207,109 @@ export class ClienteComponent implements OnInit {
 
     }
 
+  }
+
+  carregaFrete(event: any) {
+
+    this.valorFrete = "vazio";
+    this.frete = 0;
+
+    event.target.value = event.target.value.replace("-", "");
+
+    if(event.target.value.length == 8) {
+
+      let nCdServico: string = "41106";
+
+      this.correioService.calculaValorFreteCarrinho(this.usuario.pedidos, nCdServico, event.target.value).subscribe((resp: number) => {
+        this.valorFrete = String(resp);
+      });
+
+    }else {
+      this.valorFrete = "vazio";
+
+    }
+
+  }
+
+  calculaFreteAutomatico() {
+
+    if(this.cep.length == 8) {
+
+      let nCdServico: string = "41106";
+
+      this.correioService.calculaValorFreteCarrinho(this.usuario.pedidos, nCdServico, this.cep).subscribe((resp: number) => {
+        this.valorFrete = String(resp);
+      });
+
+    }else {
+      this.valorFrete = "vazio";
+
+    }
+
+  }
+
+  renderizaValorFrete(valor: number) {
+    this.valorFrete = String(valor);
+  }
+
+  renderizaFrete(texto: string) {
+
+    if(texto != "vazio") {
+      return true;
+    }
+
+    return false;
+  }
+
+  finalizarCompra() {
+    let user: Cliente = new Cliente();
+    user.id = this.usuario.id;
+
+    this.compra.cliente = user;
+    this.compra.status = "Pedido realizado";
+
+    this.comprasService.postCompra(this.compra).subscribe((resp: Compras) => {
+      console.log("compra gerada com sucesso!");
+      console.log(resp);
+
+      this.comprasService.adicionaProdutoACompra(this.usuario.pedidos, resp.id, Number(this.valorFrete)).subscribe((retorno: boolean) => {
+        console.log("produto inserido na compra com sucesso!");
+        console.log(resp);
+
+      }, erro => {
+        console.log("ocorreu um erro com a insercao do produto na compra.");
+        console.log(erro);
+
+      })
+
+      /*this.correioService.insereFreteNaCompra(resp.id, Number(this.valorFrete)).subscribe((resp: Compras) => {
+        console.log('frete inserido no carrinho com sucesso!');
+        console.log(resp);
+
+      }, erro => {
+        console.log('ocorreu um erro com a inserção do frete.');
+        console.log(erro);
+
+      });*/
+
+      this.alertas.alertaMensagem('Pedido realizado com sucesso!');
+
+      this.router.navigate(['/produto']);
+
+    }, erro => {
+      console.log("ocorreu um erro com a geracao da compra.");
+      console.log(erro);
+
+    })
+
+  }
+
+  renderizaSubtotal(frete: string, valorCarrinho: number) {
+    let retorno: number = 0;
+
+    retorno = Number(frete) + valorCarrinho;
+
+    return retorno;
   }
 
 }

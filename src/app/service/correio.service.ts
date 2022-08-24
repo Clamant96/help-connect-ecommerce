@@ -1,3 +1,5 @@
+import { Compras } from './../model/Compras';
+import { Produto } from './../model/Produto';
 import { Correio } from './../model/Correio';
 import { EnderecoEntrega } from './../model/EnderecoEntrega';
 import { Observable } from 'rxjs';
@@ -27,9 +29,19 @@ export class CorreioService {
     return this.http.get<EnderecoEntrega>(`${this.endereco}/correios/${cep}`, this.autorizacao);
   }
 
+  /*insereFreteNaCompra(idCompra: number, frete: number): Observable<Compras> {
+
+    return this.http.get<Compras>(`${this.endereco}/correios/insere-frete-compra/idCompra/${idCompra}/frete/${frete}`, this.autorizacao);
+  }*/
+
   calculaValorFrete(correio: Correio): Observable<string> {
 
     return this.http.post<string>(`${this.endereco}/correios/frete`, correio, this.autorizacao);
+  }
+
+  calculaValorFreteCarrinho(produtos: Produto[], numeroPedido: string, cep: string): Observable<number> {
+
+    return this.http.post<number>(`${this.endereco}/correios/calcula-frete/numeroPedido/${numeroPedido}/cep/${cep}`, produtos, this.autorizacao);
   }
 
 }

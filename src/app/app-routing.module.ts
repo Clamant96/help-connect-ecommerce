@@ -1,3 +1,4 @@
+import { CompraComponent } from './compra/compra.component';
 import { FocoProdutoComponent } from './foco-produto/foco-produto.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -48,6 +49,9 @@ const routes: Routes = [
   },
   {
     path: 'produto/:id', component: FocoProdutoComponent
+  },
+  {
+    path: 'compra/:id', component: CompraComponent
   }
 
 ];

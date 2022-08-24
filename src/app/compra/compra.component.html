@@ -1,0 +1,126 @@
+<section>
+  <div class="exibirPerfil">
+      <div class="perfil">
+          <div class="informacao">
+              <h2>Facilite seu dia com <b>solucoes inteligentes.</b></h2>
+          </div>
+          <div class="gerenciarPerfil">
+              <div class="menu">
+                  <!-- DADOS PERFIL CAMPO MENU -->
+                  <div class="dadosLogin">
+                      <div class="img">
+                          <img src="{{foto}}" alt="{{nome}}">
+                      </div>
+                      <div class="nome">
+                          <p>{{nome}}</p>
+                      </div>
+                      <div class="email">
+                          <p>{{email}}</p>
+                      </div>
+                  </div>
+                  <!--<div class="botoes">-->
+                    <ul class="botoes nav nav-tabs" id="myTab" role="tablist">
+                      <li class="comprar nav-item" role="presentation">
+                        <button class="nav-link" id="minhas-compras-tab" >
+
+                        <!--<div class="comprar">
+                            <a>-->
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box2" viewBox="0 0 16 16">
+                                      <path d="M2.95.4a1 1 0 0 1 .8-.4h8.5a1 1 0 0 1 .8.4l2.85 3.8a.5.5 0 0 1 .1.3V15a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4.5a.5.5 0 0 1 .1-.3L2.95.4ZM7.5 1H3.75L1.5 4h6V1Zm1 0v3h6l-2.25-3H8.5ZM15 5H1v10h14V5Z"/>
+                                    </svg>
+                                </div>
+                                <div class="hr">
+                                    <hr />
+                                </div>
+                                <p>Numero Pedido: {{this.compra.numeroPedido}}</p>
+                            <!--</a>
+                        </div>-->
+
+                        </button>
+                      </li>
+                      <li class="comprar nav-item" role="presentation">
+                        <button class="nav-link" id="minhas-compras-tab" routerLink="/cliente" >
+
+                        <!--<div class="comprar">
+                            <a>-->
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                                      <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                                    </svg>
+                                </div>
+                                <div class="hr">
+                                    <hr />
+                                </div>
+                                <p>Minhas Compras</p>
+                            <!--</a>
+                        </div>-->
+
+                        </button>
+                      </li>
+                    </ul>
+                  <!--</div>-->
+                  <div class="atendimento">
+                      <h2>Atendimento ao Cliente</h2>
+                      <p>kevin.helpconnect@gmail.com</p>
+                  </div>
+              </div>
+              <div class="dados">
+                  <div class="minhaConta">
+                      <h2>Minha Conta</h2>
+                      <h3>Administre seus dados, endereco e pedidos.</h3>
+                      <p>Se houver duvidas, entre em contato com nossa central de atendimento</p>
+                  </div>
+                  <div class="dadosCadastrais">
+                      <h2>Dados Cadastrais</h2>
+                      <h3>Todos os campos sao obrigatorios</h3>
+                  </div>
+                  <div class="painel">
+                      <div class="opcao">
+                          <p>Dados Pessoais</p>
+                          <div class="botoes">
+                            <div class="meu-carrinho">
+                              <!--<div class="icone">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                                  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                </svg>
+                              </div>
+                              <p>R$ {{this.compra.valorTotal.toFixed(2).replace('.', ',')}}</p>-->
+                            </div>
+                          </div>
+                      </div>
+                      <div class="dadosPerfil">
+                          <div class="cadastro">
+
+                              <!-- NAV AND TABS -->
+                              <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                  <div class="bloco" *ngFor='let item of this.compra.meuPedido'>
+
+                                    <div class="img">
+                                      <img src="{{item.img}}" alt="{{item.nome}}">
+                                    </div>
+                                    <div class="conteudo">
+                                      <h2>{{item.nome}}</h2>
+                                      <h4>{{item.descricao}}</h4>
+                                      <h3>R$ {{item.preco.toFixed(2).replace('.', ',')}}</h3>
+                                      <p>x {{item.qtdPedidoProduto}}</p>
+                                    </div>
+
+                                  </div>
+
+                                  <!-- IMPLEMENTAR UM SISTEMA DE PASSO JA REALIZADOS APOS A REALIZACAO DA COMPRA -->
+
+                                </div>
+                              </div>
+                              <!-- ############# -->
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

@@ -33,7 +33,6 @@ export class FocoProdutoComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
-    private categoriaService: CategoriaService,
     private alertas: AlertasService,
     private route: ActivatedRoute,
     private correioService: CorreioService
@@ -41,6 +40,7 @@ export class FocoProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
 
     if(localStorage.getItem('token') == null) {
       this.router.navigate(['/login']);

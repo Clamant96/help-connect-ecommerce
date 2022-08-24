@@ -1,3 +1,4 @@
+import { Compras } from './Compras';
 import { Produto } from './Produto';
 
 export class Cliente {
@@ -21,5 +22,6 @@ export class Cliente {
     public pedidos: Produto[];
     public listaDeDesejos: Produto[];
     public valorTotal: number;
+    public compras: Compras[];
 
 }

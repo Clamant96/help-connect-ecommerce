@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
       environment.tipo=this.clienteLogin.tipo;
       environment.usuario= this.clienteLogin.usuario;
       environment.id = this.clienteLogin.id;
+      environment.cep = this.clienteLogin.cep;
 
       /* ARMAZENA O TOKEN DO USUARIO NA VARIAVEL */
       this.tokenUsuario = this.clienteLogin.token;
