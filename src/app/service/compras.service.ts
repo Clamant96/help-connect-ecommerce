@@ -42,6 +42,11 @@ export class ComprasService {
     return this.http.post<boolean>(`${this.api}/compras/produto_compra/compra/${idCompra}/frete/${frete}`, produtos, this.autorizacao);
   }
 
+  enviarEmail(id: number): Observable<boolean> {
+
+    return this.http.get<boolean>(`${this.api}/compras/email/${id}`, this.autorizacao);
+  }
+
   postCompra(compra: Compras): Observable<Compras> {
 
     return this.http.post<Compras>(`${this.api}/compras`, compra, this.autorizacao);

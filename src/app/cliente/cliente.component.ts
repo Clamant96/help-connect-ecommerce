@@ -274,7 +274,7 @@ export class ClienteComponent implements OnInit {
 
       this.comprasService.adicionaProdutoACompra(this.usuario.pedidos, resp.id, Number(this.valorFrete)).subscribe((retorno: boolean) => {
         console.log("produto inserido na compra com sucesso!");
-        console.log(resp);
+        console.log(retorno);
 
       }, erro => {
         console.log("ocorreu um erro com a insercao do produto na compra.");
@@ -282,17 +282,19 @@ export class ClienteComponent implements OnInit {
 
       })
 
-      /*this.correioService.insereFreteNaCompra(resp.id, Number(this.valorFrete)).subscribe((resp: Compras) => {
-        console.log('frete inserido no carrinho com sucesso!');
-        console.log(resp);
-
-      }, erro => {
-        console.log('ocorreu um erro com a inserção do frete.');
-        console.log(erro);
-
-      });*/
-
       this.alertas.alertaMensagem('Pedido realizado com sucesso!');
+
+      setTimeout(() => {
+        this.comprasService.enviarEmail(resp.id).subscribe((emailRetorno: boolean) => {
+          console.log("EMARIL ENVIADO: "+ emailRetorno);
+
+        }, erro => {
+          console.log(erro);
+
+        });
+
+      }, 2000);
+
 
       this.router.navigate(['/produto']);
 

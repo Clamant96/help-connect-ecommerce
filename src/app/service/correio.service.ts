@@ -29,11 +29,6 @@ export class CorreioService {
     return this.http.get<EnderecoEntrega>(`${this.endereco}/correios/${cep}`, this.autorizacao);
   }
 
-  /*insereFreteNaCompra(idCompra: number, frete: number): Observable<Compras> {
-
-    return this.http.get<Compras>(`${this.endereco}/correios/insere-frete-compra/idCompra/${idCompra}/frete/${frete}`, this.autorizacao);
-  }*/
-
   calculaValorFrete(correio: Correio): Observable<string> {
 
     return this.http.post<string>(`${this.endereco}/correios/frete`, correio, this.autorizacao);
