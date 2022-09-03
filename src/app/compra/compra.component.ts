@@ -52,4 +52,32 @@ export class CompraComponent implements OnInit {
 
   }
 
+  validaStatusCompraPagamentoRealizado() {
+    let retorno: string = "";
+
+    if(this.compra.status == "Pagamento realizado" || this.compra.status == "Entregue") {
+      retorno = "";
+
+    }else {
+      retorno = "-cinza";
+
+    }
+
+    return retorno;
+  }
+
+  validaStatusCompraEntregue() {
+    let retorno: string = "";
+
+    if(this.compra.status == "Entregue") {
+      retorno = "";
+
+    }else {
+      retorno = "-cinza";
+
+    }
+
+    return retorno;
+  }
+
 }

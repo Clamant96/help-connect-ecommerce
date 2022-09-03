@@ -110,6 +110,20 @@
 
                                   </div>
 
+                                  <div class="andamento-compra">
+                                    <div class="circulo">
+                                      <p class="texto">Pedido realizado</p>
+                                    </div>
+                                    <div class="linha"></div>
+                                    <div class="circulo{{validaStatusCompraPagamentoRealizado()}}">
+                                      <p class="texto{{validaStatusCompraPagamentoRealizado()}}">Pagamento realizado</p>
+                                    </div>
+                                    <div class="linha{{validaStatusCompraPagamentoRealizado()}}"></div>
+                                    <div class="circulo{{validaStatusCompraEntregue()}}">
+                                      <p class="texto{{validaStatusCompraEntregue()}}">Entregue</p>
+                                    </div>
+                                  </div>
+
                                   <!-- IMPLEMENTAR UM SISTEMA DE PASSO JA REALIZADOS APOS A REALIZACAO DA COMPRA -->
 
                                 </div>
